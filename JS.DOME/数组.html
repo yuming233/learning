@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // 数组
+    // var a = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'];
+    // for (var i = 0; i < a.length; i++) {
+    //     console.log(a[i]);
+    // }
+
+
+    // var add = 0;
+    // var pj = 0;
+    // var a = [2, 6, 1, 7, 4];
+    // for (var i = 0; i < a.length; i++) {
+    //     add += a[i];
+    // }
+    // pj = add / a.length;
+    // console.log(add,pj);
+
+
+    // 数组比较最大值
+    // var a = [1, 654, 16, , 651, 21, 86, 654, 86, 4, 8, 76];
+    // var max = a[0];             // 第0个开始
+    // for (var i = 1; i < a.length; i++) {    // i是第1个开始跟第0个比较
+    //     if (a[i] > max) {            
+    //         max = a[i];
+    //     }
+    // }
+    // console.log(max);
+
+
+    // 字符串拼接
+    // var a = ['挖的坑', '连起来', '已经很多了', '你不懂', '我也不懂'];
+    // var str = '';
+    // var sep = '|';
+    // for (var i = 0; i < a.length; i++) {
+    //     str += a[i] + sep;
+    // }
+    // console.log(str);
+
+
+    // 数组存放1~10个值
+    // var a = [];
+    // for (var i = 0; i < 10; i++) {
+    //     // a = i;  // 你要直接给数组名赋值 否则以前的元素都没了
+    //     a[i] = i + 1; // i+1是因为要从1开始算 
+    // }
+    // console.log(a);
+
+    // -----------------------------------------------------------------------------------------------------------
+
+    // 将数组[2,0,6,1,77,0,1,52,6,0,15,25,7]中大于等于10的数拿出来放入新的数组
+    // var a = [2, 0, 6, 1, 77, 0, 1, 52, 6, 0, 15, 25, 7];
+    // var b = [];
+    // var j = 0;
+    // for (var i = 0; i < a.length; i++) {
+    //     if (a[i] >= 10) {
+    //         // 新数组索引号从0开始 依次递增
+    //         b[j] = a[i];
+    //         j++;
+    //     }
+    // }
+    // console.log(b);
+
+    // var a = [2, 0, 6, 1, 77, 0, 1, 52, 6, 0, 15, 25, 7];
+    // var b = [];
+    // for (var i = 0; i < a.length; i++) {
+    //     if (a[i] <= 10) {    // 因为b本来就是一个空数组 length自动计算长度，会依次递增长度
+    //         b[b.length] = a[i];
+    //     }
+    // }
+    // console.log(b);
+
+    // -----------------------------------------------------------------------------------------------------------------
+
+    // 删除指定数组元素 [2,0,6,1,77,0,1,52,6,0,15,25,7] 里面的0
+    // var a = [2, 0, 6, 1, 77, 0, 1, 52, 6, 0, 15, 25, 7];
+    // var b = [];
+    // for (var i = 0; i < a.length; i++) {
+    //     if (a[i] != 0) { // 因为b本来就是一个空数组 length自动计算长度，会依次递增长度
+    //         b[b.length] = a[i];
+    //     }
+    // }
+    // console.log(b);
+
+
+    // 翻转数组
+    // var a = ['挖的坑', '连起来', '已经很多了', '你不懂', '我也不懂'];
+    // var str = [];
+    // for (var i = a.length-1; i >= 0; i--) { //注意里面的大于等于也要改，和i--
+    //     str[str.length] =a[i];
+    // }
+    // console.log(str);
+
+    // 冒泡排序 (从大到小或者从小到大)
+    // var a = [2, 3, 5, 1, 77, 4, 10, 52, 6, 0, 15, 25, 7];
+    // for (var i = 0; i <= a.length - 1; i++) { // 外层循环管循环的躺数
+    //     for (var j = 0; j <= a.length - i - 1; j++) { // 里层循环管“每一趟”的交换次数
+    //         // 内部交换2个变量的值 前一个和后面一个数组元素相比较
+    //         if (a[j] > a[j + 1]) {  // 把里面的>改成<就是从大到小
+    //             var temp = a[j];
+    //             a[j] = a[j + 1];
+    //             a[j + 1] = temp;
+    //         }
+    //     }
+    // }
+    // console.log(a);
+    
+</script>
+
+<body>
+</body>
+
+</html>

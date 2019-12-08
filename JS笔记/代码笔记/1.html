@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="."></script>
+</head>
+
+<body>
+    <script>
+        // let n = [10,20];
+        // let m = n;
+        // let x = m;
+        // m[0] = 100;
+        // x = [30,40];
+        // x[0] = 200;
+        // m = x;
+        // m[1] = 300;
+        // n[2] = 400;
+        // console.log(n);
+        // console.log(m);
+        // console.log(x);
+
+        // let a = {
+        //     n:1
+        // };
+        // let b = a ;
+        // a.x = a ={
+        //     n:2
+        // };
+        // console.log(a.x);  //=> undefined未定义
+        // console.log(b);   //=> object Object 对象的对象
+
+
+
+        //     let a =10;
+        //     // a > 0 && a < 20 ? (a++,console.log(a)) : null;
+
+        //     // let a =10;
+        //     // if (a>0 && a<20){
+        //     //     a++;
+        //     //     console.log(a);
+        //     // }
+
+        //     if (a > 0) {
+        //         if (a < 10) {
+        //             a++;
+        //         } else {
+        //             a--;
+        //         }
+        //     } else {
+        //         if (a>-10){
+        //             a +=2;
+        //     }
+        // }
+        for (var i = 0; i < 10; i++) {
+            if (i >= 2) {
+                i += 2;
+                continue;
+            }
+            if (i >= 6) {
+                i--;
+                break;
+            }
+            i++;
+            console.log(i); //=> 0
+        }
+        console.log(i);
+        // a >= 10 ? console.log('呵呵') : console.log('哈哈');
+    </script>
+</body>
+
+</html>

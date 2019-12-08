@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/*
+			transform-oringin : 设置轴的位置;
+			perspective: 透视   近大远小;  取值： 500~1000
+			perspective-origin :设置透视点（视线源点）的位置;
+		*/
+		div{
+			border: 1px solid red;
+			position: absolute;
+			left: 50%;
+			margin-left: -155px;
+			top: 100px;
+			perspective: 800px;
+			background-color: #000;
+			<!-- perspective-origin: right top; -->
+		}
+		img{
+			display: block;
+			border: 1px solid red;
+			transition: all 1s;
+			background-color: #fff;
+			/*
+				设置旋转时  轴的位置
+			*/
+			transform-origin: left;
+		}
+		div:hover img{
+			transform: rotateY(50deg);
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="img/pk1.png">
+	</div>
+</body>
+</html>

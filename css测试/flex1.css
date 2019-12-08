@@ -1,0 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	padding: 30px;
+	width: 90%;
+	background: #eee;
+	margin: 50px auto;
+	display: flex;
+	flex-wrap: wrap;
+	 justify-content: space-between;  /*平均分配 */
+	align-items: center;       /* 以纵向对齐 */
+}
+
+.one{
+	width: 100px;
+}
+
+.two{
+	width: 150px;
+	align-self: flex-end;     /* 单独操作 */
+}
+
+.three{
+	width: 200px;
+}

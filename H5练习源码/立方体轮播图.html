@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			perspective: 800px;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			width: 800px;
+			height: 360px;
+			margin: 100px auto;
+			list-style:none;
+			position: relative;
+			transform-style: preserve-3d;
+			transition: all 2s;
+			animation:run 8s linear infinite;
+		}
+		li{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+		li:nth-child(1){
+			background: url(images/1.jpg);
+			transform: translateZ(180px);
+		}
+		li:nth-child(2){
+			background: url(images/2.jpg);
+			transform-origin: top;
+			transform:translateZ(-180px) rotateX(90deg);
+		}
+
+		li:nth-child(3){
+			background: url(images/3.jpg);
+			transform:translateZ(-180px) rotateX(180deg);
+		}
+		li:nth-child(4){
+			background: url(images/4.jpg);
+			transform-origin: bottom;
+			transform:translateZ(-180px) rotateX(-90deg);
+		}
+		
+		@keyframes run{
+			0%{
+				transform: translateZ(-180px) rotateX(0deg);
+			}
+			25%{
+				transform: translateZ(-180px) rotateX(90deg);
+			}
+			50%{
+				transform: translateZ(-180px) rotateX(180deg);
+			}
+			75%{
+				transform: translateZ(-180px) rotateX(270deg);
+			}
+			100%{
+				transform: translateZ(-180px) rotateX(360deg);
+			}
+		}
+
+		ul:hover{
+			animation-play-state: paused;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

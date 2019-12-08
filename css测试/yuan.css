@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(216, 215, 215);
+  margin: 200px 50%;
+}
+
+div {
+  width: 200px;
+  /* height: 300px;             1.圆    */
+  /* height: 600px;                2    */
+  background-color: #ffffff;
+  float: flex;
+  border-top: 100px solid rgb(0, 0, 0);
+  border-bottom: 100px solid rgb(255, 255, 255);
+  /* border-radius: 50%;                1.圆    */
+  /* border-radius: 300px 0px 0px 0px / 600px 0px 0px 0px;         2.  1/4圆       */
+  border-radius: 50%;   
+  position: relative;    
+
+
+}
+
+div::after{
+    content: "";
+    height: 50px;
+    width: 50px;
+
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    border: 25px solid rgb(0, 0, 0);
+    position: absolute;
+    margin-top: -50px;
+}
+
+div::before{
+    content: "";
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    border: 25px solid rgb(255, 255, 255);
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 100px;
+}

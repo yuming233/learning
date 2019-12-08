@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>black.dong</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+	</head>
+	<style>
+		html,body{
+			padding: 0px;
+			margin: 0px;
+			overflow: hidden;
+		}
+		#bg{
+			width: auto;
+			height: 100vh;
+			background: radial-gradient(100% 100% at center center,#101,#000);
+			overflow: hidden;
+			z-index: -1;
+		}
+		#light{
+			height: 200px;
+			width: 200px;
+			position: absolute;
+			border-radius: 50%;
+			background: #000000;
+			box-shadow: 0 0 40px rgb(43,42,42);
+			top: 39%;
+			left: 45%;
+			z-index: 2;
+		}
+		.hei{
+			position: absolute;
+			transform: perspective(400px);
+			transform-style: preserve-3d;
+			bottom: 50%;
+			left: 50%;
+			perspective-origin: 50% 100%;
+			animation: hei 120s linear infinite;
+		}
+		@keyframes hei{
+			0%{transform: perspective(400px) rotateZ(0deg) rotateX(-90deg);}
+			100%{transform: perspective(400px) rotateZ(360deg) rotateX(-90deg);}
+		}
+		
+		.light{
+			position: absolute;
+			transform-style: preserve-3d;
+			transform: perspective(400px);
+		}
+		@keyframes rotate{
+			0%{transform: rotateX(0deg) rotateY(0deg);}
+			100%{transform: rotateX(0deg) rotateY(0deg) translateY(1000px);}
+		}
+		
+		.star{
+			position: absolute;
+			top: 0px;
+			left: 0;
+			transform-origin: 0 0 -300px;
+			transform: translate3d(0,0,-300px);
+			backface-visibility: hidden;
+			border-radius: 50%;
+		}
+		
+	</style>
+	
+	<script>
+		$(document).ready(function(){
+			var x=[];
+			var star2=[]
+			var $hei=$(".hei");
+			for(var i=0;i<$hei.length;i++){
+				var div=document.createElement("div");
+				div.className="light";
+				$hei.eq(i).append(div);
+			}
+			var $light=$(".light");
+			for(var j=0;j<$light.length;j++){
+				var div=document.createElement("div");
+				div.className="star";
+				$light.eq(j).append(div);
+			}
+			
+			$(".star").each(function(){
+				var a=Math.random()*12;
+				var b=Math.random()*100 ;
+				var c=Math.random()*(-20);
+				var r=Math.random()*600;
+				var s=(Math.random()*1)+0.2;
+				$(this).css({
+					width:a+"px",
+					height:a+"px",
+					trnasformOrigin:"0 0"+r+"px",
+					transform:"translate3d(0,0,-"+r+"px) rotateY("+b+"deg) rotateX("+c+"deg) scale("+s+","+s+")",
+					background:"rgba("+Math.random()*225+","+Math.random()*255+","+Math.random()*255+","+Math.random()*1+")",
+					boxShadow:"0 0"+Math.random()*50+"px rgba("+Math.random()*255+","+Math.random()*255+","+Math.random()*255+","+Math.random()*1+")"
+				})
+			})
+		})
+	</script>
+	<body>
+		<div id="bg">
+			<div id="light"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+			<div class="hei"></div>
+		</div>
+	</body>
+</html>

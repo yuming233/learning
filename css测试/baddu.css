@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 头部 START */
+#header{
+    height: 32px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 12px;
+    margin-bottom: 40px;
+    /* color: #555555; */
+    margin-left: 10px;
+}
+.liang{
+    color: rgb(141, 224, 16);
+}
+#header a{
+    margin-left: 10px;
+    color: #555555;
+
+}
+
+#header .header-left{
+    float: left;
+    width: 270px;
+    height: 33px;
+    line-height: 33px;
+
+}
+
+#header .header-right{
+    float: right;
+    height: 33px;
+    line-height: 33px;
+}
+
+#header .header-right a{
+    font-weight: bolder;
+
+}
+
+/* 行内标签转成行内块级 */
+#header .header-right a.more{
+    display: inline-block;
+    background:#398bfb;
+    border-bottom: 1px solid #398bfb;
+    color: white;
+    width: 86px;
+    height: 32px;
+    /* line-height: 32px; */
+    text-align: center;
+    text-decoration: none;
+
+}
+
+/* 头部 END */
+
+/* 搜索 START */
+#content{
+    width: 641px;
+    height: 189px;
+    margin: 20px auto;
+
+}
+
+#content .logo{
+    text-align: center;
+    width: 641px;
+    height: 112px;
+}
+
+#content .logo img{
+    width: 270px;
+    height: 112px;
+}
+
+#content .search{
+    width: 100%;
+    height: 77px;
+    padding-top: 10px;
+}
+
+#content .search form{
+    width: 100%;
+    height: 44px;
+}
+
+#content .search form .search-input{
+    width: 536px;
+    height: 44px;
+    padding-left: 8px;
+    outline: none;
+    border: 1px solid #e0e0e0;
+    float: left;
+
+}
+
+#content .search form .search-input:focus{
+    border-color: #398bfb;
+}
+#content .search form .search-submit{
+    width: 105px;
+    height: 44px;
+    background-color:#398bfb;
+    border: none;
+    float: left;
+    color: white;
+    font-size: 16px;
+
+    outline: none;
+
+}
+#content .search form .search-submit:hover{
+    background-color: #317EF3;
+}
+
+
+/* 搜索 END */
+
+/* 列表 START */
+#list{
+    width: 893px;
+    height: 600px;
+    border: 1px solid #e0e0e0;
+    margin: 0 auto;
+}
+
+#list .list-head{
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+#list .list-head .list-head-left{
+    float: left;
+}
+
+.a-right{
+    float: right;
+}
+/* 列表 END */

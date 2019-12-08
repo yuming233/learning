@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background: #aaa;
+    }
+    div{
+        height: 100px;
+        width: 500px;
+        text-align: center;
+        margin: 50px auto;
+        position: relative;
+        padding: 25px;
+        background: #fff;
+        box-shadow: inset 0px 0px 30px rgba(0,0,0,0.3);
+    }
+    div::after{
+        content: "";
+        height: 100px;
+        width: 400px;
+        margin: 50px auto;
+        position: absolute;
+        padding: 25px;
+        /* background: crimson; */
+        box-shadow: inset 0px 30px 30px rgba(0, 0, 0, 0.3);
+
+    }
+
+</style>
+
+<body>
+    <div class="yingyin">
+        <h2>HTML CSS JAVASCRIPT</h2>
+        <p>HELLO WORLD</p>
+    </div>
+</body>
+
+</html>
