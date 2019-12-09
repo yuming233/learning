@@ -47,19 +47,47 @@
     // console.log(getSun(10, 66));
 
     // 函数求数组中的最大值
-    function getMax(a) { // a 接受一个数组
-        var max = a[0];
-        for (var i = 1; i <= a.length; i++) {
-            if (a[i] > max) {
-                max = a[i];
-            }
-        }
-        return max;
-    }
-    // getMax([2, 3, 5, 1, 77, 4, 10, 52, 6, 0, 15, 25, 7]);
-    // 实际开发里面，经常用一个变量来接受函数的返回结果
-    var re = getMax([2, 3, 5, 1, 77, 4, 10, 52, 6, 0, 15, 25, 7]); // 定义一个函数去输出
-    console.log(re);
+    // function getMax(a) { // a 接受一个数组
+    //     var max = a[0];
+    //     for (var i = 1; i <= a.length; i++) {
+    //         if (a[i] > max) {
+    //             max = a[i];
+    //         }
+    //     }
+    //     return max;
+    // }
+    // // getMax([2, 3, 5, 1, 77, 4, 10, 52, 6, 0, 15, 25, 7]);
+    // // 实际开发里面，经常用一个变量来接受函数的返回结果
+    // var re = getMax([2, 3, 5, 1, 77, 4, 10, 52, 6, 0, 15, 25, 7]); // 定义一个函数去输出
+    // console.log(re);
+
+    // 函数返回值注意事项
+    // 1.return 终止函数  return 后面的函数不会被执行
+    // function getSum(num1, num2) {
+    //     return num1 + num2;
+    //     alert('不会被执行')
+    // }
+    // console.log(getSum(5, 5));
+
+    // 2.return只能返回一个值
+    // function getSum(num1, num2) {
+    //     return num1, num2;
+    // }
+    // console.log(getSum(5, 5));
+
+    // 求任意两个数的加减乘除结果
+    // function getSum(num1, num2) {
+    //     return [num1 + num2, num1 - num2, num1 * num2, num1 / num2];
+    // }
+    // console.log(getSum(6, 5));  // 也可以跟上面也有用var
+
+    // 函数如果有return 则返回的是return后面的值，如果函数没有return则返回undefined
+    // function fun(){
+        
+    // }
+    // console.log(fun());
+    
+    
 </script>
 
 <body>
