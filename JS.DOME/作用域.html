@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    //  javascript作用域：就是代码名字(变量)在某个范围内起作用和效果 目的是未来提高程序的可靠性，更重要的是减少命名冲突
+    // js的作用域(es6之前)：全局作用域 局部作用域
+    // 全局作用域：整个script标签 或者是一个单独的js文件
+    // var num = 10;     //  这个变量就被下面相同的变量覆盖了
+    // var num = 20;
+    // console.log(num);
+
+    // // 局部作用域(函数作用域)在函数内部就是局部作用域 这个代码的名字只在函数内部起效果和作用
+    // function fn() {
+    //     // 局部作用域
+    //     var num = 30;
+    //     console.log(num);
+    // }
+    // fn();
+
+
+    // 变量的作用域：根据作用域的不同我们变量分为全局变量和局部变量
+    // 全局变量：在全局作用域下的变量 在全局下都可以使用
+    // 注意 如果在函数内部没有声明直接赋值的变量也属于全局变量
+    // var num = 10; //num就是一个全局变量
+    // console.log(num);
+
+    // function fn() {
+    //     console.log(num);
+    // }
+    // fn();
+    // 局部变量 在局部作用域下的变量 后者在函数内部的变量就是局部变量
+    // 函数的形参也可以看做是局部变量
+    // function fun() {
+    //     var num1 = 10; //num1就是局部变量，只能在函数内部使用
+    //     num2 = 20;
+    // }
+    // fun();
+    // console.log(num1);
+    // console.log(num2);
+
+    // 从执行效率来看全局变量和局部变量
+    // 全局变量只有浏览器关闭的时候才会销毁，比较占内存
+    // 局部变量 当程序执行完毕就会销毁 比较节约内存资源
+
+    // 作用域链：内部函数访问外部函数的变量，采取的是链式查找的方式来绝对取那个值 这种结构称为作用域链  也就是就近原则
+    // var num =10;
+    // function fn(){  // 外部函数
+    //     var num =20;
+    //     function fun(){  //内部函数
+    //         console.log(num);
+    //     }
+    //     fun();    // 没有num就往上一层找num直到找到函数
+    // } 
+    // fn();    调用fn函数才能执行
+
+
+    // 案例 结果是456
+    // function f1() {
+    //     var num1 = 123;
+
+    //     function f2() {
+    //         console.log(num);  // 站在目标出发，一层一层往外找
+
+    //     }
+    //     f2();
+    // }
+    // var num = 456;
+    // f1();
+
+    // 案例 
+    var a = 1;
+
+    function fn1() {
+        var a = 2;
+        var b = '22';
+        fn2(); // 调用fn2没有可以输出的
+
+        function fn2() {
+            var a = 3;
+            fn3(); // 调用fn3需要输出a，b
+
+
+            function fn3() {
+                var a = 4;
+                console.log(a); // 4
+                console.log(b); // 22
+
+
+            }
+        }
+    }
+    fn1();
+</script>
+
+<body>
+
+</body>
+
+</html>

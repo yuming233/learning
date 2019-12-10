@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // 用argument
+
+    // 利用函数求任意个数的最大值
+    // function getMax() {
+    //     var max = arguments[0];
+    //     for (var i = 1; i < arguments.length; i++) {
+    //         if (arguments[i] > max) {
+    //             max = arguments[i];
+    //         }
+    //     }
+    //     return max;
+    // }
+    // console.log(getMax(2, 3, 5, 1, 77, 4, 10, 52, 6, 0, 15, 25, 7));
+
+    // 利用函数翻转任意数组 reverse翻转
+    // function reverse(arr) {
+    //     var newArr = [];
+    //     for (var i = arr.length - 1; i >= 0; i--) {
+    //         newArr[newArr.length] = arr[i];
+    //     }
+    //     return newArr;
+    // }
+    // var arr1 = reverse([2, 3, 5, 1, 77, 4, 10, 52, 6, 0, 15, 25, 7]);
+    // console.log(arr1);
+
+    // 函数冒泡排序 sort 排序
+    // function sort(a) {
+    //     for (var i = 0; i <= a.length - 1; i++) { // 外层循环管循环的躺数
+    //         for (var j = 0; j <= a.length - i - 1; j++) { // 里层循环管“每一趟”的交换次数
+    //             // 内部交换2个变量的值 前一个和后面一个数组元素相比较
+    //             if (a[j] > a[j + 1]) { // 把里面的>改成<就是从大到小
+    //                 var temp = a[j];
+    //                 a[j] = a[j + 1];
+    //                 a[j + 1] = temp;
+    //             }
+    //         }
+    //     }
+    //     return a;
+    // }
+    // var arr1 = sort([2, 3, 5, 1, 77, 4, 10, 52, 6, 0, 15, 25, 7]);
+    // console.log(arr1);
+
+    // 判断闰年(能被4整除并且不能被100整除，或者能被400整除)
+    function runYear(year) {
+        // 如果是闰年返回true 否则返回false
+        var flao = false;
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            flao = true;
+        }
+        return flao;
+    }
+    console.log(runYear(2000));
+
+
+    // 函数调用函数
+    // function a(){
+    //     console.log(123);
+    //     b();        // a函数里面调用b函数
+    // }               // 函数不调用不能用
+    // function b(){
+    // console.log(456);
+    // }
+    // a();
+
+    // 用户输入年份，输出当前年份二月份的天数
+    function back() {
+        var year = prompt('输入年份:');
+        if (runYear(year)) { // 调用函数要加小括号  调用上面的判断闰年函数
+            alert('当前年份是闰年，2月份有29天');
+        } else {
+            alert('当前年份是平年，2月份有28天');
+        }
+    }
+    back();
+
+
+    // 1.利用函数关键字自定义函数 (命名函数)
+    function a() {
+
+    }
+    a();
+    // 2.函数表达式(匿名函数)
+    // var 变量名 = function () {};
+    var fun = function (abc) {
+        console.log('我是函数表达式');
+        console.log(abc);
+    }
+    fun('傻逼');
+    // fun是变量名，不是函数名
+    // 函数表达式声明方式跟声明变量差不多，只不过变量里面存的是值 而 函数表达式里面存的是函数
+    // 函数表达式也可以进行传递参数
+</script>
+
+
+<body>
+
+</body>
+
+</html>
