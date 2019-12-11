@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // 利用对象字面量创建对象{}
+    var lisi = {
+        name: '李四',
+        age: 18,
+        sex: '男',
+        sayHi: function () {
+            console.log('hi~');
+        }
+    }
+    // 1.
+    // 里面的属性或者方法采取键值对的形式  属性名:属性值
+    // 多个属性或者方法中间用逗号隔开
+    // 方法冒号后面跟的是一个匿名函数
+
+    // 2.适用对象
+    // 调用对象的属性，采取 对象名.属性
+    console.log(lisi.name);
+    // 调用属性还有一种方法  对象名['属性名']
+    console.log(lisi['age']);
+    // 调用对象的方法 sayHi   对象名.方法名()    千万别忘记小括号
+    lisi.sayHi();
+
+
+ var dog={
+    name:'可可',
+    type:'阿拉斯加犬',
+    age:5,
+    color:'red',
+    sayBark:function(){console.log('汪汪汪');},
+    showFilm:function(){console.log('演电影');}
+ }
+ console.log(dog.name,dog.type,dog.age,dog.color);
+ dog.sayBark();
+ dog.showFilm();
+ 
+
+    
+</script>
+
+<body>
+
+</body>
+
+</html>

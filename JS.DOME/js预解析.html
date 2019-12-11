@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // js解释器运行js分为两步：预解析 代码执行
+        // 预解析：js引擎会把js里面所有的var还有function提升到当前作用域的最前面
+        // 代码执行:按照代码书写的顺序从上往下执行
+
+        // 预解析分为变量预解析(变量提升) 和 函数预解析(函数提升)
+        // 变量提升 就是把所有的变量提升到当前的作用域最前面 不提升赋值操作
+        // 函数提升 就是把所有的函数声明提升带当前作用域的最前面 不调用函数
+
+        // 函数表达式 调用必须卸载函数表达式的下面
+
+        // 案例
+        var num = 10;
+        fun();
+
+        function fun() {
+            console.log(num);
+            var num = 20;
+        }
+
+        // 相当于执行了以下操作  外面全局作用域的变量提升完，再提升里面的作用域
+        // var num;
+        // function fun() {
+        //     var num;
+        //     console.log(num);  // 根据作用域链就近原则，结果是undefined
+        //     num = 20;
+        // }
+        // num = 10;
+        // fun();    
+
+        // 案例2
+        var num = 10;
+
+        function fn() {
+            console.log(num);
+            var num = 20;
+            console.log(num);
+        }
+        fn();
+
+        // 想当于以下代码   有函数就要提升
+        // var num;
+        // undefined   20
+        // function fn() {
+        //     var num;
+        //     console.log(num);
+        //     num = 20;
+        //     console.log(num);
+        // }
+        // fn();
+        // num = 10;
+
+        // 案例3
+        var a = 18;
+        f1();
+
+        function f1() {
+            var b = 9;
+            console.log(a);
+            console.log(b);
+            var a = '123';
+        }
+
+        // 相当于执行以下代码
+        //         var a;
+        // undefined   9
+        //         function f1() { // 全局和内部都是先提升变量
+        //             var b;
+        //             var a;
+        //             b = 9;
+        //             console.log(a);
+        //             console.log(b);
+        //             a = '123';
+        //         }
+        //         a = 18;
+        //         f1();
+
+        //案例4    函数提升到前面
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+
+        function f1() {
+            var a = b = c = 9;
+            // 相当于 var a=9;b=9;c=9;    注意b和c没有var。b和c直接赋值没有var声明当全局变量看
+            // 集体声明应该是 var a=9,b=9,c=9;  
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+
+        // 相当于以下代码
+        function f1() {
+            var a = b = c = 9;
+            // 相当于 var a=9;b=9;c=9; 注意b和c没有var。b和c直接赋值没有var声明当全局变量看
+            // 集体声明应该是 var a=9,b=9,c=9;
+            console.log(a); // 9
+            console.log(b); // 9
+            console.log(c); // 9
+        }
+
+        f1();
+        console.log(c);// c和b当全局变量看所以 c等于9
+        console.log(b);// 9
+        console.log(a);// a等于局部变量，外面的值是不能调用的，所以是报错 a is not defined
+    </script>
+</body>
+
+</html>
