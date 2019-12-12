@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // 为什么我们需要构造函数
+    // 因为我们一次创建一个对象，里面很多的属性和方法是大量相同的 我们只能复制
+    // 因此我们可以利用函数的方法 重复这些相同的代码 我们就把这个函数称为 构造函数
+    // 又因为这个函数不一样，里面封装的不是普通代码，而是对象
+    // 构造函数 就是把我们对象里面一些相同的属性和方法抽象出来封装到函数里面
+
+    // 利用构建函数创建对象
+    // 创建四大天王的对象  相同的属性: 名字 年龄 性别  相同的方法：唱歌 跳舞
+    // 构造函数的语法格式
+    // function 构造函数名() {
+    //     this.属性 = 值;
+    //     this.方法 = function () {}
+    // }
+    // new 构造函数名();
+
+    function Star(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.sing = function (a) {
+            console.log(a);
+        }
+        this.jump = function (b) {
+            console.log(b);
+        }
+    }
+    var ldh = new Star('刘德华', 18, '男'); //调用函数返回的是一个对象
+    console.log(ldh.name);
+    console.log(ldh['sex']);
+    ldh.sing('忘情水');
+    ldh.jump('跳');
+    var zxy = new Star('张学友', 19, '男');
+    console.log(zxy.name);
+    console.log(zxy.age);
+    zxy.sing('遥远的她');
+
+    // 构造函数名字首字母要大写
+    // 构造函数不需要 return 就可以返回结果
+    // 我们调用构造函数必须使用 new
+    // 我们只要new Star()调用函数就创建一个对象ldh {}
+    // 我们的属性和方法前面必须添加this
+
+    function Hero(name, type, blood, attack) {
+        this.name = name;
+        this.type = type;
+        this.blood = blood;
+        this.attack = attack;
+    }
+    var lp = new Hero('廉颇', '力量型', '500血', '近战');
+    console.log(lp.name, lp.type, lp.blood, lp.attack);
+
+    var hy = new Hero('后裔', '射手型', '100血', '远程');
+    console.log(hy.name, hy.type, hy.blood, hy.attack);
+
+    // new关键字执行过程
+    // new构造函数可以在内存中穿件了一个空的对象
+    // this 就会指向刚才创建的空对象
+    // 执行构造函数里面的代码 给这个空对象添加属性和方法
+    // 返回这个对象   所以不需要写return
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    //使用for in遍历对象
+    var dog = {
+        name: '可可',
+        type: '阿拉斯加犬',
+        age: 5,
+        color: 'red',
+        sayBark: function () {
+            console.log('汪汪汪');
+        },
+        showFilm: function () {
+            console.log('演电影');
+        }
+    }
+
+    for (var k in dog) {
+        console.log(k);     // k 变量 输出 得到的是属性名
+        console.log(dog[k]);    // dog[k]得到的是属性值
+    }
+
+    // 使用for in 里面的变量我们喜欢用k或者key，没有强制，只是像for用i一样默认
+</script>
+
+<body>
+
+</body>
+
+</html>
