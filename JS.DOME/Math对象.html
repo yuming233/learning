@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // Math数学对象 不是一个构造函数，所以我们不需要new来调用 而是直接使用里面的属性和方法即可
+    // console.log(Math.PI); // 一个属性 圆周率
+    // console.log(Math.max(1, 90, 6, 30, 80, 999, 0)); // 最大数
+    // console.log(Math.max(-1, -10)); // -1
+    // console.log(Math.max(-1, -10, '字符串返回NaN')); // NaN
+    // console.log(Math.max()); // 什么都没有返回-Infinity
+    // console.log(Math.min(-1, 80, -60, 1)); // 最小值
+    // console.log(Math.min()); //Infinity
+
+    //封装直接的数学对象  里面有 PI 最大值 最小值
+    // var myMath = {
+    //     Pi: 3.141592653,
+    //     max: function () {
+    //         var max = arguments[0];
+    //         for (var i = 1; i < arguments.length; i++) {
+    //             if (arguments[i] > max) {
+    //                 max = arguments[i];
+    //             }
+    //         }
+    //         return max;
+    //     },
+    //     min: function () {
+    //         var min = arguments[0];
+    //         for (var i = 1; i < arguments.length; i++) {
+    //             if (arguments[i] < min) {
+    //                 min = arguments[i];
+    //             }
+    //         }
+    //         return min;
+    //     }
+    // }
+    // console.log(myMath.Pi);
+    // console.log(myMath.max(1, 4, 7)); //7
+    // console.log(myMath.min(1, 4, 7)); //1
+
+    // Math绝对值和三个取整方法
+    // 1.绝对值方法
+    // console.log(Math.abs(1));//1
+    // console.log(Math.abs(-1));//1
+    // console.log(Math.abs('1')); //隐式转换
+    // console.log(Math.abs('abc')); //NaN
+
+    // 三个取整方法
+    // 1.Math.floor() 向下取整  往最小了取值
+    // console.log(Math.floor(1.1)); //1
+    // console.log(Math.floor(1.9)); //1
+    // // 2.Math.ceil()  向上取整 往最大了取值
+    // console.log(Math.ceil(1.1)); //2
+    // console.log(Math.ceil(1.9)); //2
+    // // 3.Math.round()  四舍五入    其他数字都是四舍五入，但是.5特殊，它往大的取
+    // console.log(Math.round(1.1)); //1
+    // console.log(Math.round(1.5)); //2
+    // console.log(Math.round(1.9)); //2
+    // console.log(Math.round(-1.1)); //-1
+    // console.log(Math.round(-1.5)); //-1   
+
+
+    // Math.random随机数   random()返回一个随机的小数  0=<x<1
+    //这个方法里面不加参数
+
+    //想得到两个数之间的随机整数，并且包含这两个整数
+    // console.log(Math.random());
+
+    // function getRandom(max, min) {
+    //     return Math.floor(Math.random() * (max - min + 1)) + min;
+    // }
+    // console.log(getRandom(1, 10));
+
+    // // 随机点名
+    // var arr = ['张三', '李四', '王五', '黄毛'];
+    // console.log(arr[getRandom(0, arr.length)]);
+
+    // 猜数字游戏
+    // 随机生成1~50的整数，十次机会
+    function getRandom(max, min) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    var random = getRandom(1,50);
+    for (var i = 0; i <= 10; i++) {
+        if (i < 10) {
+            var num = prompt('猜1~50的数，10次机会')
+            if (num > random) {
+                alert('你猜大了');
+            } else if (num < random) {
+                alert('你猜小了');
+            } else {
+                alert('你猜对了');
+                break;
+            }
+        } else {
+            alert('没机会了');
+            break;
+        }
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>
