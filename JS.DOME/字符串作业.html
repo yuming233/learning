@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+<script>
+    // 定一个字符串，如:'adadwsadasdadfjigjghij34443434' 问题如下
+    // 1.字符串的长度
+    var x = 'adadwsadabdadfjigjghij3443434';
+    console.log('字符串长度是' + x.length);
+
+    // 2.取出指定位置的字符，如:0,3,5,9等
+    console.log(x.charAt(0), x.charAt(3), x.charAt(5), x.charAt(9));
+
+
+    // 3.取出指定字符是否在以上字符串中存在，如i,c,b等
+    console.log(x.indexOf('i'), x.indexOf('c'), x.indexOf('b')); //-1就是没有
+
+    //4.替换指定的字符，如g替换成22，s替换为456等操作
+    // console.log(x.replace('g','22'));
+    function rep(a, b) { //封装一个函数就可以反复调用
+        var Y = 'adadwsadabdadfjigjghij34443434'; // 全局变量会改变，局部变量好
+        while (Y.indexOf(a) !== -1) { // 只要还有属性就会一直替换
+            Y = Y.replace(a, b);
+        }
+        console.log(Y);
+    }
+    rep('i', '?');
+    rep('g', '&');
+
+    // 5.截取指定开始位置到结束位置的字符串，如：取得1-5的字符串
+    console.log(x.substr(0, 5));
+
+    // 6.找出以上字符中出现次数最多的字符和出现的次数
+    var str = {};
+    for (var i = 0; i <= x.length; i++) {
+        var zifu = x.charAt(i);
+        if (str[zifu]) {
+            str[zifu]++;
+        } else {
+            str[zifu] = 1;
+        }
+    }
+    var max = 0;
+    var ch = '';
+    for (var k in str) {
+        if (str[k] > max) {
+            max = str[k];
+            ch = k;
+        }
+    }
+    console.log('最多的字符是' + ch + ',出现的次数是' + max);
+
+</script>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script>
+    // 简单数据类型null 返回的是一个空的对象 object
+    var timer = null;
+    console.log(typeof timer);
+    // 如果有个变量我们以后打算存储为对象，暂时没想好防什么，这个时候就给null
+    // 1.简单数据类型 是存放在站里面 里面直接开辟一个空间存放的是值
+    // 2.复杂数据类型 首先在栈里面存放地址 十六进制表示 然后这个地址指向堆里面的数据
+
+    // 简单数据类型传参
+    function fn(a) {
+        a++;
+        console.log(a);
+    }
+    var x = 10;
+    fn(x);
+    console.log(x);
+    // 上面的过程 首先function函数没被调用，跳过 看var x=10
+    // 2.x已经是10了 下一步就是调用fn  因为x=10  fn(x);相当于fn(x 实参) 传给fn(a 形参) 所以a=10
+    // 3.现在a是10执行a++  输出是a=11
+    // 最后输出x  简单数据类型传参本身的值是不会有影响的  所以x=10
+
+    // 怎么修改形参fn(a)外面的变量var x=10都不会有影响  这就是简单数据类型变量
+
+
+
+    //复杂数据类型传参
+    function peple(name) {
+        this.name = name;
+    }
+
+    function f1(x) {    //x=p  把p的地址传给x 他们的地址都指向一个对象
+        console.log(x.name);     // 2.这个输出什么? 刘德华
+        x.name = '张学友';
+        console.log(x.name);    // 3.这个输出什么 ? 张学友
+    }
+    var p = new peple('刘德华');
+    console.log(p.name);    // 1.这个输出什么?    刘德华
+    f1(p);
+    console.log(p.name);     // 4.这个输出什么?  张学友
+
+    //1.首先，前两个函数 不调用不执行 直到var p = new peple('刘德华');
+    //2.this.name=name 相当于name='刘德华' console.log(p.name); 输出刘德华
+    //3.调用f1(p); 相当于把p传给x 因为p里面存的是地址，等同于把地址传给x，相同的地址指向一个对象'刘德华'
+    //4.console.log(x.name); 因为name是刘德华 x也是指向name 所以输出刘德华
+    //5.x.name = '张学友';   name从刘德华变成了张学友   下面输出x.name 就是张学友
+    //6.最后一步console.log(p.name);   因为他们指向同一个地址，里面的name已经变成了张学友 所以p.name也是张学友
+    // 按照输出顺序就是刘刘张张
+
+    //内部的重新赋值影响外部的，这就是复杂类型传参
+
+    // 总结：
+    // 简单数据类型是把结果传过去
+    // 复杂数据类型是把地址传过去，因为地址都是指向一个对象，对象改变地址不变
+
+</script>
+
+<body>
+
+</body>
+
+</html>
