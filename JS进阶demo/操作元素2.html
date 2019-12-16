@@ -21,6 +21,9 @@
 
     <img id="a" src="" alt="" title="">
     <div></div>
+
+    <button id='btn'>按钮</button>
+    <input type="text" value="输入内容">
     <script>
         // 修改元素属性 src
         // 1.获取元素
@@ -54,7 +57,7 @@
         var h = date.getHours();
         // 3.判断小时数改变图片和文字信息
         if (h < 12) {
-            img1.scr = 'http://ww4.sinaimg.cn/large/9150e4e5ly1fmm6jasu8nj20f00f03z1.jpg';
+            img1.src = 'http://ww4.sinaimg.cn/large/9150e4e5ly1fmm6jasu8nj20f00f03z1.jpg';
             div.innerHTML = '早上好';
         } else if (h < 18) {
             img1.src = 'http://ww2.sinaimg.cn/bmiddle/9150e4e5ly1fh0y3rgebtj205i05ia9x.jpg';
@@ -64,6 +67,24 @@
             div.innerHTML = '晚上好';
         }
         console.log(img);
+
+
+
+
+        // 修改表单属性
+        // 1.获取元素
+        var btn = document.getElementById('btn');
+        var input = document.querySelector('input');
+        // 2.注册事件 处理程序
+        btn.onclick = function () {
+            // input.innerHTML = '点击了';  //这个是普通盒子 比如 div 标签里面的内容
+            // 表单里面的值 文字内容是通过 value 来修改
+            input.value = '被点击了';
+            //如果想要某个表单被禁用 不能再点击  disabled 我们想要这个按钮 button禁用
+            // btn.disabled = true;
+            this.disabled = true;
+            // this 指向的是时间函数的调用者  btn
+        }
     </script>
 </body>
 
