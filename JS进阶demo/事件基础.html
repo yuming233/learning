@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">姚明</button>
+    <div>123</div>
+    <script>
+        //点击一个按钮，弹出对话框
+        // 事件是由三部分组成的  事件源  事件类型 事件处理程序   也称事件三要素
+        // 1.事件源 事件被触发的对象 谁 按钮
+        var btn = document.getElementById('btn');
+        // 2.事件类型 如何触发 什么事件 比如鼠标点击(onclick) 还是鼠标经过 还是键盘按下
+        // 3.事件处理程序 通过一个函数赋值的方式 完成
+        btn.onclick = function () {
+            alert('中国巨人');
+        }
+
+
+        // 执行事件步骤
+        // 点击div 控制台输出 我被选中了
+        // 1.获取事件源
+        var div = document.querySelector('div');
+        // 2.绑定事件 注册事件
+        // div.onclick
+        // 3.添加事件处理程序
+        div.onclick = function(){
+            console.log('我被选中了');
+        }
+    </script>
+</body>
+
+</html>

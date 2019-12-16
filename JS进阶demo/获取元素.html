@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="time">2019/12/15</div>
+
+    <ul>
+        <li>这是getElementsByTagName获取的li1</li>
+        <li>这是getElementsByTagName获取的li2</li>
+        <li>这是getElementsByTagName获取的li3</li>
+    </ul>
+    <ol id='ol'>
+        <li>这是document.querySelector获取的ol里的li1</li>
+        <li>这是element.getElementsById获取的ol里的li1</li>
+        <li>这是element.getElementsById获取的ol里的li2</li>
+        <li>这是element.getElementsById获取的ol里的li3</li>
+    </ol>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <script>
+        // getElementById
+        // 1.因为我们文档页面从上往下加载，所以先得有标签 所以我们script写到标签的下面
+        // 2.get 获得 element 元素 by 通过 驼峰命名法
+        // 3.参数id是大小写敏感的字符串
+        // 4.返回的是一个元素对象
+        var timer = document.getElementById('time');
+        console.log(timer);
+        console.log(typeof timer);
+        // 5.console.dir(timer); 打印我们返回的元素对象 更好的查看里面的属性和方法
+        console.dir(timer);
+
+
+        // getElementsByTagName
+        // 1.返回的是 获取过来元素对象的集合 以伪数组的形式存储的
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(lis[0]);
+        // 2.依次打印里面的元素对象可以采取遍历的方式
+        for (var i = 0; i <= lis.length; i++) {
+            console.log(lis[i]);
+        }
+        // 3.如果页面中只有一个li 返回的还是伪数组的形式
+        // 4.如果页面中没有这个元素 返回的是空的伪数组
+        // 5.getElementsByTagName('标签名'); 父元素必须指定单个元素
+        var ol = document.getElementById('ol');
+        console.log(ol.getElementsByTagName('li'));
+
+
+
+        // HTML5新增的获取元素方式
+        // getElementsByClassName 根据类名获得某些元素集合
+        var boxs = document.getElementsByClassName('box');
+        console.log(boxs);
+
+        //querySelector 返回指定选择器的第一个元素对象 切记里面的"选择器"需要加符号 .box #ol
+        var firstbox = document.querySelector('.box');
+        console.log(firstbox);
+        var ols = document.querySelector('#ol');
+        console.log(ols);
+        var li = document.querySelector('li');
+        console.log(li);
+
+        // querySelectorAll()返回指定选择器的所有元素对象集合 等价于getElementsByClassName
+        var allbox = document.querySelectorAll('.box');
+        console.log(allbox);
+        var allli = document.querySelectorAll('li');
+        console.log(allli);
+
+
+        // 1.获取body元素
+        var bodyEle = document.body;
+        console.log(bodyEle);
+        console.dir(bodyEle);
+        // 2.获取html元素
+        var htmlEle = document.documentElement;
+        console.log(htmlEle);
+    </script>
+</body>
+
+</html>
