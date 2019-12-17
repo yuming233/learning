@@ -37,6 +37,7 @@
         console.dir(timer);
 
 
+
         // getElementsByTagName
         // 1.返回的是 获取过来元素对象的集合 以伪数组的形式存储的
         var lis = document.getElementsByTagName('li');
@@ -54,10 +55,13 @@
 
 
 
+
         // HTML5新增的获取元素方式
         // getElementsByClassName 根据类名获得某些元素集合
         var boxs = document.getElementsByClassName('box');
         console.log(boxs);
+
+
 
         //querySelector 返回指定选择器的第一个元素对象 切记里面的"选择器"需要加符号 .box #ol
         var firstbox = document.querySelector('.box');
@@ -67,11 +71,16 @@
         var li = document.querySelector('li');
         console.log(li);
 
+
+
+
         // querySelectorAll()返回指定选择器的所有元素对象集合 等价于getElementsByClassName
         var allbox = document.querySelectorAll('.box');
         console.log(allbox);
         var allli = document.querySelectorAll('li');
         console.log(allli);
+
+
 
 
         // 1.获取body元素
