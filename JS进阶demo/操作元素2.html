@@ -12,6 +12,11 @@
         display: block;
         padding-top: 10px;
     }
+    #cor{
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
 </style>
 
 <body>
@@ -24,6 +29,8 @@
 
     <button id='btn'>按钮</button>
     <input type="text" value="输入内容">
+
+    <div id="cor"></div>
     <script>
         // 修改元素属性 src
         // 1.获取元素
@@ -57,13 +64,13 @@
         var h = date.getHours();
         // 3.判断小时数改变图片和文字信息
         if (h < 12) {
-            img1.src = 'http://ww4.sinaimg.cn/large/9150e4e5ly1fmm6jasu8nj20f00f03z1.jpg';
+            img1.src = 'zao.jpg';
             div.innerHTML = '早上好';
         } else if (h < 18) {
-            img1.src = 'http://ww2.sinaimg.cn/bmiddle/9150e4e5ly1fh0y3rgebtj205i05ia9x.jpg';
+            img1.src = 'zhong.jpg';
             div.innerHTML = '中午好';
         } else {
-            img1.src = 'http://wx3.sinaimg.cn/bmiddle/0068Lfdely1fwdpmaqqipj309q0953yw.jpg';
+            img1.src = 'wan.jpg';
             div.innerHTML = '晚上好';
         }
         console.log(img);
@@ -84,6 +91,17 @@
             // btn.disabled = true;
             this.disabled = true;
             // this 指向的是时间函数的调用者  btn
+        }
+
+
+
+
+        //修改样式属性
+        var cor = document.getElementById('cor');
+        cor.onclick = function(){
+            // cor.style.backgroundColor = 'red';
+            this.style.backgroundColor = 'red';
+            this.style.width = '250px';
         }
     </script>
 </body>
