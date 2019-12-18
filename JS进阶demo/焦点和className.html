@@ -11,10 +11,23 @@
     input {
         color: #ccc;
     }
+
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet;
+    }
+    .change{
+        background-color: black;
+        color: #fff;
+        font-size: 24px;
+        margin-top: 100px;
+    }
 </style>
 
 <body>
     <input type="text" value="手机">
+    <div class="first">文本</div>
     <script>
         var text = document.querySelector('input');
         // 2.获得焦点事件 onfocus
@@ -33,6 +46,22 @@
             // 失去焦点需要把文本框里面的文字颜色变浅
             this.style.color = '#ccc';
         }
+
+
+        // 1.使用element.style 获得修改元素样式 如果样式少，或者功能简单的情况下使用
+        var test = document.querySelector('div');
+        test.onclick = function(){
+            // this.style.backgroundColor = 'red';
+            // this.style.color = '#fff';
+            // this.style.fontSize = '25px'
+            // this.style.marginTop = '100';
+
+            //我们可以通过修改元素的className更改元素样式 适用于样式较多或者功能复杂的情况
+            // this.className = 'change';
+            //但是会覆盖原先的class类名 如果想要保留我们可以使用 多类名 选择器
+            this.className = 'first change';
+        }
+
     </script>
 </body>
 
