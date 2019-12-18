@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .zuoye1 {
+        color: #ccc;
+        outline: 0;
+    }
+
+    .box {
+        width: 500px;
+        height: 100px;
+        background-color: skyblue;
+        position: relative;
+    }
+
+    .box .btn {
+        font-size: 10px;
+        border: 1px solid black;
+    }
+
+    .nav {
+        width: 100px;
+        height: 50px;
+        border: 1px solid black;
+        font-size: 12px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .nav ul {
+        padding-left: 0;
+        list-style: none;
+    }
+</style>
+
+<body>
+    <input class="zuoye1" type="text" value="手机">
+    <div class="box"><i class="btn">×</i></div>
+    <div class="nav">
+        <ul>
+            <li>下拉菜单</li>
+        </ul>
+    </div>
+    <button class="light">开关灯</button>
+</body>
+<script>
+    var text = document.querySelector('.zuoye1');
+    text.onfocus = function () {
+        if (this.value === '手机') {
+            this.value = '';
+            this.style.border = '2px solid pink'
+        }
+        this.style.color = '#333';
+    }
+    text.onblur = function () {
+        if (this.value === '') {
+            this.value = '手机';
+            this.style.border = '1px solid #ccc'
+        }
+        this.style.color = '#ccc';
+    }
+
+    var btn = document.querySelector('.btn');
+    var box = document.querySelector('.box');
+    btn.onclick = function () {
+        box.style.display = 'none';
+    }
+
+    var light = document.querySelector('.light');
+    var flag = 0;
+    light.onclick = function () {
+        if (flag === 0) {
+            document.body.style.background = '#000';
+            flag = 1;
+        } else {
+            document.body.style.background = '#fff';
+            flag = 0;
+        }
+    }
+</script>
+
+</html>
