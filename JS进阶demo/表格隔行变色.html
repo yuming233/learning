@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        margin: 100px auto;
+        width: 800px;
+        text-align: center;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    thead tr {
+        height: 30px;
+    }
+
+    tbody tr {
+        height: 30px;
+    }
+
+    tbody {
+        color: rgb(28, 3, 255);
+    }
+
+    thead {
+        background-color: rgb(0, 75, 214);
+        color: #fff;
+    }
+
+    .bg {
+        background-color: red;
+    }
+</style>
+
+<body>
+    <table>
+
+        <thead>
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>最新净值</th>
+                <th>累计净值</th>
+                <th>前单位净值</th>
+                <th>净值增长率</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>021021</td>
+                <td>xxx开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.094</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>021021</td>
+                <td>xxx开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.094</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>021021</td>
+                <td>xxx开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.094</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>021021</td>
+                <td>xxx开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.094</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>021021</td>
+                <td>xxx开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.094</td>
+                <td>+0.047%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // 获取元素 获取的是tbody里面所有的行
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        for (var i = 0; i < trs.length; i++) {
+            // 鼠标经过事件 onmouseover
+            trs[i].onmouseover = function () {
+                this.className = 'bg';
+            }
+            // 鼠标离开事件 onmouseout
+            trs[i].onmouseout = function () {
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
