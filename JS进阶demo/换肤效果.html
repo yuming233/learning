@@ -1,17 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        background: url(img/1.jpg)no-repeat;
+        background-size: 100% 100%;
+        /* position: absolute; */
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .huanfu {
+        overflow: hidden;
+        margin: 100px auto;
+        background-color: #fff;
+        width: 410px;
+        padding-top: 3px;
+    }
+
+    .huanfu li {
+        float: left;
+        margin: 0 1px;
+        cursor: pointer;
+    }
+
+    .huanfu img {
+        width: 100px;
+    }
+</style>
+
 <body>
-<ul class="huanfu">
-    <li><img src="img/1.jpg" alt=""></li>
-    <li><img src="img/2.jpg" alt=""></li>
-    <li><img src="img/3.jpg" alt=""></li>
-    <li><img src="img/4.jpg" alt=""></li>
-</ul>
+    <ul class="huanfu">
+        <li><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" style="height: 66px;" alt=""></li>
+        <li><img src="img/4.jpg" alt=""></li>
+    </ul>
+    <script>
+        // 意思是huanfu里面的img 更加的精确
+        var imgs = document.querySelector('.huanfu').querySelectorAll('img');
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function () {
+                // this.scr就是我们点击图片的路径
+                // 把这个路径this.src 给body就可以了
+                // 获取body就document.body
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
 </body>
+
 </html>
