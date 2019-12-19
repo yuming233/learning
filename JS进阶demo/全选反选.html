@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        margin: 100px auto;
+        width: 800px;
+        text-align: center;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    thead tr {
+        height: 30px;
+    }
+
+    tbody tr {
+        height: 30px;
+    }
+
+    tbody {
+        color: rgb(28, 3, 255);
+    }
+
+    thead {
+        background-color: rgb(0, 75, 214);
+        color: #fff;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll">
+                    </th>
+                    <th>商品</th>
+                    <th>价格</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iphone 8</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iphone 8</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iphone 8</td>
+                    <td>8000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // 获取元素
+        var j_cbAll = document.getElementById('j_cbAll'); //全选按钮
+        var j_tbs = document.getElementById('j_tb').getElementsByTagName('input'); // 下面所有的复选框
+        // 注册事件
+        j_cbAll.onclick = function () {
+            //this.checked 它可以得到当前复选框的选中状态如果是true 就是选中 如果是false就是未选中
+            for (var i = 0; i < j_tbs.length; i++) {
+                j_tbs[i].checked = this.checked;
+            }
+        }
+        // 下面复选框需要全部选中 上面全选才能选中做法：给下面所有复选框绑定点击时间 每次点击都要循环检查四个按钮是否全中
+        for (var i = 0; i < j_tbs.length; i++) {
+            j_tbs[i].onclick = function () {
+                // flag控制全选按钮是否选中
+                var flag = true;
+                // 每次点击下面的复选框都要循环检查者四个小按钮是否全被选中
+                for (var i = 0; i < j_tbs.length; i++) {
+                    if (!j_tbs[i].checked) {
+                        flag = false;
+                        break; //退出for循环 可以提高执行效率 因为只要有一个没选中其他的就无需循环
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+
+</html>
