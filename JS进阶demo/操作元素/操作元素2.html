@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        display: block;
+        padding-top: 10px;
+    }
+    #cor{
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <button id="hbr">何宝荣</button>
+    <button id="lyh">黎耀辉</button>
+    <img src="" alt="" title="">
+
+    <img id="a" src="" alt="" title="">
+    <div></div>
+
+    <button id='btn'>按钮</button>
+    <input type="text" value="输入内容">
+
+    <div id="cor"></div>
+    <script>
+        // 修改元素属性 src
+        // 1.获取元素
+        var hbr = document.getElementById('hbr');
+        var lyh = document.getElementById('lyh');
+        var img = document.querySelector('img');
+        // 2.注册事件然后处理程序
+        hbr.onclick = function () {
+            img.src =
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRcujTBj2KdcfrtWwuu8gz8bgbOZZAuPgju5hh8ZrlIXeREGLwH';
+            img.title = '何宝荣';
+            img.alt = '何宝荣';
+        }
+        lyh.onclick = function () {
+            img.src =
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1bGSpkv8AM0lqA3AfViCc1Ye4dxAtrsZ3GXmgtYefV9LaqLnR';
+            img.title = '黎耀辉';
+            img.alt = '黎耀辉';
+        }
+
+
+        //根据系统不同时间来判断，所以需要用到日期内置对象
+        //利用多分支语句来设置不同的图片
+        //需要一个图片，并且根据时间修改图片，就需要用到操作元素src属性
+        //需要一个div元素，显示不同问候语句，修改元素内容即可
+        //1.获取元素
+        var img1 = document.getElementById('a');
+        var div = document.querySelector('div');
+        // 2.得到当前的小时数
+        var date = new Date();
+        var h = date.getHours();
+        // 3.判断小时数改变图片和文字信息
+        if (h < 12) {
+            img1.src = 'img/zao.jpg';
+            div.innerHTML = '早上好';
+        } else if (h < 18) {
+            img1.src = 'img/zhong.jpg';
+            div.innerHTML = '中午好';
+        } else {
+            img1.src = 'img/wan.jpg';
+            div.innerHTML = '晚上好';
+        }
+        console.log(img);
+
+
+
+
+        // 修改表单属性
+        // 1.获取元素
+        var btn = document.getElementById('btn');
+        var input = document.querySelector('input');
+        // 2.注册事件 处理程序
+        btn.onclick = function () {
+            // input.innerHTML = '点击了';  //这个是普通盒子 比如 div 标签里面的内容
+            // 表单里面的值 文字内容是通过 value 来修改
+            input.value = '被点击了';
+            //如果想要某个表单被禁用 不能再点击  disabled 我们想要这个按钮 button禁用
+            // btn.disabled = true;
+            this.disabled = true;
+            // this 指向的是时间函数的调用者  btn
+        }
+
+
+
+
+        //修改样式属性
+        var cor = document.getElementById('cor');
+        cor.onclick = function(){
+            // cor.style.backgroundColor = 'red';
+            this.style.backgroundColor = 'red';
+            this.style.width = '250px';
+        }
+    </script>
+</body>
+
+</html>
