@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding:0;
+        margin: 0;
+    }
+.box{
+    width: 800px;
+    margin: 100px auto;
+}
+.tab{
+    background-color: pink;
+    border-bottom: 1px solid rgb(255, 0, 0);
+    height: 38px;
+
+}
+
+.tab li{
+    /* float: left; */
+    line-height: 39px;
+    padding:0 20px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.tab .current{
+    background-color: red;
+    color: white;
+}
+.item{
+    display: none;
+}
+
+</style>
+
+<body>
+    <div class="box">
+        <div class="tab">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价(5000+)</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="biao">
+            <div class="item" style="display: block;">
+                商品介绍模块
+            </div>
+            <div class="item">
+                规格与包装模块
+            </div>
+            <div class="item">
+                售后包装模块
+            </div>
+            <div class="item">
+                商品评价模块
+            </div>
+            <div class="item">
+                手机社区模块
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
