@@ -8,39 +8,41 @@
     <title>Document</title>
 </head>
 <style>
-    *{
-        padding:0;
+    * {
+        padding: 0;
         margin: 0;
     }
-.box{
-    width: 800px;
-    margin: 100px auto;
-}
-.tab{
-    background-color: pink;
-    border-bottom: 1px solid rgb(255, 0, 0);
-    height: 38px;
 
-}
+    .box {
+        width: 800px;
+        margin: 100px auto;
+    }
 
-.tab li{
-    /* float: left; */
-    line-height: 39px;
-    padding:0 20px;
-    text-align: center;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-}
+    .tab {
+        background-color: pink;
+        border-bottom: 1px solid rgb(255, 0, 0);
+        height: 38px;
 
-.tab .current{
-    background-color: red;
-    color: white;
-}
-.item{
-    display: none;
-}
+    }
 
+    .tab li {
+        /* float: left; */
+        line-height: 39px;
+        padding: 0 20px;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+    }
+
+    .tab .current {
+        background-color: red;
+        color: white;
+    }
+
+    .item {
+        display: none;
+    }
 </style>
 
 <body>
@@ -72,6 +74,43 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // 1.上的模块选项卡，点击某一个，当前这一个底色会是红色，其余不变(排他思想)修改类名的方式
+        // 获取元素
+        var tab = document.querySelector('.tab'); // 获取tab栏
+        var lis = document.querySelectorAll('li'); // 获取li
+        var items = document.querySelectorAll('.item'); //获取div
+        for (var i = 0; i < lis.length; i++) {
+
+            lis[i].setAttribute('index', i);   // 给每一个li绑定一个index
+
+            lis[i].onclick = function () {
+                // 干掉所有人 其余的li清除 class="current"这个类
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                // 只留下自己
+                this.className = 'current';
+
+                // 显示下面模块 都是在lis点击事件里
+                var index = this.getAttribute('index');
+                //干掉所有人 让其余的item 这些div 隐藏
+                // 留下我自己 让对应的item 显示
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = 'none';
+                }
+                items[index].style.display = 'block';// 点击到items的index索引号就显示
+
+            }
+        }
+
+        // 思路：
+        // 首先获取了li和item的元素
+        // 先做li的点击事件，for循环每一个li，只要点击就给current的class，没有就className为空
+        // li做完就做显示模块了，先给每一个li绑定一个index(lis[i].setAttribute('index', i);)当索引号
+        // for循环只要点击到到items的index索引号就显示，其余的items[i]都为none
+    </script>
 </body>
 
 </html>
