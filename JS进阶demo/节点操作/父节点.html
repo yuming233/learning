@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="demo">
+        <div class="box">
+            <span class="erzi">X</span>
+        </div>
+    </div>
+
+    <script>
+        // 1.父节点 parentNode
+        var erzi = document.querySelector('.erzi');
+        // var box =document.querySelector('box');    // 长一点
+        // 得到的是离元素最近的父级节点（亲爸爸） 如果找不到父节点就返回为空 null
+        console.log(erzi.parentNode); // 简单一点
+    </script>
+</body>
+
+</html>
