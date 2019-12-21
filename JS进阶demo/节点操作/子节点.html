@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+
+    <script>
+        // DOM给我们的获取方法(API)
+        var ul = document.querySelector('ul');
+        var lis = ul.querySelectorAll('li');
+
+        console.log(lis); // 3个
+
+        // 1.子节点 childNodes(标准，不提倡)   所有的子节点 包含元素节点 文本节点
+        console.log(ul.childNodes); //7个   换行算文本节点爷被获取了
+
+        // children(非标准，重点常用)获取所有的子节点元素
+        console.log(ul.children); //3个
+    </script>
+</body>
+
+</html>
