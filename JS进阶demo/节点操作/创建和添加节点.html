@@ -20,9 +20,10 @@
         // 2.添加节点 node.appendChild(child)  node 父级  child 子级 后面追加元素 类似于数组中的push
         var ul = document.querySelector('ul');
         ul.appendChild(li);
-        // 3.添加节点
+        // 3.添加节点 node.insertBefore(child,指定元素);   插入指定元素的前面
         var lil = document.createElement('li');
         ul.insertBefore(lil, ul.children[0]);
+        // 4.我们想要页面添加一个新的元素: 1.创建元素 2.添加元素
     </script>
 </body>
 
