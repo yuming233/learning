@@ -26,8 +26,8 @@
         // ul.removeChild(ul.children[0]);    删除第一个
         // 3.点击按钮依次删除里面的孩子
         btn.onclick = function () {
-            if (ul.children.length == 0) {
-                this.disabled = true;
+            if (ul.children.length == 0) { // 如果ul里面没有长度了
+                this.disabled = true; // 禁止点击
             } else {
                 ul.removeChild(ul.children[0]);
             }
