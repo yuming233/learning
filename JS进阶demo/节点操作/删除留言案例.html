@@ -8,8 +8,63 @@
     <title>Document</title>
 </head>
 
-<body>
+<style>
+    textarea {
+        border: 1px solid aqua;
+        background-color: yellow;
+        width: 300px;
+        height: 100px;
+    }
 
+    button {
+        background-color: aqua;
+    }
+
+    ul li {
+        list-style: none;
+        background-color: pink;
+        width: 300px;
+    }
+
+    li a {
+        float: right;
+    }
+</style>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul></ul>
+
+    <script>
+        // 1.获取元素
+        var btn = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        // 2.注册事件
+        btn.onclick = function () {
+            if (text.value == '') {
+                alert('你没有输入内容');
+                return false;
+            } else {
+                // 1.创建元素
+                var li = document.createElement('li');
+                // 注意先有li才能赋值
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+                // 2.添加元素
+                // ul.appendChild(li);   // 最后一个插入
+                ul.insertBefore(li, ul.children[0]); // 放第一个的前面
+                // 3.删除元素  删除当前链接的 li  它的父亲
+                var as = document.querySelectorAll('a');
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function () {
+                        // node.removeChild(child); 删除的是li 当前a所在的li this.parentNode;
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
