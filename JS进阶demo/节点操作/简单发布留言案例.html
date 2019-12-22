@@ -9,10 +9,6 @@
 </head>
 
 <style>
-    body {
-        background-color: black;
-    }
-
     textarea {
         border: 1px solid aqua;
         background-color: yellow;
@@ -24,23 +20,38 @@
         background-color: aqua;
     }
 
-    ul {
-        list-style: none;
-        color: white;
+    ul li {
+        /* list-style: none; */
+        background-color: pink;
     }
 </style>
 
 <body>
-    <textarea name="" id="">123</textarea>
+    <textarea name="" id=""></textarea>
     <button>发布</button>
     <ul>
-        <li>123</li>
     </ul>
 
 
     <script>
-
-
+        // 1.获取元素
+        var btn = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        // 2.注册事件
+        btn.onclick = function () {
+            if (text.value == '') {
+                alert('你没有输入内容');
+                return false;
+            } else {
+                // 1.创建元素
+                var li = document.createElement('li');
+                // 注意先有li才能赋值
+                li.innerHTML = text.value;
+                // 2.添加元素
+                ul.appendChild(li);
+            }
+        }
     </script>
 </body>
 
