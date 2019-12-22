@@ -29,8 +29,7 @@
 <body>
     <textarea name="" id=""></textarea>
     <button>发布</button>
-    <ul>
-    </ul>
+    <ul></ul>
 
 
     <script>
@@ -49,7 +48,8 @@
                 // 注意先有li才能赋值
                 li.innerHTML = text.value;
                 // 2.添加元素
-                ul.appendChild(li);
+                // ul.appendChild(li);   // 最后一个插入
+                ul.insertBefore(li, ul.children[0]); // 放第一个的前面
             }
         }
     </script>
