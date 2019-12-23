@@ -76,6 +76,7 @@
             // 行里面创建单元格 td 单元格的数量取决于每个对象里面的属性个数 for循环遍历对象 datas[i]
             for (var k in datas[i]) { //里面的for循环管 列  td
                 var td = document.createElement('td');
+                td.innerHTML = datas[i][k];
                 tr.appendChild(td);
             }
         }
