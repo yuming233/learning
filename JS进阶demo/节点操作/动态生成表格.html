@@ -66,6 +66,13 @@
             subject: 'CSS',
             score: 100
         }];
+        // 2.往tbody 里面创建行: 有几个人(通过数组的长度)我们就创建几行
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            // 创建tr行
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+        }
     </script>
 </body>
 
