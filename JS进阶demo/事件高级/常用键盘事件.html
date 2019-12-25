@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.弹起触发
+        document.addEventListener('keyup', function () {
+            console.log('松开触发了keyup');
+        });
+        // 2. keydown 按键按下的时候触发
+        document.addEventListener('keydown', function () {
+            console.log('keydown按下触发了');
+        });
+        // 3. keypress 按键按下的时候触发 不识别功能键比如shift、enter、ctrl等
+        document.addEventListener('keypress', function () {
+            console.log('keypress按下触发了');
+        });
+        // 如果同时写了三个事件，他们的执行的顺序是keydown -> keypress ->keyup
+        // 传统方式前面加on,(addEventListener不用)
+    </script>
+</body>
+
+</html>
