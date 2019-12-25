@@ -15,12 +15,14 @@
 
     img {
         position: absolute;
+        width: 100px;
+        height: 100px;
     }
 </style>
 
 <body>
     <p>这段文字不想被复制</p>
-    <img src="/JS进阶demo/img/gensui.jpg" alt="">
+    <img src="../img/gensui.jpg" alt="">
     <script>
         //contextmenu 禁止鼠标右键
         document.addEventListener('contextmenu', function (e) {
@@ -43,14 +45,21 @@
         });
 
 
-        // 图片跟随鼠标
+        // 图片跟随鼠标  鼠标移动事件
         var pic = document.querySelector('img');
         document.addEventListener('mousemove', function (e) {
             // 1.mousemove只要我们鼠标移动1px 就会触发这个事件
             // console.log(1);
-            // 2.核心原理：每次鼠标移动，我们都会获得最新的鼠标坐标 ，把这个x和y坐标做为图片的top和left
+            // 2.核心原理：每次鼠标移动，我们都会获得最新的鼠标坐标 ，把这个x和y坐标做为图片的top和left 值就可以移动图片
+            var x = e.pageX;
+            var y = e.pageY;
+            console.log('x坐标是' + x, 'y坐标是' + y);
+            // 3.千万不要忘记给坐标加px
+            // 让图片居中就x和y减去图片一半px
+            pic.style.left = x - 50 + 'px';
+            pic.style.top = y - 50 + 'px';
 
-        })
+        });
     </script>
 </body>
 
