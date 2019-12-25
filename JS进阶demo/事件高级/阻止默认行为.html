@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <a href="http://www.baidu.com">百度</a>
+    <form action=" http://www.baidu.com">
+        <input type="submit" value="提交" name="sub">
+    </form>
+
+    <script>
+        // 常见的实践对象的属性和方法
+        // 1.返回事件类型
+        var div = document.querySelector('div');
+        div.addEventListener('click', fn);
+
+        function fn(e) {
+            console.log(e.type);
+        }
+
+        //2.阻止默认行为(事件) 让链接不跳转 或者让提交按钮不提交
+        var a = document.querySelector('a');
+        a.addEventListener('click', function (e) {
+            e.preventDefault(); // dom 标准写法
+        });
+    </script>
+</body>
+
+</html>
