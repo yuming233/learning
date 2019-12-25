@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        // 常见事件对象的属性和方法
+        // 1.e.target 返回的是触发事件的对象(元素)
+        // 2.this 返回的是绑定事件的对象(元素)
+        // 区别：e.target 点击了哪个元素就返回哪个元素
+        // this 哪个元素绑定了这个点击事件，那么久返回谁
+        var div = document.querySelector('div');
+        div.addEventListener('click', function (e) {
+            console.log(e.target);
+            console.log(this);
+        });
+
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function (e) {
+            // 我们个ul绑定了事件 那么this 就指向ul
+            console.log(this); // 点击ul或者li都是触发ul
+            // e.target 指向我们点击的那个对象
+            console.log(e.target); // 点击li就触发li，ul就ul
+        });
+    </script>
+</body>
+
+</html>
