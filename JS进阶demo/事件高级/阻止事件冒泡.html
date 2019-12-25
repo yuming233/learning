@@ -7,9 +7,51 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+    .father {
+        display: flex;
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        margin: 100px auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .son {
+        display: flex;
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 
 <body>
+    <div class="father">
+        <div class="son">son盒子</div>
+    </div>
 
+    <script>
+        // 常见事件对象的属性和方法
+        // 阻止冒泡 dom 推荐的标准
+        var son = document.querySelector('.son');
+        son.addEventListener('click', function (e) {
+            alert('son');
+            e.stopPropagation(); //标准 stop 停止 Propagation 传播
+            e.cancelBubble = true; //非标准(兼容ie678)  cancel 取消    Bubble 泡泡
+        }, false);
+        var father = document.querySelector('.father');
+        father.addEventListener('click', function () {
+            alert('father');
+            // 点击father还是会向上冒泡的 要阻止就在father这里也加个停止冒泡
+        }, false);
+
+        document.addEventListener('click', function () {
+            alert('document');
+        });
+    </script>
 </body>
 
 </html>
