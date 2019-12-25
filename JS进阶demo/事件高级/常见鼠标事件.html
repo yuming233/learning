@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        height: 3000px;
+        width: 3000px;
+    }
+
+    img {
+        position: absolute;
+    }
+</style>
+
+<body>
+    <p>这段文字不想被复制</p>
+    <img src="/JS进阶demo/img/gensui.jpg" alt="">
+    <script>
+        //contextmenu 禁止鼠标右键
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+        // 2.禁止选中文字 selectstart
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+
+        // 鼠标事件对象 MouseEvent
+        document.addEventListener('click', function (e) {
+            // 1.client鼠标在可视区的x和y的坐标
+            console.log(e.clientX);
+            console.log(e.clientY);
+            console.log('------------------------------------');
+            // .page鼠标在页面文档的x和y的坐标 (常用 ie9以上支持)
+            console.log(e.pageX);
+            console.log(e.pageY);
+        });
+
+
+        // 图片跟随鼠标
+        var pic = document.querySelector('img');
+        document.addEventListener('mousemove', function (e) {
+            // 1.mousemove只要我们鼠标移动1px 就会触发这个事件
+            // console.log(1);
+            // 2.核心原理：每次鼠标移动，我们都会获得最新的鼠标坐标 ，把这个x和y坐标做为图片的top和left
+
+        })
+    </script>
+</body>
+
+</html>
