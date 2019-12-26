@@ -59,6 +59,8 @@
         // 获取需要的
         var con = document.querySelector('.con');
         var jd = document.querySelector('.jd');
+        // 不能用"在文本框里面"keydown和keypress，因为他们两个事件触发的时候，文字还没有落入文本框中
+        // press不识别退格键，如果要删除，用不了
         jd.addEventListener('keyup', function () {
             // 判断值为空 就隐藏  输入了就显示
             if (this.value == '') {
