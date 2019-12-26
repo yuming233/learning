@@ -71,6 +71,17 @@
                 con.innerText = this.value;
             }
         });
+        // 当我们失去焦点，就隐藏con盒子
+        jd.addEventListener('blur', function () {
+            con.style.display = 'none';
+        });
+        // 当我们获得焦点，就显示这个con盒子
+        jd.addEventListener('focus', function () {
+            // 如果里面的值不等于空的就显示出来(等于空就不显示)
+            if (this.value !== '') {
+                con.style.display = 'block';
+            }
+        });
     </script>
 </body>
 
