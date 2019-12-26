@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    .search {
+        width: 200px;
+        height: 200px;
+        border: 1px solid springgreen;
+        margin: 100px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .jd {}
+
+    .con::before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 28px;
+        left: 18px;
+        border: 8px solid #000;
+        border-style: solid dashed dashed;
+        border-color: #fff transparent transparent;
+    }
+</style>
+
+<body>
+    <div class="search">
+        <div class="con"></div>
+        <input type="text" placeholder="请输入快递单号" class="jd">
+    </div>
+</body>
+
+</html>
