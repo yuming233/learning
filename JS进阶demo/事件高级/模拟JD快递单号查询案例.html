@@ -13,32 +13,63 @@
         width: 200px;
         height: 200px;
         border: 1px solid springgreen;
-        margin: 100px auto;
+        margin: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
     }
 
-    .jd {}
+
+    .con {
+        display: none;
+        border: 1px solid rgba(0, 0, 0, .2);
+        width: 171px;
+        height: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        position: absolute;
+        font-size: 18px;
+        line-height: 20px;
+        padding: 5px 0;
+        color: #333;
+        top: 50px;
+        left: 14px;
+    }
 
     .con::before {
         content: '';
         width: 0;
         height: 0;
         position: absolute;
-        top: 28px;
-        left: 18px;
+        top: 30px;
+        left: 10px;
         border: 8px solid #000;
         border-style: solid dashed dashed;
-        border-color: #fff transparent transparent;
+        border-color: rgb(255, 255, 255) transparent transparent;
     }
 </style>
 
 <body>
     <div class="search">
-        <div class="con"></div>
+        <div class="con">123</div>
         <input type="text" placeholder="请输入快递单号" class="jd">
     </div>
+
+    <script>
+        // 获取需要的
+        var con = document.querySelector('.con');
+        var jd = document.querySelector('.jd');
+        jd.addEventListener('keyup', function () {
+            // 判断值为空 就隐藏  输入了就显示
+            if (this.value == '') {
+                con.style.display = 'none';
+            } else {
+                con.style.display = 'block';
+                // 写到文本里面
+                con.innerText = this.value;
+            }
+        });
+    </script>
 </body>
 
 </html>
