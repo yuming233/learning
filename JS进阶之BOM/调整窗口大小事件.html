@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+</style>
+<script>
+    window.addEventListener('load', function () {
+        var div = document.querySelector('div');
+        // window.onresize只要窗口发生变化就会触发执行 经常利用完成响应式布局
+        window.addEventListener('resize', function () {
+            // 打印浏览器宽度发生变化
+            console.log('浏览器宽度' + window.innerWidth);
+            // 打印浏览器窗口变化
+            console.log('浏览器窗口有变化');
+            // 如果窗口宽度小于600px或者高度小于800px就隐藏
+            if (window.innerWidth <= 600 || window.innerHeight <= 800) {
+                div.style.display = 'none';
+            } else {
+                div.style.display = 'block';
+            }
+        })
+    });
+</script>
+
+
+<body>
+    <div></div>
+</body>
+
+</html>
