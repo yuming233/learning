@@ -17,6 +17,7 @@
 
 <body>
     <div class="ad">广告</div>
+    <button>停止</button>
     <script>
         // 1.setTimeout
         // 语法规范：window.setTimeout(调用函数,延迟时间);
@@ -41,9 +42,18 @@
 
         // 隔5秒关闭广告案例
         var ad = document.querySelector('.ad');
-        setTimeout(function () {
+        var timer = setTimeout(function () {
             ad.style.display = 'none';
-        }, 3000);
+        }, 5000);
+
+        // 清楚定时器效果  必须要个名字
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            clearTimeout(timer)
+        });
+
+
+        // 停止定时器
     </script>
 
 
