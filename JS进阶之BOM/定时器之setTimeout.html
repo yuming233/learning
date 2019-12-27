@@ -7,8 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+    div {
+        height: 300px;
+        width: 300px;
+        background-color: blue;
+    }
+</style>
 
 <body>
+    <div class="ad">广告</div>
     <script>
         // 1.setTimeout
         // 语法规范：window.setTimeout(调用函数,延迟时间);
@@ -32,7 +40,14 @@
         // 回调函数：先执行上一步在执行    回头再调用就是回调函数
 
         // 隔5秒关闭广告案例
+        var ad = document.querySelector('.ad');
+        setTimeout(function () {
+            ad.style.display = 'none';
+        }, 3000);
     </script>
+
+
 </body>
+
 
 </html>
