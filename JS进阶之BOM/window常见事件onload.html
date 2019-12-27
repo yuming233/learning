@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // script必须写在body下面，但用onload方法可以随便放
+    // 下面是传统注册事件方式，只能写一次，写多个会以最后一个window.onload为准，推荐使用addEventListener('load', function ())
+    // window.onload = function () {
+    //     var btn = document.querySelector('button');
+    //     btn.addEventListener('click', function () {
+    //         alert('点击了');
+    //     })
+    // }
+
+    // 这个就不会有冲突的
+    window.addEventListener('load', function () {
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            alert('点击了');
+        });
+    });
+    window.addEventListener('load', function () {
+        alert(11)
+    });
+
+    // 新方法 有兼容性问题 ie9以上支持
+    document.addEventListener('DOMContentLoaded', function () {
+        alert(22)
+    });
+    // load 等页面内容全部加载完毕，包含页面dom元素 图片 flash css 等等才会执行
+    // DOMContentLoaded 是DOM加载完毕，不包含图片 flash css等就可以 加载比load更快
+</script>
+
+
+<body>
+    <button>点击</button>
+</body>
+
+</html>
