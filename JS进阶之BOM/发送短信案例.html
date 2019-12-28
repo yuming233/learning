@@ -9,7 +9,29 @@
 </head>
 
 <body>
+    <input type="number"><button>发送短信</button>
 
+    <script>
+        var btn = document.querySelector('button');
+        // var time = 3; //定义一个变量是剩下的秒数
+        btn.addEventListener('click', function () {
+            var time = 3; // 把time定义在点击事件中就不用重新time=3了
+            btn.disabled = true;
+            var timer = setInterval(function () {
+                // 如果变量为0 说明到了时间 停止定时器并且复原按钮初始状态
+                if (time == 0) {
+                    // 清除定时器和复原按钮
+                    clearInterval(timer);
+                    btn.disabled = false;
+                    btn.innerHTML = '发送短信';
+                    // time = 3; // time--完之后重新开始计算，不然就没有了
+                } else {
+                    btn.innerHTML = '还剩下' + time + '秒';
+                    time--;
+                }
+            }, 1000)
+        });
+    </script>
 </body>
 
 </html>
