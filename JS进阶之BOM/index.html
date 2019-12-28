@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>登陆成功</p>
+    <div></div>
+    <script>
+        console.log(location.search); // ?uname=yuming
+        // 1.先去掉?  substr('起始的位置',截取几个字符);
+        var params = location.search.substr(1); // 索引号从第1个开始截取 一直截取的最后 uname=yuming
+        console.log(params);
+        // 2.利用=把字符串分割为数组 split('=');
+        var arr = params.split('=');
+        console.log(arr); // ["uname", "yuming"]
+        // 3.把数据写入div中
+        var div = document.querySelector('div');
+        div.innerHTML = arr[1] + '欢迎你';
+    </script>
+</body>
+
+</html>
