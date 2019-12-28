@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <a href="list.html">点击我去列表页</a>
+    <button>后退</button>
+
     <p>登陆成功</p>
     <div></div>
     <script>
@@ -22,6 +25,13 @@
         // 3.把数据写入div中
         var div = document.querySelector('div');
         div.innerHTML = arr[1] + '欢迎你';
+
+
+
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            history.back();
+        });
     </script>
 </body>
 
