@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+        // location 实现点击跳转页面效果
+        // var btn = document.querySelector('button');
+        // btn.addEventListener('click', function () {
+        //     // console.log(location.href);
+        //     location.href = 'https://www.bilibili.com/';
+        // });
+
+
+
+        // 5秒之后跳转页面
+        var div = document.querySelector('div');
+        var timer = 5;
+        countDown(); // 先执行一次封装的函数，防止刷新页面空白
+        setInterval(countDown, 1000); // 调用函数开启定时器
+
+
+        function countDown() {
+            if (timer == 0) {
+                location.href = 'https://www.bilibili.com/';
+            } else {
+                div.innerHTML = timer + '秒之后跳转到首页';
+                timer--;
+            }
+        }
+    </script>
+</body>
+
+</html>
