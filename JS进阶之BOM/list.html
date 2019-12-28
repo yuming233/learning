@@ -15,7 +15,8 @@
     <script>
         var btn = document.querySelector('button');
         btn.addEventListener('click', function () {
-            history.forward();
+            history.forward(); // 前进
+            history.go(1); // go(1)就是前进1步 go(2)前进两步
         });
     </script>
 </body>

@@ -30,7 +30,9 @@
 
         var btn = document.querySelector('button');
         btn.addEventListener('click', function () {
-            history.back();
+            // history.back();
+            history.go(-1); // go(-1)就是后退1步 go(-2)后退两步
+
         });
     </script>
 </body>
