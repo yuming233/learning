@@ -7,9 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: #c2c;
+    }
+</style>
 
 <body>
+    <div class="box"></div>
 
+    <script>
+        // offset与style的区别    小结里面有图详解
+        // style 可读写
+        // offset 只读
+        var box = document.querySelector('.box');
+        box.offsetWidth = '300px';
+        box.style.width = '300px';
+    </script>
 </body>
 
 </html>
