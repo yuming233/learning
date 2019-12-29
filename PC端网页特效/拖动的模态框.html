@@ -22,7 +22,6 @@
     a {
         text-decoration: none;
         color: #000;
-
     }
 
     .login-header #link {
@@ -32,6 +31,25 @@
 
     #bg {
         background-color: #333;
+    }
+
+    #login {
+        /* display: none; */
+        position: fixed;
+        border: 1px solid #000;
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        text-align: center;
+        z-index: 9999;
+        left: 50%;
+        top: 50%;
+        box-shadow: 0px 0px 20px #ddd;
+        transform: translate(-50%, 50%);
+    }
+
+    #login #loginBtn {
+        padding-top: 180px;
     }
 </style>
 
