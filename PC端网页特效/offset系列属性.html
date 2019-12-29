@@ -11,6 +11,7 @@
     * {
         margin: 0;
         padding: 0;
+        /* box-sizing: border-box; */
     }
 
     .father {
@@ -19,6 +20,7 @@
         height: 200px;
         background-color: blue;
         margin: 150px;
+        /* padding: 20px; */
     }
 
     .son {
@@ -34,15 +36,22 @@
         <div class="son"></div>
     </div>
     <script>
-        // offset 系列
+        // offset 系列  可以(动态获取)盒子大小
         var father = document.querySelector('.father');
         var son = document.querySelector('.son');
-        // 可以得到元素的偏移 位置 返回的不带单位的数值
-        console.log(father.offsetTop);
-        console.log(father.offsetLeft);
+        // 1.可以得到元素的偏移 位置 返回的不带单位的数值
+        console.log('father离上面多少像素' + father.offsetTop);
+        console.log('father离下面多少像素' + father.offsetLeft);
 
         // 它以带有定位的父亲为准 如果有父亲或者父亲没有定位 则以body 为准
-        console.log(son.offsetLeft);
+        console.log('son离父元素左边多少像素' + son.offsetLeft);
+
+        // 2.获取元素的大小 padding、border、width会撑大盒子 可以用border-box，但注意子盒子也会变化
+        console.log('father宽多少' + father.offsetWidth);
+        console.log('father高多少' + father.offsetHeight);
+        // 3. 返回带有定位的父亲， 否则返回的是body
+        console.log(son.offsetParent);
+        console.log(son.parentNode); // 返回父亲 是返回最近以及的父亲 不管父亲有没有定位
     </script>
 </body>
 
