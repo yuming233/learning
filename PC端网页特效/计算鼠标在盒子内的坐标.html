@@ -23,7 +23,7 @@
         var box = document.querySelector('.box');
         // mousemove 鼠标移动显示坐标
         box.addEventListener('mousemove', function (e) {
-            // 用鼠标的坐标减去盒子的坐标得到鼠标的坐标
+            // 用鼠标在页面的坐标减去盒子在页面的坐标得到鼠标在盒子里的坐标
             var x = e.pageX - this.offsetLeft;
             var y = e.pageY - this.offsetTop;
             this.innerHTML = 'x坐标是' + x + 'y坐标是' + y;
