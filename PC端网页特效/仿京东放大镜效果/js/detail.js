@@ -23,7 +23,8 @@ window.addEventListener('load', function () {
         // (3).我们mask 移动的距离
         var maskX = x - mask.offsetWidth / 2;
         var maskY = y - mask.offsetHeight / 2;
-        // (4) 如果x坐标小于0 就让他停在0的位置
+        // (4) 如果x坐标小于0 就让他停在0的位置  黄盒子不超过小图片的范围
+        // 遮挡层的最大移动距离
         var maxX = preview_img.offsetWidth - mask.offsetWidth;
         var maxY = preview_img.offsetHeight - mask.offsetHeight;
         // 如果宽在最左边0的坐标就等于0 最右边就用盒子的宽减去子盒子的宽
@@ -40,5 +41,18 @@ window.addEventListener('load', function () {
         }
         mask.style.left = maskX + 'px';
         mask.style.top = maskY + 'px';
+        // 大图片的移动距离 = 遮挡层移动距离 * 大图片最大移动距离 / 遮挡层的最大移动距离
+        // 大图
+        var bigImg = document.querySelector('.bigImg');
+        // 大图片的最大移动距离
+        var bigMaxX = bigImg.offsetWidth - big.offsetWidth;
+        var bigMaxY = bigImg.offsetHeight - big.offsetHeight;
+        // 大图片的移动距离 X Y
+        var bigX = maskX * bigMaxX / maxX;
+        var bigY = maskY * bigMaxY / maxY;
+        // 注意要在大图里面加定位才能移动  大图要负值
+        bigImg.style.left = -bigX + 'px';
+        bigImg.style.top = -bigY + 'px';
+
     })
 })
