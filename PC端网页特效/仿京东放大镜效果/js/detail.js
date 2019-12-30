@@ -12,4 +12,15 @@ window.addEventListener('load', function () {
         mask.style.display = 'none';
         big.style.display = 'none';
     })
+
+    // 2.鼠标移动的时候，让黄色的盒子跟着鼠标来走
+    preview_img.addEventListener('mousemove', function (e) {
+        // 1.先计算出鼠标在盒子内的坐标
+        var x = e.pageX - this.offsetLeft;
+        var y = e.pageY - this.offsetTop;
+
+        // 盒子的高度300 的一就是150  活写
+        mask.style.left = x - mask.offsetWidth / 2 + 'px';
+        mask.style.top = y - mask.offsetHeight / 2 + 'px';
+    })
 })
