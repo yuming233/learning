@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    .box2 {
+        top: 250px;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: #c2c;
+    }
+</style>
+
+<body>
+    <button>点击盒子2走</button>
+    <div class="box2">盒子2</div>
+
+    <script>
+        // 思路:
+        // 1.让盒子每次移动的距离慢慢变小，速度就会落下来
+        // 2.核心算法:(目标值 - 现在的位置) / 10 作为每次移动的距离 步长
+        // 3.停止的条件是:让当前盒子位置等于目标位置就停止定时器
+        function animate(obj, target) {
+            // 清除以前的定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                // 步长值写到定时器里面
+                var step = (target - obj.offsetLeft) / 10;
+                if (obj.offsetLeft >= target) {
+                    // 停止动画 本质是停止定时器
+                    clearInterval(obj.timer);
+                }
+                // 把每次加1 这个步长值改为一个慢慢变小的值 步长公式：(目标值 - 现在的位置) / 10
+                obj.style.left = obj.offsetLeft + step + 'px';
+
+            }, 15);
+        }
+        var div1 = document.querySelector('.box1');
+        var div2 = document.querySelector('.box2');
+        var btn = document.querySelector('button');
+        // 调用函数
+        btn.addEventListener('click', function () {
+            animate(div2, 1000);
+        });
+    </script>
+</body>
+
+</html>
