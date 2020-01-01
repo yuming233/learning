@@ -33,7 +33,8 @@
             obj.timer = setInterval(function () {
                 // 步长值写到定时器里面
                 var step = (target - obj.offsetLeft) / 10;
-                if (obj.offsetLeft >= target) {
+
+                if (obj.offsetLeft == target) {
                     // 停止动画 本质是停止定时器
                     clearInterval(obj.timer);
                 }
@@ -49,6 +50,8 @@
         btn.addEventListener('click', function () {
             animate(div2, 1000);
         });
+        // 匀速动画就是盒子是当前的位置 + 固定的值 10
+        // 缓速动画就是 盒子当前的位置 + 变化的值(目标值 - 现在的位置) / 10
     </script>
 </body>
 
