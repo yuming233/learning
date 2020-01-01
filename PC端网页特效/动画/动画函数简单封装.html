@@ -9,28 +9,43 @@
 </head>
 
 <style>
-    div {
+    .box1 {
         position: absolute;
         width: 200px;
         height: 200px;
         background-color: #2c2;
     }
+
+
+    .box2 {
+        top: 250px;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: #c2c;
+    }
 </style>
 
 <body>
-    <div></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
 
     <script>
         // 简单动画函数封装 obj目标对象 target目标位置
-        function animate(obj, target)
-        var div = document.querySelector('div');
-        var timer = setInterval(function () {
-            if (div.offsetLeft >= 800) {
-                // 停止动画 本质是停止定时器
-                clearInterval(timer);
-            }
-            div.style.left = div.offsetLeft + 1 + 'px';
-        }, 1);
+        function animate(obj, target) {
+            var timer = setInterval(function () {
+                if (obj.offsetLeft >= target) {
+                    // 停止动画 本质是停止定时器
+                    clearInterval(timer);
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, 1);
+        }
+        var div1 = document.querySelector('.box1');
+        var div2 = document.querySelector('.box2');
+        // 调用函数
+        animate(div1, 800);
+        animate(div2, 600);
     </script>
 </body>
 
