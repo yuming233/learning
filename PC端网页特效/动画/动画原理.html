@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: #2c2;
+    }
+</style>
+
+<body>
+    <div></div>
+
+    <script>
+        // 1. 获得盒子当前位置
+        // 2.让盒子带当前位置加 x个 移动距离
+        // 3.利用定时器不断重复这个操作
+        // 4.加一个结束定时器的条件
+        // 5.注意此元素需要添加定位，才能使用element.style.left
+        var div = document.querySelector('div');
+        var timer = setInterval(function () {
+            if (div.offsetLeft >= 800) {
+                // 停止动画 本质是停止定时器
+                clearInterval(timer);
+            }
+            div.style.left = div.offsetLeft + 1 + 'px';
+        }, 1);
+    </script>
+</body>
+
+</html>
