@@ -12,7 +12,13 @@ window.addEventListener('load', function () {
 
     // 3.动态生成小圆圈  有几张图片 就生成几个小圆圈
     var ul = focus.querySelector('ul');
+    var ol = focus.querySelector('.circle');
     for (var i = 0; i < ul.children.length; i++) {
+        // 创建小li
         var li = document.createElement('li');
+        // 把小li插入到ol 里面
+        ol.appendChild(li);
     }
+    // 把ol里面的第一个小li设置类名为current
+    ol.children[0].className = 'current';
 })
