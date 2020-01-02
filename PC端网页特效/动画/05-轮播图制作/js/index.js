@@ -8,5 +8,5 @@ window.addEventListener('load', function () {
     focus.addEventListener('mouseenter', function () {
         arrow_l.style.display = 'block';
         arrow_r.style.display = 'block';
-    })
+    });
 })
