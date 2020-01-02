@@ -18,7 +18,6 @@ window.addEventListener('load', function () {
         var li = document.createElement('li');
         // 把小li插入到ol 里面
         ol.appendChild(li);
-
         // 4.小圆圈的排他思想 我们可以直接在生成小圆圈的同时直接绑定点击事件
         li.addEventListener('click', function () {
             // 把所有小li清除 current 类名
