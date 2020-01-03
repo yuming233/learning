@@ -39,7 +39,11 @@ window.addEventListener('load', function () {
     // 把ol里面的第一个小li设置类名为current
     ol.children[0].className = 'current';
 
-    // 6.点击右侧按钮，图片滚动一张
+    // 6.克隆第一张图片(li)放到ul最后面
+    var first = ul.children[0].cloneNode(true);
+    ul.appendChild(first);
+
+    // 7.点击右侧按钮，图片滚动一张
     var num = 0;
     arrow_r.addEventListener('click', function () {
         if (num == ul.children.length - 1) {
