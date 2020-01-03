@@ -67,14 +67,20 @@
             var lis = c_nav.querySelectorAll('li');
 
             // 2.给所有的小li绑定事件
+            // 这个current 作为筋斗云的起始位置
+            var current = 0;
             for (var i = 0; i < lis.length; i++) {
                 // 鼠标经过把当前小li 的位置作为目标值
                 lis[i].addEventListener('mouseenter', function () {
                     animate(cloud, this.offsetLeft);
                 });
-                // 鼠标离开就复原为0
+                // 鼠标离开就回到起始的位置
                 lis[i].addEventListener('mouseleave', function () {
-                    animate(cloud, 0);
+                    animate(cloud, current);
+                });
+                // 当我们鼠标点击,就把当前位置做为目标值
+                lis[i].addEventListener('click', function () {
+                    current = this.offsetLeft;
                 });
             }
         });
