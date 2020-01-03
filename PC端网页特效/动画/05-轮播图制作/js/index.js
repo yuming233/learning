@@ -3,6 +3,7 @@ window.addEventListener('load', function () {
     var arrow_l = document.querySelector('.arrow-l');
     var arrow_r = document.querySelector('.arrow-r');
     var focus = document.querySelector('.focus');
+    var focusWidth = focus.offsetWidth;  // 图片宽度
 
     // 2.鼠标经过focus 就显示隐藏左右按钮
     focus.addEventListener('mouseenter', function () {
@@ -32,10 +33,20 @@ window.addEventListener('load', function () {
             // ul 的移动距离就是小圆圈的索引号乘以图片的宽度 注意是负值
             //当我们点击了某个小li 就拿到当前小li 的索引号
             var index = this.getAttribute('index');
-            var focusWidth = focus.offsetWidth;
             animate(ul, -index * focusWidth);
         })
     }
     // 把ol里面的第一个小li设置类名为current
     ol.children[0].className = 'current';
+
+    // 6.点击右侧按钮，图片滚动一张
+    var num = 0;
+    arrow_r.addEventListener('click', function () {
+        if (num == ul.children.length - 1) {
+            ul.style.left = 0;
+            num = 0;
+        }
+        num++;
+        animate(ul, -num * focusWidth);
+    });
 })
