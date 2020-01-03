@@ -16,10 +16,11 @@ function animate(obj, target, callback) {
             clearInterval(obj.timer);
 
             //  回调函数写到定时器结束里面
-            if (callback) {
-                // 调用函数
-                callback();
-            }
+            // if (callback) {
+            //     // 调用函数
+            //     callback();
+            // }
+            callback && callback();  // 等于上面的if
         }
 
         // 把每次加1 这个步长值改为一个慢慢变小的值 步长公式：(目标值 - 现在的位置) / 10

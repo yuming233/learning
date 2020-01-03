@@ -62,47 +62,62 @@ window.addEventListener('load', function () {
     // circle 控制小圆圈的播放
     var circle = 0;
 
+
     // 右侧按钮做法
+    // flag 节流阀
+    var flag = true;
     arrow_r.addEventListener('click', function () {
-        if (num == ul.children.length - 1) {
-            ul.style.left = 0;
-            num = 0;
+        if (flag) {
+            flag = false;  // 关闭节流阀
+            // 如果走到了最后复制的一张图片，此时 我们的ul 要快速复原 left 改为0
+            if (num == ul.children.length - 1) {
+                ul.style.left = 0;
+                num = 0;
+            }
+            num++;
+            animate(ul, -num * focusWidth, function () {
+                flag = true;
+            });
+
+            // 8.点击右侧按钮，小圆圈跟随一起变化，可以声明一个变量控制小圆圈的播放
+            circle++;
+            // 如果circle == 4 说明走到最后克隆的这张图片了 我们就复原
+            // if (circle == ol.children.length) {
+            //     circle = 0;
+            // }
+            circle = circle == ol.children.length ? 0 : circle; // 三元表达式
+
+            // 调用函数
+            circleChange();
         }
-        num++;
-        animate(ul, -num * focusWidth);
-
-        // 8.点击右侧按钮，小圆圈跟随一起变化，可以声明一个变量控制小圆圈的播放
-        circle++;
-        // 如果circle == 4 说明走到最后克隆的这张图片了 我们就复原
-        // if (circle == ol.children.length) {
-        //     circle = 0;
-        // }
-        circle = circle == ol.children.length ? 0 : circle; // 三元表达式
-
-        // 调用函数
-        circleChange();
     });
+
 
 
     // 9.左侧按钮做法
     arrow_l.addEventListener('click', function () {
-        if (num == 0) {
-            num = ul.children.length - 1;
-            ul.style.left = num * focusWidth + 'px';
+        if (flag) {
+            flag = false;
+            if (num == 0) {
+                num = ul.children.length - 1;
+                ul.style.left = num * focusWidth + 'px';
 
+            }
+            num--;
+            animate(ul, -num * focusWidth, function () {
+                flag = true;
+            });
+
+            // 8.点击左侧按钮，小圆圈跟随一起变化，可以声明一个变量控制小圆圈的播放
+            circle--;
+            // 如果circle < 0 说明第一张图片  则小圆圈要改为第四个小圆圈
+            // if (circle < 0) {
+            //     circle = ol.children.length - 1;
+            // }
+            circle = circle < 0 ? ol.children.length - 1 : circle;  // 三元表达式
+            // 调用函数
+            circleChange();
         }
-        num--;
-        animate(ul, -num * focusWidth);
-
-        // 8.点击左侧按钮，小圆圈跟随一起变化，可以声明一个变量控制小圆圈的播放
-        circle--;
-        // 如果circle < 0 说明第一张图片  则小圆圈要改为第四个小圆圈
-        // if (circle < 0) {
-        //     circle = ol.children.length - 1;
-        // }
-        circle = circle < 0 ? ol.children.length - 1 : circle;  // 三元表达式
-        // 调用函数
-        circleChange();
 
     });
 
