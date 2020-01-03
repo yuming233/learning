@@ -52,6 +52,8 @@ window.addEventListener('load', function () {
     var num = 0;
     // circle 控制小圆圈的播放
     var circle = 0;
+
+    // 右侧按钮做法
     arrow_r.addEventListener('click', function () {
         if (num == ul.children.length - 1) {
             ul.style.left = 0;
@@ -63,15 +65,46 @@ window.addEventListener('load', function () {
         // 8.点击右侧按钮，小圆圈跟随一起变化，可以声明一个变量控制小圆圈的播放
         circle++;
         // 如果circle == 4 说明走到最后克隆的这张图片了 我们就复原
-        if (circle == ol.children.length) {
-            circle = 0;
+        // if (circle == ol.children.length) {
+        //     circle = 0;
+        // }
+        circle = circle == ol.children.length ? 0 : circle; // 三元表达式
+
+        // 调用函数
+        circleChange();
+    });
+
+
+    // 9.左侧按钮做法
+    arrow_l.addEventListener('click', function () {
+        if (num == 0) {
+            num = ul.children.length - 1;
+            ul.style.left = num * focusWidth + 'px';
+
         }
+        num--;
+        animate(ul, -num * focusWidth);
+
+        // 8.点击左侧按钮，小圆圈跟随一起变化，可以声明一个变量控制小圆圈的播放
+        circle--;
+        // 如果circle < 0 说明第一张图片  则小圆圈要改为第四个小圆圈
+        // if (circle < 0) {
+        //     circle = ol.children.length - 1;
+        // }
+        circle = circle < 0 ? ol.children.length - 1 : circle;  // 三元表达式
+        // 调用函数
+        circleChange();
+
+    });
+
+
+    // 创建个函数调用简洁代码
+    function circleChange() {
         // 先清除其余小圆圈的current类名
         for (var i = 0; i < ol.children.length; i++) {
             ol.children[i].className = '';
         }
         // 留下当前的小圆圈的current类名
         ol.children[circle].className = 'current';
-
-    });
+    }
 })
