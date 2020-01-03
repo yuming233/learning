@@ -9,6 +9,15 @@ window.addEventListener('load', function () {
     focus.addEventListener('mouseenter', function () {
         arrow_l.style.display = 'block';
         arrow_r.style.display = 'block';
+        clearInterval(timer);
+        timer = null;  // 清除定时器变量
+    });
+    focus.addEventListener('mouseleave', function () {
+        arrow_l.style.display = 'none';
+        arrow_r.style.display = 'none';
+        timer = setInterval(function () {
+            arrow_r.click();   // 手动调用右侧按钮点击事件
+        }, 1000)
     });
 
     // 3.动态生成小圆圈  有几张图片 就生成几个小圆圈
@@ -107,4 +116,10 @@ window.addEventListener('load', function () {
         // 留下当前的小圆圈的current类名
         ol.children[circle].className = 'current';
     }
+
+
+    // 10.自动播放轮播图
+    var timer = setInterval(function () {
+        arrow_r.click();   // 手动调用右侧按钮点击事件
+    }, 1000)
 })
