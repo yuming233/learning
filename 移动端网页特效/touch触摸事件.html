@@ -20,9 +20,18 @@
     <div></div>
     <script>
         // 1.获取元素
+        // 手指触摸 touchstart
         var div = document.querySelector('div');
         div.addEventListener('touchstart', function () {
             this.style.backgroundColor = 'red';
+        });
+        // 手指移动 touchmove
+        div.addEventListener('touchmove', function () {
+            console.log('移动');
+        });
+        // 手指离开 touchend
+        div.addEventListener('touchend', function () {
+            this.style.backgroundColor = 'aqua';
         });
     </script>
 </body>
