@@ -27,6 +27,19 @@
             console.log(e);
             // touches 正在触摸屏幕的所有手指的列表
             // targetTouch 正在触摸当前DOM元素的手指列表
+            // 如果侦听的是一个DOM元素,他们两个是一样的
+            // changedTouch 手指状态发生了改变的列表 从无到有 或者 从有到无
+            // 因为我们一般是触摸元素 所以最经常使用targetTouch
+            console.log(e.targetTouches[0]);
+            // targetTouches[0]得到正在触摸dom元素的第一个手指的相关信息  比如手指坐标等等
+
+        });
+
+        // 手指离开 touchend
+        div.addEventListener('touchend', function (e) {
+            console.log(e);
+            // 当我们手指离开屏幕的时候,就没有了touches 和 targetTouch 列表
+            // 但是会有 changedTouch
         });
     </script>
 </body>
