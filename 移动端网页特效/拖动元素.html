@@ -47,6 +47,7 @@
             // 移动我们的盒子  盒子原来的位置+手指移动的距离
             this.style.left = x + moveX + 'px';
             this.style.top = y + moveY + 'px';
+            e.preventDefault(); // 阻止屏幕滚动的默认行为
         });
     </script>
 </body>
