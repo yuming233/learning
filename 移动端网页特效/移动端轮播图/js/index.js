@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
 
     //  等着我们过渡完成之后，再去判断 监听过渡完成的事件 transitionend
     ul.addEventListener('transitionend', function () {
-        if (index == 3) {
+        if (index >= 3) {
             index = 0;
             // 去掉过渡效果 这样让我们的ul 快速的调到目标位置
             ul.style.transition = 'none';
