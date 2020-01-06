@@ -13,4 +13,14 @@ window.addEventListener('load', function () {
         ul.style.transform = 'translatex(' + translatex + 'px)';
     }, 2000);
 
+    //  等着我们过渡完成之后，再去判断 监听过渡完成的事件 transitionend
+    ul.addEventListener('transitionend', function () {
+        if (index == 3) {
+            index = 0;
+            // 去掉过渡效果
+            ul.style.transition = 'none';
+            var translatex = -index * w;
+            ul.style.transform = 'translatex(' + translatex + 'px)';
+        }
+    })
 })
