@@ -90,19 +90,6 @@ window.addEventListener('load', function () {
             }, 2000);
         });
 
-        // 返回顶部模块制作
-        var goBack = document.querySelector('.goBack');
-        var nav = document.querySelector('nav');
-        window.addEventListener('scroll', function () {
-            if (window.pageYOffset >= nav.offsetTop) {
-                goBack.style.display = 'block';
-            } else {
-                goBack.style.display = 'none';
-            }
-        });
-        goBack.addEventListener('click', function () {
-            window.scroll(0, 0);
-        })
+
     })
-})
 })
