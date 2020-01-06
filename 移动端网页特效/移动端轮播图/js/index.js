@@ -36,7 +36,7 @@ window.addEventListener('load', function () {
         // 让当前索引号的小li 加上 current  add
         ol.children[index].classList.add('current');
 
-        // 4. 手指滑动轮播图 
+        // 4. 手指滑动轮播图
         // 触摸元素 touchstart： 获取手指初始坐标
         var startX = 0;
         var moveX = 0; // 后面我们会使用这个移动距离所以要定义一个全局变量
@@ -90,5 +90,19 @@ window.addEventListener('load', function () {
             }, 2000);
         });
 
+        // 返回顶部模块制作
+        var goBack = document.querySelector('.goBack');
+        var nav = document.querySelector('nav');
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset >= nav.offsetTop) {
+                goBack.style.display = 'block';
+            } else {
+                goBack.style.display = 'none';
+            }
+        });
+        goBack.addEventListener('click', function () {
+            window.scroll(0, 0);
+        })
     })
+})
 })
