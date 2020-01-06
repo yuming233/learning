@@ -17,8 +17,15 @@ window.addEventListener('load', function () {
     ul.addEventListener('transitionend', function () {
         if (index == 3) {
             index = 0;
-            // 去掉过渡效果
+            // 去掉过渡效果 这样让我们的ul 快速的调到目标位置
             ul.style.transition = 'none';
+            // 利用最新的索引号乘以宽度 去滚动图片
+            var translatex = -index * w;
+            ul.style.transform = 'translatex(' + translatex + 'px)';
+        } else if (index < 0) {
+            index = 2;
+            ul.style.transition = 'none';
+            // 利用最新的索引号乘以宽度 去滚动图片
             var translatex = -index * w;
             ul.style.transform = 'translatex(' + translatex + 'px)';
         }
