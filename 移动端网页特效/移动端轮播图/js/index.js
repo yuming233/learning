@@ -50,7 +50,7 @@ window.addEventListener('load', function () {
         ul.addEventListener('touchmove', function (e) {
             // 计算移动距离
             moveX = e.targetTouches[0].pageX - startX;
-            // 移动盒子：  盒子原来的位置 + 手指移动的距离 
+            // 移动盒子：  盒子原来的位置 + 手指移动的距离
             var translatex = -index * w + moveX;
             // 手指拖动的时候，不需要动画效果所以要取消过渡效果
             ul.style.transition = 'none';
@@ -58,11 +58,12 @@ window.addEventListener('load', function () {
             flag = true; // 如果用户手指移动过我们再去判断否则不做判断效果
             e.preventDefault(); // 阻止滚动屏幕的行为
         });
+
         // 手指离开 根据移动距离去判断是回弹还是播放上一张下一张
         ul.addEventListener('touchend', function (e) {
             if (flag) {
                 // (1) 如果移动距离大于50像素我们就播放上一张或者下一张
-                if (Math.abs(moveX) > 50) {
+                if (Math.abs(moveX) > 50) {   // 不管正负都是  取绝对值 Math.abs
                     // 如果是右滑就是 播放上一张 moveX 是正值
                     if (moveX > 0) {
                         index--;
@@ -89,7 +90,5 @@ window.addEventListener('load', function () {
                 ul.style.transform = 'translateX(' + translatex + 'px)';
             }, 2000);
         });
-
-
     })
 })
