@@ -19,8 +19,8 @@
         username.value = localStorage.getItem('username');
         remember.checked = true;
     }
-    remember.addEventListener('change', function () {
-        if (this.checked) {
+    remember.addEventListener('change', function () { // 如果单选框发生变化就执行判断
+        if (this.checked) { // 判断有没有单选框勾上，勾上就把值传进去保存，没有就删除
             localStorage.setItem('username', username.value);
         } else {
             localStorage.removeItem('username');
