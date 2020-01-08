@@ -10,7 +10,7 @@
 
 
 <!-- 关闭页面还有 -->
-<!-- 数据多窗口并存(只要在同一个软件里面chrome) -->
+<!-- 数据多页面并存(只要在同一个浏览器里面chrome) -->
 
 <body>
     <input type="text" name="" id="">
@@ -28,16 +28,16 @@
         set.addEventListener('click', function () {
             // 当我们点击了之后就可以把表单里面的值存储起来
             var val = ipt.value;
-            localStorage.setItem('uname', val);
+            localStorage.setItem('username', val);
             localStorage.setItem('pwd', val);
         });
         get.addEventListener('click', function () {
             // 当我们点击之后，就可以把表单里面的值获取过来
-            console.log(localStorage.getItem('uname'));
+            console.log(localStorage.getItem('username'));
         });
         remove.addEventListener('click', function () {
             // 当我们点击之后，就可以把表单里面的值移除
-            localStorage.removeItem('uname');
+            localStorage.removeItem('username');
         });
         del.addEventListener('click', function () {
             // 当我们点击之后，清除所有  实际开发少用

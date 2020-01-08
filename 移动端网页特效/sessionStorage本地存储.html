@@ -10,7 +10,7 @@
 
 
 <!-- 关闭页面没有了 -->
-<!-- 数据只能存在在一个窗口 -->
+<!-- 数据只能存在在一个页面里 -->
 
 
 
@@ -21,6 +21,13 @@
     <button class="remove">删除数据</button>
     <button class="del">清空所有数据</button>
     <script>
+        // 取到localStorage 里面的数据，前提是那个页面里面存了数据
+        console.log(localStorage.getItem('username'));
+
+
+
+
+
         var ipt = document.querySelector('input');
         var set = document.querySelector('.set');
         var get = document.querySelector('.get');
