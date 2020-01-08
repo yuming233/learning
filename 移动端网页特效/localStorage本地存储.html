@@ -9,9 +9,7 @@
 </head>
 
 
-<!-- 关闭页面没有了 -->
-
-
+<!-- 关闭页面还有 -->
 
 <body>
     <input type="text" name="" id="">
@@ -29,19 +27,20 @@
         set.addEventListener('click', function () {
             // 当我们点击了之后就可以把表单里面的值存储起来
             var val = ipt.value;
-            sessionStorage.setItem('uname', val);
-            sessionStorage.setItem('pwd', val);
+            localStorage.setItem('uname', val);
+            localStorage.setItem('pwd', val);
         });
         get.addEventListener('click', function () {
             // 当我们点击之后，就可以把表单里面的值获取过来
-            console.log(sessionStorage.getItem('uname'));
+            console.log(localStorage.getItem('uname'));
         });
         remove.addEventListener('click', function () {
             // 当我们点击之后，就可以把表单里面的值移除
-            sessionStorage.removeItem('uname');
+            localStorage.removeItem('uname');
         });
         del.addEventListener('click', function () {
             // 当我们点击之后，清除所有  实际开发少用
+            localStorage.clear();
         });
     </script>
 
