@@ -10,10 +10,21 @@
 </head>
 
 <body>
-    <video src=""></video>
+    <video src="" muted></video>
 
 
-    <script></script>
+    <script>
+        // 1.DOM对象转换为jQuery对象
+        //(1)我们直接获取视频，得到就是jQuery对象
+        $('video');
+        // (2)我们已经使用原生js 获取过来DOM对象
+        var myVideo = document.querySelector('video');
+        // $(myVideo).play(); jQuery里面没有play这个方法
+        // 2.jQuery对象转换为DOM对象
+        // myVideo.play();    原生方法看视频
+        $('video')[0].play(); // 转换为DOM再调用播放函数
+        $('video').get(0).play();
+    </script>
 </body>
 
 </html>
