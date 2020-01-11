@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jQuery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <script>
+        $(function () {
+            $('ul li:first').css('color', 'red'); // ul里面的第一个li
+            $('ul li:eq(2)').css('color', 'red'); // ul里面的第三个li
+            $('ol li:odd').css('color', 'blue'); //ol里面的奇数行
+            $('ol li:even').css('color', 'red'); //ol里面的奇数行
+        });
+    </script>
+</body>
+
+</html>
