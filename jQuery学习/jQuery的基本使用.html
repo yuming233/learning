@@ -8,8 +8,25 @@
     <title>Document</title>
     <script src="jQuery.min.js"></script>
 </head>
+<style>
+    div {
+        width: 200px;
+        height: 210px;
+        background-color: aqua;
+    }
+</style>
 
 <body>
+    <script>
+        // $('div').hide(); // 隐藏了盒子
+        // 1.等着页面DOM加载完毕再去执行js代码
+        $(function () {
+            $('div').hide();
+        });
+    </script>
+
+
+    <div></div>
 
 </body>
 
