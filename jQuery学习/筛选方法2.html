@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jQuery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>111</li>
+        <li>111</li>
+        <li class="item">111</li>
+        <li>111</li>
+        <li>111</li>
+    </ul>
+    <ol>
+        <li>111</li>
+        <li>111</li>
+        <li class="time">111</li>
+        <li>111</li>
+        <li>111</li>
+    </ol>
+    <div class="current"></div>
+    <div></div>
+    <script>
+        $(function () {
+            // 1.兄弟元素siblings 出来自身元素之外的所有亲兄弟
+            $('ul .item').siblings('li').css('color', 'red');
+            // 2.第n个元素
+            var index = 2;
+            // (1)我们可以用选择器的方式选择
+            // $('ol li:eq(1)').css('color', 'blue');
+            // (2)我们可以用选择方法的方式选择  更推荐
+            $('ol li').eq(index).css('color', 'blue');
+        });
+        // 3. 判断是否有某个类名
+        console.log($('div:first').hasClass('current')); // 检测第一个div有current这个类名吗  有就是true
+        console.log($('div:last').hasClass('current')); // 检测第二个div有current这个类名吗  没有就是false
+    </script>
+</body>
+
+</html>
