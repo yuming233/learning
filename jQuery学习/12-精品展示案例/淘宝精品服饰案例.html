@@ -10,15 +10,15 @@
             padding: 0;
             font-size: 12px;
         }
-        
+
         ul {
             list-style: none;
         }
-        
+
         a {
             text-decoration: none;
         }
-        
+
         .wrapper {
             width: 250px;
             height: 248px;
@@ -27,16 +27,16 @@
             border-right: 0;
             overflow: hidden;
         }
-        
+
         #left,
         #content {
             float: left;
         }
-        
+
         #left li {
             background: url(images/lili.jpg) repeat-x;
         }
-        
+
         #left li a {
             display: block;
             width: 48px;
@@ -46,11 +46,11 @@
             text-align: center;
             color: black;
         }
-        
+
         #left li a:hover {
             background-image: url(images/abg.gif);
         }
-        
+
         #content {
             border-left: 1px solid pink;
             border-right: 1px solid pink;
@@ -58,9 +58,9 @@
     </style>
     <script src="jquery.min.js"></script>
     <script>
-        $(function() {
+        $(function () {
             // 1. 鼠标经过左侧的小li 
-            $("#left li").mouseover(function() {
+            $("#left li").mouseover(function () {
                 // 2. 得到当前小li 的索引号
                 var index = $(this).index();
                 console.log(index);
@@ -71,8 +71,8 @@
                 // 链式编程
                 $("#content div").eq(index).show().siblings().hide();
 
-            })
-        })
+            });
+        });
     </script>
 </head>
 
