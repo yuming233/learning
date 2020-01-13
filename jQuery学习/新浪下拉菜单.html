@@ -104,15 +104,30 @@
     <script>
         $(function () {
             // 鼠标经过
-            $('.nav>li').mouseover(function () {
-                // $(this) jQuery 当前元素  this不要加引号
-                // show() 显示元素
-                $(this).children('ul').show();
-            })
-            // 鼠标离开
-            $('.nav>li').mouseout(function () {
-                $(this).children('ul').hide();
+            // $('.nav>li').mouseover(function () {
+            //     // $(this) jQuery 当前元素  this不要加引号
+            //     // show() 显示元素
+            //     $(this).children('ul').slideDown();
+            // })
+            // // 鼠标离开
+            // $('.nav>li').mouseout(function () {
+            //     $(this).children('ul').slideUp();
+            // });
+
+            // 事件切换  hover 就是鼠标经过和离开的复合写法
+            // 第一个function是鼠标经过， 第二个function是鼠标离开
+            // $('.nav>li').hover(function () {
+            //     $(this).children('ul').slideDown();
+            // }, function () {
+            //     $(this).children('ul').slideUp();
+            // });
+
+            // 事件切换 hover 如果只写一个函数，那么鼠标经过和离开都会触发这个函数
+            $('.nav>li').hover(function () {
+                $(this).children('ul').slideToggle();
             });
+
+
         });
     </script>
 </body>
