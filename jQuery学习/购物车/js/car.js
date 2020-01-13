@@ -15,4 +15,26 @@ $(function () {
             $('.checkall').prop('checked', false);
         }
     });
+
+
+
+    // 3.增减商品数量模块 首先声明一个变量 ，当我们点击+号(increment),就让这个值++,然后赋值给文本框。
+    $('.increment').click(function () {
+        var n = $(this).siblings('.itxt').val();
+        n++;
+        $(this).siblings('.itxt').val(n);
+    });
+    // 减商品
+    $('.decrement').click(function () {
+        var n = $(this).siblings('.itxt').val();
+        if (n == 1) {
+            return false;
+        }
+        n--;
+        $(this).siblings('.itxt').val(n);
+    });
+
+
+
+
 })
