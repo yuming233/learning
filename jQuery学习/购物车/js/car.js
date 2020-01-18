@@ -26,10 +26,11 @@ $(function () {
         $(this).siblings('.itxt').val(n);
         // 3.计算小计模块 根据文本框的值 乘以 当前商品的价格 就是 商品的小计
         // 当前商品的价格  p
-        var p = $(this).parent().parent().siblings('.p-price').html();
+        var p = $(this).parents('.p-num').siblings('.p-price').html();
         p = p.substr(1);    // 从第2个索引开始获取(去掉￥符号)
         // 小计模块
-        $(this).parent().parent().siblings('.p-sum').html('￥' + p * n);
+        // toFixed(2)  可以让我们保留两位小数
+        $(this).parents('.p-num').siblings('.p-sum').html('￥' + (p * n).toFixed(2));
     });
     // 减商品
     $('.decrement').click(function () {
@@ -40,10 +41,10 @@ $(function () {
         }
         n--;
         $(this).siblings('.itxt').val(n);
-        var p = $(this).parent().parent().siblings('.p-price').html();
+        var p = $(this).parents('.p-num').siblings('.p-price').html();
         p = p.substr(1);    // 从第2个索引开始获取(去掉￥符号)
         // 小计模块
-        $(this).parent().parent().siblings('.p-sum').html('￥' + p * n);
+        $(this).parents('.p-num').siblings('.p-sum').html('￥' + (p * n).toFixed(2));
     });
 
 
