@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jQuery.min.js"></script>
+</head>
+
+<body>
+    <div class="one">第一个
+        <div class="two">第二个
+            <div class="three">第三个
+                <div class="four">第四个</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 如果要返回one的话 很繁琐
+        // console.log($('.four').parent().parent().parent());
+        // parents() 指定祖先元素
+        console.log($('.four').parents('.one'));
+    </script>
+</body>
+
+</html>
