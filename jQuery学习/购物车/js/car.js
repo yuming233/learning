@@ -47,7 +47,18 @@ $(function () {
         $(this).parents('.p-num').siblings('.p-sum').html('￥' + (p * n).toFixed(2));
     });
 
+    // 用户修改文本框的值 计算 小计模块
+    $('.itxt').change(function () {
+        // 先得到文本框里的值 乘以 当前商品的单价
+        var n = $(this).val();
+        // 当前商品的单价
+        var p = $(this).parents('.p-num').siblings('.p-price').html();
+        p = p.substr(1);    // 从第2个索引开始获取(去掉￥符号)
+        // 小计模块
+        // toFixed(2)  可以让我们保留两位小数
+        $(this).parents('.p-num').siblings('.p-sum').html('￥' + (p * n).toFixed(2));
 
+    });
 
 
 })
