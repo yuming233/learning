@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jQuery.min.js"></script>
+</head>
+
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+    <script>
+        $(function () {
+            // $('div').css('color', 'red');
+            //  如果针对同一类元素做不同操作，需要用到遍历元素(类似for ，但比for强大)
+
+            // 1.each()  方法遍历元素
+            var sum = 0;
+            var arr = ["red", "blue", "green"];
+            $('div').each(function (index, domEle) {
+                // 回调函数第一个参数一定是索引号  可以自己制定索引号名词
+                console.log(index);
+                // 回调函数第二个参数一定是 dom元素对象 
+                console.log(domEle);
+
+                // domEle.css('color'); dom对象没有css方法
+                $(domEle).css('color', arr[index]); // 要转化为jq对象就可以用css方法了
+                sum += parseInt($(domEle).text()); // 值转为数字型不然是字符拼接了
+            });
+            console.log(sum);
+
+
+        });
+    </script>
+</body>
+
+</html>
