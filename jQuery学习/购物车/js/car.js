@@ -31,7 +31,9 @@ $(function () {
         // 小计模块
         // toFixed(2)  可以让我们保留两位小数
         $(this).parents('.p-num').siblings('.p-sum').html('￥' + (p * n).toFixed(2));
+        getSum();
     });
+
     // 减商品
     $('.decrement').click(function () {
         // 得到兄弟文本框里的值
@@ -45,20 +47,39 @@ $(function () {
         p = p.substr(1);    // 从第2个索引开始获取(去掉￥符号)
         // 小计模块
         $(this).parents('.p-num').siblings('.p-sum').html('￥' + (p * n).toFixed(2));
+        getSum();
+
     });
 
-    // 用户修改文本框的值 计算 小计模块
+
+    // 4.用户修改文本框的值 计算 小计模块
     $('.itxt').change(function () {
         // 先得到文本框里的值 乘以 当前商品的单价
         var n = $(this).val();
         // 当前商品的单价
         var p = $(this).parents('.p-num').siblings('.p-price').html();
         p = p.substr(1);    // 从第2个索引开始获取(去掉￥符号)
-        // 小计模块
-        // toFixed(2)  可以让我们保留两位小数
         $(this).parents('.p-num').siblings('.p-sum').html('￥' + (p * n).toFixed(2));
-
+        getSum();
     });
+
+
+
+    // 5.计算总计和总额模块  (封装一个函数)
+    getSum();   // 先调用一次，刷新页面的时候
+    function getSum() {
+        var count = 0; // 计算总件数
+        var money = 0; // 计算总价钱
+        $('.itxt').each(function (i, ele) {
+            count += parseInt($(ele).val());
+        });
+        $('.amount-sum em').text(count);
+
+        $('.p-sum').each(function (i, ele) {
+            money += parseFloat($(ele).text().substr(1));
+        });
+        $('.price-sum em').text('￥' + money.toFixed(2));
+    }
 
 
 })
