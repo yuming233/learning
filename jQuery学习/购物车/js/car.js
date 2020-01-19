@@ -4,6 +4,13 @@ $(function () {
     // 事件可以使用change
     $('.checkall').change(function () {
         $('.j-checkbox, .checkall').prop('checked', $(this).prop('checked'))
+        if ($(this).prop('checked')) {
+            // 让所有的商品添加 check-cart-item 类名
+            $('.cart-item').addClass('check-cart-item');
+        } else {
+            // check-cart-item  移除
+            $('.cart-item').removeClass('check-cart-item');
+        }
     });
 
     // 2.如果小复选框被选中的个数等于3 就应该吧全选按钮选上  ，否则全选按钮不选
@@ -13,6 +20,14 @@ $(function () {
             $('.checkall').prop('checked', true);
         } else {
             $('.checkall').prop('checked', false);
+        }
+
+        if ($(this).prop('checked')) {
+            // 让当前商品添加 check-cart-item 类名
+            $(this).parents('.cart-item').addClass('check-cart-item');
+        } else {
+            // check-cart-item  移除
+            $(this).parents('.cart-item').removeClass('check-cart-item');
         }
     });
 
@@ -101,4 +116,7 @@ $(function () {
         $('.cart-item').remove();
         getSum();
     });
+
+
+
 })
