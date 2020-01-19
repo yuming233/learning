@@ -53,7 +53,13 @@
                     $('.back').fadeOut();
                 }
             });
-
+            // 返回顶部
+            $('.back').click(function () {
+                // 只有元素才能做动画
+                $('body,html').stop().animate({
+                    scrollTop: 0
+                })
+            });
 
         });
     </script>
