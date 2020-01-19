@@ -82,4 +82,23 @@ $(function () {
     }
 
 
+
+    // 6.删除商品模块
+    // (1)商品后面的删除按钮
+    $('.p-action a').click(function () {
+        // 删除的是当前的商品
+        $(this).parents('.cart-item').remove();
+        getSum();
+    });
+    // (2)删除选中的商品
+    $('remove-batch').click(function () {
+        // 删除的是晓得复选框选中的商品
+        $('.j-checkbox:checked').parents('.cart-item').remove();
+        getSum();
+    });
+    // (3)清空购物车 删除全部商品
+    $('.clear-all').click(function () {
+        $('.cart-item').remove();
+        getSum();
+    });
 })
