@@ -22,6 +22,14 @@
 
 <body>
     <div></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ol></ol>
     <script>
         $(function () {
             // 1.单个事件注册
@@ -49,6 +57,28 @@
             $('div').on('mouseenter mouseleave', function () {
                 $(this).toggleClass('current');
             })
+
+            // (2)on可以实现事件委托(委派)
+            // $('ul li').click();  这样事件就绑定在每一个小li上面了
+            $('ul').on('click', 'li', function () {
+                alert(11);
+            });
+            //click 是绑定在ul身上的 但是 触发的对象是ul里面的小li
+
+
+            // (3)on可以给未来动态创建的元素绑定事件
+            // $('ol li').click(function () { 
+            //     alert(11);// 以前的方法
+            // });
+
+            $('ol').on('click', 'li', function () {
+                alert(1);
+            });
+
+            var li = $("<li>后来创建的li</li>");
+            $('ol').append(li);
+
+
         });
     </script>
 </body>
