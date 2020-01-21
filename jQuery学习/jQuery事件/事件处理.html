@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jQuery.min.js"></script>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+    }
+
+    .current {
+        background-color: green;
+    }
+</style>
+
+<body>
+    <div></div>
+    <script>
+        $(function () {
+            // 1.单个事件注册
+            // $('div').click(function () {
+            //     $(this).css('background', 'red');
+            // });
+            // $('div').mouseenter(function () {
+            //     $(this).css('background', 'black');
+            // });
+
+            // 2.事件处理on  可以绑定一个或者多个
+            // $('div').on({
+            //     mouseenter: function () {
+            //         $(this).css('background', 'black');
+            //     },
+            //     click: function () {
+            //         $(this).css('background', 'red');
+            //     },
+            //     mouseleave: function () {
+            //         $(this).css('background', 'aqua');
+            //     }
+            // });
+
+            // 如果事件一样的 这样写鼠标经过 添加current类  鼠标离开会去掉 多个事件用空格隔开
+            $('div').on('mouseenter mouseleave', function () {
+                $(this).toggleClass('current');
+            })
+        });
+    </script>
+</body>
+
+</html>
