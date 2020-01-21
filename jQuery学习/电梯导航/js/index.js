@@ -11,6 +11,12 @@ $(function () {
     }
     $(window).scroll(function () {
         toggleTool()
+        // 3.页面滚动到某个模块 给fixedtool添加current类  兄弟移除current  用each遍历
+        $('.floor .w').each(function (i, ele) {
+            if ($(document).scrollTop() >= $(ele).offset().top) {
+                $('.fixedtool li').eq(i).addClass('current').siblings().removeClass();
+            }
+        })
     });
 
 
