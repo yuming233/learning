@@ -47,6 +47,7 @@
             var boxTop = $('.container').offset().top;
             $(window).scroll(function () {
                 console.log($(document).scrollTop());
+
                 if ($(document).scrollTop() >= boxTop) {
                     $('.back').fadeIn();
                 } else {
