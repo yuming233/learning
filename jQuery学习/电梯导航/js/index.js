@@ -1,12 +1,16 @@
 $(function () {
     // 1.显示隐藏电梯导航栏
     var toolTop = $('.recommend').offset().top; // 拿到今日推荐模块距离文档上面的距离
-    $(window).scroll(function () {
+    toggleTool();       // 先调用
+    function toggleTool() {
         if ($(document).scrollTop() >= toolTop) {
             $('.fixedtool').fadeIn();
         } else {
             $('.fixedtool').fadeOut();
         }
+    }
+    $(window).scroll(function () {
+        toggleTool()
     });
 
 
@@ -19,6 +23,8 @@ $(function () {
         $('body,html').stop().animate({
             scrollTop: current
         });
+        // 点击之后，让当前的小li 添加current类名，其他移除current类名
+        $(this).addClass('current').siblings().removeClass();
     });
 
 
