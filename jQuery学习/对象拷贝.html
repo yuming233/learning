@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jQuery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(function () {
+            var targetObj = {
+                id: 0,
+                mag: {
+                    sex: '男'
+                }
+            };
+            var obj = {
+                id: 1,
+                name: 'andy',
+                mag: {
+                    age: 18
+                }
+            };
+
+            // 语法格式 $.extend(target, obj);
+            // $.extend(targetObj, obj); // 会覆盖targetObj里面原来的数据
+            // console.log(targetObj);
+            // // 1. 浅拷贝把原来对象里面的复杂数据类型地址拷贝给目标对象 一修改都会变
+            // // 有相同的复杂数据类型 浅拷贝会覆盖掉原来的复杂数据类型
+            // targetObj.mag.age = 20;
+            // console.log(targetObj); //mag: {age: 18}
+            // console.log(obj);
+
+            // 2.深拷贝把里面的数据完全复制一份给目标对象  如果里面有不冲突的属性，就会合并到一起
+            // 相同的复杂数据类型会合并，修改不影响
+            $.extend(true, targetObj, obj);
+            console.log(targetObj); //mag: {sex: "男", age: 18}
+            console.log(obj);
+
+        });
+    </script>
+</body>
+
+</html>
