@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jQuery.min.js"></script>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+    }
+
+    .current {
+        background-color: green;
+    }
+</style>
+
+<body>
+    <div></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ol>只能用一次</ol>
+
+
+
+    <script>
+        $(function () {
+            $('div').on({
+                mouseenter: function () {
+                    $(this).css('background', 'black');
+                },
+                click: function () {
+                    $(this).css('background', 'red');
+                },
+                mouseleave: function () {
+                    $(this).css('background', 'aqua');
+                }
+            });
+            $('ul').on('click', 'li', function () {
+                alert(1);
+            });
+
+
+            // 1.事件解绑 off
+            // $('div').off(); // 这个是解除了div身上的所有事件
+            $('div').off('click'); // 这个是解除了div身上的点击事件
+            $('ul').off('click', 'li'); // 解除事件委托
+
+
+            // 2.one() 只能触发事件一次
+            $('ol').one('click', function () {
+                alert(11);
+            });
+
+        });
+    </script>
+</body>
+
+</html>
