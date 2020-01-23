@@ -1,6 +1,7 @@
 $(function () {
     // 1.按下回车 把完整数据 存储到本地存储里面
     // 存储的数据格式  var todolist = [{ title: 'xxx', done: false }]
+    load(); // 预加载一次
     $('#title').on('keydown', function (e) {
         if (e.keyCode === 13) {
             // 先读取本地存储原来的数据
@@ -10,6 +11,8 @@ $(function () {
             // 把这个数据local存储给本地存储
             saveDate(local);
 
+            // 2.toDolist 本地存储数据渲染加载到页面
+            load();
         }
     });
 
@@ -31,5 +34,16 @@ $(function () {
     // 保存本地存储数据
     function saveDate(data) {
         localStorage.setItem('todolist', JSON.stringify(data));
+    }
+
+    // 渲染加载数据
+    function load() {
+        var data = getDate();
+        // 遍历之前要先清空ol里面的元素内容
+        $('ol').empty();
+        // 遍历这个数据
+        $.each(data, function (i, n) {
+            $('ol').prepend("<li><input type='checkbox' ><p>" + n.title + "</p><a href='javascript:;'></a></a></li>")
+        })
     }
 })
