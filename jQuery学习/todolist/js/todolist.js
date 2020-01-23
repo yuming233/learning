@@ -16,11 +16,20 @@ $(function () {
         }
     });
 
+    // 3.toDolist 删除操作
+    $('ol').on('click', 'a', function () {
+        // 先获取本地存储
+        var data = getDate();
+        // 修改数据
+        var index = $(this).attr('id');
+        // 保存到本地存储
+        
+        // 重新渲染页面
+    })
 
 
 
-
-    // 读取本地存储的数据  用的较多 封装一个函数
+    // 读取本地存储的数据  用的较多 封装函数
     function getDate() {
         var data = localStorage.getItem('todolist');
         if (data !== null) {
@@ -43,7 +52,7 @@ $(function () {
         $('ol').empty();
         // 遍历这个数据
         $.each(data, function (i, n) {
-            $('ol').prepend("<li><input type='checkbox' ><p>" + n.title + "</p><a href='javascript:;'></a></a></li>")
+            $('ol').prepend("<li><input type='checkbox' ><p>" + n.title + "</p><a href='javascript:;' id=" + i + "></a></a></li>")
         })
     }
 })
