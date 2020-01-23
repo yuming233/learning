@@ -37,7 +37,9 @@ $(function () {
         var index = $(this).siblings('a').attr('id');  // 点击的兄弟a的id号
         data[index].done = $(this).prop('checked');  // data的第index个选定为True
         // 保存到本地存储
+        saveDate(data);
         // 重新渲染页面
+        load();
 
     })
 
@@ -61,11 +63,16 @@ $(function () {
     // 渲染加载数据
     function load() {
         var data = getDate();
-        // 遍历之前要先清空ol里面的元素内容
-        $('ol').empty();
+        // 遍历之前要先清空ol,ul里面的元素内容
+        $('ol,ul').empty();
         // 遍历这个数据
         $.each(data, function (i, n) {
-            $('ol').prepend("<li><input type='checkbox' ><p>" + n.title + "</p><a href='javascript:;' id=" + i + "></a></a></li>")
+            // 判断done 如果是false就在ol里面 true就在ul里面
+            if (n.done) {
+                $('ul').prepend("<li><input type='checkbox' checked='checked'><p>" + n.title + "</p><a href='javascript:;' id=" + i + "></a></a></li>")
+            } else {
+                $('ol').prepend("<li><input type='checkbox' ><p>" + n.title + "</p><a href='javascript:;' id=" + i + "></a></a></li>")
+            }
         })
     }
 })
