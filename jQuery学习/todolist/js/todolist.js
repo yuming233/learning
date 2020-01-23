@@ -16,7 +16,7 @@ $(function () {
         }
     });
 
-    // 3.toDolist 删除操作
+    // 3.toDoList 删除操作
     $('ol').on('click', 'a', function () {
         // 先获取本地存储
         var data = getDate();
@@ -29,6 +29,17 @@ $(function () {
         load();
     });
 
+    // 4.toDoList正在进行和已经完成选项操作
+    $('ol,ul').on('click', 'input', function () {
+        // 先获取本地存储
+        var data = getDate();
+        // 修改数据
+        var index = $(this).siblings('a').attr('id');  // 点击的兄弟a的id号
+        data[index].done = $(this).prop('checked');  // data的第index个选定为True
+        // 保存到本地存储
+        // 重新渲染页面
+
+    })
 
 
     // 读取本地存储的数据  用的较多 封装函数
