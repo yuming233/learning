@@ -4,20 +4,26 @@ $(function () {
     load(); // 预加载一次
     $('#title').on('keydown', function (e) {
         if (e.keyCode === 13) {
-            // 先读取本地存储原来的数据
-            var local = getDate();
-            // 把local数组进行更新数据 把最新的数据追加给local数组
-            local.push({ title: $(this).val(), done: false });
-            // 把这个数据local存储给本地存储
-            saveDate(local);
+            if ($(this).val() === '') {  // 判断内容是否为空
+                alert('请输入你的待办事项')
+            } else {
+                // 先读取本地存储原来的数据
+                var local = getDate();
+                // 把local数组进行更新数据 把最新的数据追加给local数组
+                local.push({ title: $(this).val(), done: false });
+                // 把这个数据local存储给本地存储
+                saveDate(local);
 
-            // 2.toDolist 本地存储数据渲染加载到页面
-            load();
+                // 2.toDolist 本地存储数据渲染加载到页面
+                load();
+                $(this).val('');
+            }
         }
+
     });
 
     // 3.toDoList 删除操作
-    $('ol').on('click', 'a', function () {
+    $('ol,ul').on('click', 'a', function () {
         // 先获取本地存储
         var data = getDate();
         // 修改数据
@@ -65,14 +71,23 @@ $(function () {
         var data = getDate();
         // 遍历之前要先清空ol,ul里面的元素内容
         $('ol,ul').empty();
+
+        var todoCount = 0; // 正在进行的个数
+        var doneCount = 0; // 已经完成的个数
+
         // 遍历这个数据
         $.each(data, function (i, n) {
             // 判断done 如果是false就在ol里面 true就在ul里面
             if (n.done) {
-                $('ul').prepend("<li><input type='checkbox' checked='checked'><p>" + n.title + "</p><a href='javascript:;' id=" + i + "></a></a></li>")
+                $('ul').prepend("<li><input type='checkbox' checked='checked'><p>" + n.title + "</p><a href='javascript:;' id=" + i + "></a></a></li>");
+                doneCount++;
             } else {
-                $('ol').prepend("<li><input type='checkbox' ><p>" + n.title + "</p><a href='javascript:;' id=" + i + "></a></a></li>")
+                $('ol').prepend("<li><input type='checkbox' ><p>" + n.title + "</p><a href='javascript:;' id=" + i + "></a></a></li>");
+                todoCount++;
+
             }
-        })
+        });
+        $('#todocount').text(todoCount);
+        $('#donecount').text(doneCount);
     }
 })
