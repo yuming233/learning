@@ -17,6 +17,7 @@
 <body>
     <div id="app">
         {{msg}}
+        <!--  输出hello world  -->
         <div>
             <input type="text" v-model="info">
             <button @click="handleClick">添加</button>
@@ -31,7 +32,7 @@
             props: ['item'], // 可以加更多的标签
             template: '<li class="item">{{item}}</li>'
         });
-        new Vue({
+        var ve = new Vue({
             el: '#app',
             data() {
                 return {
