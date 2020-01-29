@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="vue.js"></script>
+</head>
+
+<body>
+	<div id="box">
+		<input type="text" @keyup.aaa="handle" v-model="info">
+	</div>
+	<script>
+		Vue.config.keyCodes.aaa = 65; // 自定义了一个名字叫aaa的键 绑定的是键盘上的a键
+		var vm = new Vue({
+			el: '#box',
+			data: {
+				info: ''
+			},
+			methods: {
+				handle: function (event) {
+					console.log(event.keyCode)
+				}
+			}
+		});
+
+		/*
+        事件绑定-自定义按键修饰符
+		规则:自定义按键修饰符名字是自定义的，但是相对的值必须是按键对应event.keyCode值
+
+			*/
+	</script>
+</body>
+
+</html>
