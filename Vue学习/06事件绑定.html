@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <div v-text="mag"></div>
+        <div>
+            <button @click=" mag++">点击</button>
+            <button @click="handle">点击1</button>
+            <button @click="handle()">点击2</button>
+
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                mag: 0
+            },
+            methods: {
+                handle: function () {
+                    // this是Vue的实例对象
+                    this.mag++;
+                }
+            },
+        });
+
+        /*
+        
+
+        */
+    </script>
+</body>
+
+</html>
