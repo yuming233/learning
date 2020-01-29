@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <div v-text="mag"></div>
+        <div>
+            <button @click="handle1">点击1</button>
+            <button @click="handle2(123,456,$event)">点击2</button>
+
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                mag: 0
+            },
+            methods: {
+                handle1: function (event) {
+                    console.log(event.target.innerHTML);
+                    this.mag++;
+                },
+                handle2: function (p, p1, event) {
+                    console.log(p, p1);
+                    console.log(event.target.innerHTML);
+                }
+            }
+        });
+
+        /*
+        事件绑定-参数传递
+            (1)如果事件直接绑定函数名称，那么默认会传递事件对象作为事件函数的第一个参数
+            (2)如果事件绑定函数函数调用，那么事件对象必须作为最后一个参数显示传递，
+            并且事件对象的名称必须是$event
+        */
+    </script>
+</body>
+
+</html>
