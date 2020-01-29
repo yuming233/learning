@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <div>{{mag}}</div>
+        <div v-text="mag"></div>
+        <div v-html="mag1"></div>
+        <div v-pre>{{mag}}</div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                mag: 'Hello Vue',
+                mag1: '<h1>HTML</h1>'
+            }
+        });
+
+        /* 
+        1.v-text  填充纯文本  推荐用这个不推荐插值表达式
+            (1)相比插值表达式更加简洁
+        2.v-html  填充HTML片段
+            (1)存在安全隐患
+            (2)本网站内部数据可以使用，来自第三方的数据不可以用
+        3.v-pre   填充原始信息
+            (1)显示原始信息，跳过编译过程(分析编译过程)
+        */
+    </script>
+</body>
+
+</html>
