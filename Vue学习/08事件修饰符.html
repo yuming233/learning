@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <div v-text="mag"></div>
+        <div @click="handle1">
+            <button @click.stop="handle2">点击</button>
+            <a href="http://youtube.com" @click.prevent.stop="handle3($event)">YOUTUBE</a>
+
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                mag: 0
+            },
+            methods: {
+                handle1: function () {
+                    this.mag++;
+                },
+                handle2: function (event) {
+                    // 阻止冒泡
+                    // event.stopPropagation();
+                },
+                handle3: function (event) {
+                    // event.preventDefault();
+                }
+            },
+        });
+
+        /*
+        阻止单击事件继续传播 (冒泡) @click.stop
+        <a v-on:click.stop="doThis"></a>
+
+        提交事件不再重载页面(和不跳转) @click.prevent
+        <a href="http://youtube.com" @click.prevent="handle3($event)">YOUTUBE</a>
+
+        修饰符可以串联 @click.prevent.stop
+        <a href="http://youtube.com" @click.prevent.stop="handle3($event)">YOUTUBE</a>
+
+        使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 v-on:click.prevent.self 会阻止所有的点击，
+        而 v-on:click.self.prevent 只会阻止对元素自身的点击。
+        */
+    </script>
+</body>
+
+</html>
