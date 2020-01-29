@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+
+<body>
+    <div id="box">
+        <div v-cloak>{{mag}}</div>
+    </div>
+    <script>
+        var vu = new Vue({
+            el: '#box',
+            data: {
+                mag: 'Hello Vue'
+            }
+        });
+        /*
+        v-cloak指令用法
+        1.提供样式
+        [v-cloak] {
+            display: none;
+        }
+         2.在差值表达式所在的标签中添加v-cloak指令
+    
+        背后的原理:先用过样式隐藏内容，然后在内存中进行值的替换，
+        替换好之后再显示最终的结果
+        */
+    </script>
+</body>
+
+</html>
