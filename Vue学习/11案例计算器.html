@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <span>数值A:</span>
+            <input type="text" v-model='a'>
+        </div>
+        <div>
+            <span>数值B:</span>
+            <input type="text" v-model='b'>
+        </div>
+        <div>
+            <button @click='handle'>计算</button>
+        </div>
+        计算结果:<span v-text="result"></span>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            a: '',
+            b: '',
+            result: ''
+        },
+        methods: {
+            handle: function () {
+                //实现计算逻辑
+                this.result = parseFloat(this.a) + parseFloat(this.b)
+            }
+        }
+    });
+
+    // (1)通过v-model指令实现数值a和数值b的绑定
+    // (2)个计算按钮绑定事件，实现计算逻辑
+    // (3)将计算结果绑定到对应位置
+</script>
+
+</html>
