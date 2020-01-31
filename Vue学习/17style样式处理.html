@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <div :style='{border:borderStyle,width:widthStyle,height:heightStyle}'></div>
+        <div :style='objStyle'></div>
+        <div :style='[objStyle,overrideStyle]'></div>
+        <button @click='handle'>切换</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                borderStyle: '1px solid blue',
+                widthStyle: '100px',
+                heightStyle: '200px',
+
+                objStyle: {
+                    border: '1px solid red',
+                    width: '200px',
+                    height: '100px',
+                },
+
+                overrideStyle: {
+                    border: '10px solid green',
+                    backgroundColor: 'blue'
+                }
+            },
+            methods: {
+                handle: function () {
+                    this.heightStyle = '100px';
+                    this.objStyle.width = '100px';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
