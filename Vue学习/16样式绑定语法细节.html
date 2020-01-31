@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<style>
+    .active {
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+    }
+
+    .error {
+        background-color: aqua;
+    }
+
+    .test {
+        color: rgb(255, 0, 0);
+    }
+</style>
+<!-- 
+    样式绑定相关语法细节:
+        1.对象绑定和数组绑定可以结合使用
+        2.class绑定的值可以简化操作
+        3.默认的class如何处理？默认class会保留
+ -->
+
+<body>
+    <div id="box">
+        <div :class="[activeClass,errorClass,{test:isTest}]">测试样式</div>
+        <div :class='arrClass'>222</div>
+        <div :class='objClass'>333</div>
+        <div class="base" :class='objClass'>默认class被结合到一块</div>
+        <button @click='handle'>切换</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                activeClass: 'active',
+                errorClass: 'error',
+                isTest: true,
+
+                arrClass: ['active', 'error', 'test'],
+
+                objClass: {
+                    active: true,
+                    error: true,
+                    test: true
+
+                }
+            },
+            methods: {
+                handle: function () {
+                    this.activeClass = '';
+                    this.errorClass = '';
+                    this.isTest = false;
+
+                    this.arrClass[1] = '';
+
+                    this.objClass.error = false;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
