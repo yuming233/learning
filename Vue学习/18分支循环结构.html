@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<style>
+    .active {
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+    }
+
+    .error {
+        background-color: aqua;
+    }
+</style>
+
+<body>
+    <div id="box">
+        <div v-if='score>=90'>优秀</div>
+        <div v-else-if='score<90&&score>=80'>良好</div>
+        <div v-else-if='score<80&&score>60'>一般</div>
+        <div v-else>差</div>
+        <div v-show='flag'>测试v-show</div>
+        <button @click='handle'>点击</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                score: 10,
+                flag: false
+            },
+            methods: {
+                handle: function () {
+                    this.flag = !this.flag
+                }
+            }
+        });
+        // v-show 的原理：控制元素样式是否显示  display:none
+        // v-if和v-show的区别
+        //     v-if控制元素是否渲染到页面
+        //     v-show控制元素是否显示(已经渲染到了页面)
+    </script>
+</body>
+
+</html>
