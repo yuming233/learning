@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <a :href="url" v-text='mag'></a>
+        <button @click='handle'>切换</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                url: 'http://www.baidu.com',
+                mag: '百度'
+            },
+            methods: {
+                handle: function () {
+                    // 修改URL地址
+                    this.url = 'http://youtube.com',
+                        this.mag = '油管'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
