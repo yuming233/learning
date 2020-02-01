@@ -55,6 +55,7 @@
             <div>
                 <span>职业：</span>
                 <select v-model='occupation' multiple>
+                    <!--  multiple多选 -->
                     <option value="0">请选择职业...</option>
                     <option value="1">教师</option>
                     <option value="2">软件工程师</option>
@@ -74,14 +75,16 @@
         var vm = new Vue({
             el: '#app',
             data: {
-                uname: 'lisi',
+                uname: '李四',
                 gender: 1,
-                hobby: ['1', '3']
+                hobby: ['1', '3'],
+                occupation: ['2'],
+                desc: '你好'
             },
             methods: {
                 handle: function () {
-                    console.log(this.gender);
-
+                    // console.log(this.gender);
+                    // console.log(this.dese);
                 }
             }
         });
