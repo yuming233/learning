@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<style>
+    .tab ul {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+    }
+
+    .tab ul li {
+        box-sizing: border-box;
+        padding: 0;
+        float: left;
+        width: 100px;
+        height: 45px;
+        line-height: 45px;
+        list-style: none;
+        text-align: center;
+        border-top: 1px solid blue;
+        border-right: 1px solid blue;
+        cursor: pointer;
+    }
+
+    .tab ul li:first-child {
+        border-left: 1px solid blue;
+    }
+
+    .tab ul li.active {
+        background-color: orange;
+    }
+
+    .tab div {
+        width: 500px;
+        height: 300px;
+        display: none;
+        text-align: center;
+        font-size: 30px;
+        line-height: 300px;
+        border: 1px solid blue;
+        border-top: 0px;
+    }
+
+    .tab div img {
+        width: 500px;
+        height: 300px;
+    }
+
+    .tab div.current {
+        display: block;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div class="tab">
+            <ul>
+                <li class="active">apple</li>
+                <li>orange</li>
+                <li>banana</li>
+            </ul>
+            <div class="current">
+                <img src="img/apple.jpg">
+            </div>
+            <div>
+                <img src="img/orange.jpg">
+            </div>
+            <div>
+                <img src="img/banana.jpg">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>
