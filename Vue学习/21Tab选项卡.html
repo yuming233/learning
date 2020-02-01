@@ -62,18 +62,10 @@
     <div id="app">
         <div class="tab">
             <ul>
-                <li class="active">apple</li>
-                <li>orange</li>
-                <li>banana</li>
+                <li :key='item.id' v-for='(item,index) in list'>{{item.title}}</li>
             </ul>
-            <div class="current">
-                <img src="img/apple.jpg">
-            </div>
-            <div>
-                <img src="img/orange.jpg">
-            </div>
-            <div>
-                <img src="img/banana.jpg">
+            <div :key='item.id' v-for='(item,index) in list'>
+                <img :src="item.path">
             </div>
         </div>
     </div>
@@ -82,6 +74,19 @@
         var vm = new Vue({
             el: '#app',
             data: {
+                list: [{
+                    id: 1,
+                    title: 'apple',
+                    path: 'img/apple.jpg'
+                }, {
+                    id: 2,
+                    title: 'orange',
+                    path: 'img/orange.jpg'
+                }, {
+                    id: 3,
+                    title: 'banana',
+                    path: 'img/banana.jpg'
+                }]
 
             },
             methods: {
