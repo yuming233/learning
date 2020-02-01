@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <div v-if='v==13' v-for='(v,k,i) in obj'>{{v + '---' + k + '---' + i}}</div>
+    </div>
+    <script>
+        // 使用原生js遍历对象
+        var obj = {
+            uname: '李四',
+            age: 12,
+            gender: 'male'
+        }
+        for (var key in obj) {
+            console.log(key, obj[key]);
+        }
+
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                obj: {
+                    uname: '张三',
+                    age: 13,
+                    gender: 'male'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
