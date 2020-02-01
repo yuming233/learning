@@ -62,7 +62,8 @@
     <div id="app">
         <div class="tab">
             <ul>
-                <li :class='currentIndex==index?"active":""' :key='item.id' v-for='(item,index) in list'>{{item.title}}
+                <li @click='change(index)' :class='currentIndex==index?"active":""' :key='item.id'
+                    v-for='(item,index) in list'>{{item.title}}
                 </li>
             </ul>
             <div :class='currentIndex==index?"current":""' :key='item.id' v-for='(item,index) in list'>
@@ -92,7 +93,11 @@
 
             },
             methods: {
-
+                change: function (index) {
+                    // 在这里实现选项卡切换操作本质就是操作类名
+                    // 如何操作类名? 通过 currentIndex
+                    this.currentIndex = index;
+                }
             }
         });
     </script>
