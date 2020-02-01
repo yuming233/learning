@@ -62,9 +62,10 @@
     <div id="app">
         <div class="tab">
             <ul>
-                <li :key='item.id' v-for='(item,index) in list'>{{item.title}}</li>
+                <li :class='currentIndex==index?"active":""' :key='item.id' v-for='(item,index) in list'>{{item.title}}
+                </li>
             </ul>
-            <div :key='item.id' v-for='(item,index) in list'>
+            <div :class='currentIndex==index?"current":""' :key='item.id' v-for='(item,index) in list'>
                 <img :src="item.path">
             </div>
         </div>
@@ -74,6 +75,7 @@
         var vm = new Vue({
             el: '#app',
             data: {
+                currentIndex: 0, // 选项卡当前的索引
                 list: [{
                     id: 1,
                     title: 'apple',
