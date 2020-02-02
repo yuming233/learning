@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{reverseMessage()}}</div>
+        <div>{{reverseMessage()}}</div>
+        <div>{{reverseString}}</div>
+        <div>{{reverseString}}</div>
+    </div>
+    <script>
+        vm = new Vue({
+            el: '#app',
+            data: {
+                mag: 'HELLO',
+                num: 100
+            },
+            methods: { // 方法：每次调用重新计算
+                reverseMessage: function () {
+                    console.log('methods');
+                    return this.mag.split('').reverse().join('');
+                }
+            },
+            computed: { // 计算属性：计算量大的话比较节省性能
+                reverseString: function () {
+                    console.log('computed');
+                    var total = 0;
+                    for (var i = 0; i <= this.num; i++) {
+                        total += i;
+                    }
+                    return total;
+                }
+            }
+        });
+
+        // 计算属性与方法的区别
+        // 计算属性是基于他们的依赖进行缓存的
+        // 方法不存在缓存
+    </script>
+</body>
+
+</html>
