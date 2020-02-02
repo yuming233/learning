@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-color='mag'>
+    </div>
+    <script>
+        Vue.directive('color', { // 定义自动到焦点指令
+            bind: function (el, binding) {
+                // 根据指令的参数设置背景色
+                console.log(binding.value.color);
+                el.style.backgroundColor = binding.value.color;
+            }
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                mag: {
+                    color: 'blue'
+                }
+            },
+            methods: {
+                handle: function () {
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
