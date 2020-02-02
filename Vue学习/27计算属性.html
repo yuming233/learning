@@ -11,31 +11,18 @@
 
 <body>
     <div id="app">
-        <input type="text" v-color='mag'>
+        <div>{{mag}}</div>
+        <div>{{handle}}</div>
     </div>
     <script>
         vm = new Vue({
             el: '#app',
             data: {
-                mag: {
-                    color: 'blue'
-                }
+                mag: 'HELLO'
             },
-            methods: {
+            computed: {
                 handle: function () {
-
-                }
-            },
-            directives: {
-                color: {
-                    bind: function (el, binding) {
-                        el.style.backgroundColor = binding.value.color;
-                    }
-                },
-                focus:{
-                    inserted:function(el){
-                        el.focus()
-                    }
+                    return this.mag.split('').reverse().join('');
                 }
             }
         });
