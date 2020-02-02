@@ -11,31 +11,25 @@
 
 <body>
     <div id="app">
-        <input type="text" v-color='mag' v-focus>
+        <input type="text" v-focus v-color='mag'>
     </div>
     <script>
-        vm = new Vue({
+        Vue.directive('focus', { // 定义自动到焦点指令
+            inserted: function (el) {
+                // el表示指令所绑定的元素
+                el.focus();
+            }
+        });
+        var vm = new Vue({
             el: '#app',
             data: {
                 mag: {
-                    color: 'yellow'
+                    color: 'blue'
                 }
             },
             methods: {
                 handle: function () {
 
-                }
-            },
-            directives: {
-                color: {
-                    bind: function (el, binding) {
-                        el.style.backgroundColor = binding.value.color;
-                    }
-                },
-                focus: {
-                    inserted: function (el) {
-                        el.focus();
-                    }
                 }
             }
         });
