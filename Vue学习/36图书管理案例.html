@@ -74,7 +74,7 @@
                         <td>{{item.name}}</td>
                         <td>{{item.date}}</td>
                         <td>
-                            <a href="" @click.prevent>修改</a>
+                            <a href="" @click.prevent='toEdit(item.id)'>修改</a>
                             <span>|</span>
                             <a href="" @click.prevent>删除</a>
                         </td>
@@ -83,6 +83,56 @@
             </table>
         </div>
     </div>
+
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                id: '',
+                name: '',
+                books: [{
+                    id: 1,
+                    name: '三国演义',
+                    date: ''
+                }, {
+                    id: 2,
+                    name: '水浒传',
+                    date: ''
+                }, {
+                    id: 3,
+                    name: '红楼梦',
+                    date: ''
+                }, {
+                    id: 4,
+                    name: '西游记',
+                    date: ''
+                }]
+            },
+            methods: {
+                handle: function () {
+                    // 添加图书
+                    var book = {};
+                    book.id = this.id;
+                    book.name = this.name;
+                    book.date = '';
+                    this.books.push(book);
+                    // 清空表单
+                    this.id = '';
+                    this.name = '';
+                },
+                toEdit: function (id) {
+                    // 根据ID查询出要编辑的数据
+                    var book = this.books.filter(function (item) {
+                        return item.id == id;
+                    });
+                    // 把获取到的信息填充到表单
+                    this.id = book[0].id;
+                    this.name = book[0].name;
+                }
+            },
+        });
+    </script>
 </body>
 
 </html>
