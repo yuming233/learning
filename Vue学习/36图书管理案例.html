@@ -76,7 +76,7 @@
                         <td>
                             <a href="" @click.prevent='toEdit(item.id)'>修改</a>
                             <span>|</span>
-                            <a href="" @click.prevent>删除</a>
+                            <a href="" @click.prevent='deleteBook(item.id)'>删除</a>
                         </td>
                     </tr>
                 </tbody>
@@ -147,6 +147,15 @@
                     // 把获取到的信息填充到表单
                     this.id = book[0].id;
                     this.name = book[0].name;
+                },
+                deleteBook: function (id) {
+                    // 删除图书
+                    // 根据id从数组中查找元素的索引
+                    var index = this.books.findIndex(function (item) {
+                        return item.id == id;
+                    });
+                    // 根据索引删除数组元素
+                    this.books.splice(index, 1);
                 }
             },
         });
