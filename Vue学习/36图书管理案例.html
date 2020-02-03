@@ -38,6 +38,13 @@
         padding-top: 5px;
         background-color: #F3DCAB;
     }
+
+    .grid .total {
+        height: 25px;
+        line-height: 25px;
+        background-color: #F3DCAB;
+        border-top: 1px solid #C2D89A;
+    }
 </style>
 
 <body>
@@ -50,7 +57,7 @@
                         <label for="id">
                             编号：
                         </label>
-                        <input type="text" id="id" v-model='id' :disabled='flag'>
+                        <input type="text" id="id" v-model='id' :disabled='flag' v-focus>
                         <label for="name">
                             名称：
                         </label>
@@ -58,6 +65,10 @@
                         <button @click='handle'>提交</button>
                     </div>
                 </div>
+            </div>
+            <div class="total">
+                <span>图书总数:</span>
+                <span>{{total}}</span>
             </div>
             <table>
                 <thead>
@@ -86,6 +97,11 @@
 
 
     <script>
+        Vue.directive('focus', {
+            inserted: function (el) {
+                el.focus();
+            }
+        });
         var vm = new Vue({
             el: '#app',
             data: {
@@ -156,6 +172,12 @@
                     });
                     // 根据索引删除数组元素
                     this.books.splice(index, 1);
+                }
+            },
+            computed: {
+                total: function () {
+                    // 计算图书的总数
+                    return this.books.length;
                 }
             },
         });
