@@ -62,7 +62,7 @@
                             名称：
                         </label>
                         <input type="text" id="name" v-model='name'>
-                        <button @click='handle'>提交</button>
+                        <button @click='handle' :disabled='submitFlag'>提交</button>
                     </div>
                 </div>
             </div>
@@ -106,25 +106,10 @@
             el: '#app',
             data: {
                 flag: false,
+                submitFlag: false,
                 id: '',
                 name: '',
-                books: [{
-                    id: 1,
-                    name: '三国演义',
-                    date: ''
-                }, {
-                    id: 2,
-                    name: '水浒传',
-                    date: ''
-                }, {
-                    id: 3,
-                    name: '红楼梦',
-                    date: ''
-                }, {
-                    id: 4,
-                    name: '西游记',
-                    date: ''
-                }]
+                books: []
             },
             methods: {
                 handle: function () {
@@ -180,6 +165,43 @@
                     return this.books.length;
                 }
             },
+            watch: {
+                name: function (val) {
+                    // 验证图书名称是否已经存在
+                    var flag = this.books.some(function (item) {
+                        return item.name == val;
+                    });
+                    if (flag) {
+                        // 图书名称存在
+                        this.submitFlag = true;
+                    } else {
+                        // 图书名称不存在
+                        this.submitFlag = false;
+                    }
+                }
+            },
+            mounted: function () {
+                // 该生命周期钩子函数被触发的时候，模板已经可以使用
+                // 一般此时用于获取后台数据，然后把数据填充到模板
+                var data = [{
+                    id: 1,
+                    name: '三国演义',
+                    date: ''
+                }, {
+                    id: 2,
+                    name: '水浒传',
+                    date: ''
+                }, {
+                    id: 3,
+                    name: '红楼梦',
+                    date: ''
+                }, {
+                    id: 4,
+                    name: '西游记',
+                    date: ''
+                }];
+                this.books = data;
+            }
         });
     </script>
 </body>
