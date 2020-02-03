@@ -50,7 +50,7 @@
                         <label for="id">
                             编号：
                         </label>
-                        <input type="text" id="id" v-model='id'>
+                        <input type="text" id="id" v-model='id' :disabled='flag'>
                         <label for="name">
                             名称：
                         </label>
@@ -89,6 +89,7 @@
         var vm = new Vue({
             el: '#app',
             data: {
+                flag: false,
                 id: '',
                 name: '',
                 books: [{
@@ -111,17 +112,34 @@
             },
             methods: {
                 handle: function () {
-                    // 添加图书
-                    var book = {};
-                    book.id = this.id;
-                    book.name = this.name;
-                    book.date = '';
-                    this.books.push(book);
-                    // 清空表单
+                    if (this.flag) {
+                        // 编辑操作
+                        // 就是根据当前的ID去更新数组中对应的数据
+                        this.books.some((item) => { // =>找到父级Id 如果用function的话下面的this就指向了window
+                            if (item.id == this.id) {
+                                item.name = this.name;
+                                // 完成更新操作之后，需要终止循环
+                                return true;
+                            }
+                        });
+                        this.flag = false;
+                    } else {
+                        // 添加图书
+                        var book = {};
+                        book.id = this.id;
+                        book.name = this.name;
+                        book.date = '';
+                        this.books.push(book);
+                        // 清空表单
+                        this.id = '';
+                        this.name = '';
+                    }
                     this.id = '';
                     this.name = '';
                 },
                 toEdit: function (id) {
+                    // 禁止修改ID
+                    this.flag = true;
                     // 根据ID查询出要编辑的数据
                     var book = this.books.filter(function (item) {
                         return item.id == id;
