@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div :style='{fontSize:fontSize + "px"}'>{{pmag}}</div>
+        <menu-item :parr='parr' @enlarge-text='handle'></menu-item>
+    </div>
+
+    <!-- props传递数据原则：单项数据流 -->
+    <!-- 父组件监听子组件 -->
+
+    <script>
+        Vue.component('menu-item', {
+            props: ['parr'],
+            template: `
+            <div>
+                <ul>
+                    <li :key='index' v-for='(item,index) in parr'>{{item}}</li>
+                </ul>
+                <button @click='parr.push("lemon")'>点击加个lemon</button>
+                <button @click='$emit("enlarge-text")'>扩大父组件中字体大小</button>
+            </div>
+            `
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                pmag: '父组件中内容',
+                parr: ['apple', 'orange', 'banana'],
+                fontSize: 10
+            },
+            methods: {
+                handle: function () {
+                    // 扩大字体大小
+                    this.fontSize += 5;
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>
