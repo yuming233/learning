@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         <div :style='{fontSize:fontSize + "px"}'>{{pmag}}</div>
-        <menu-item :parr='parr' @enlarge-text='handle'></menu-item>
+        <menu-item :parr='parr' @enlarge-text='handle($event)'></menu-item>
     </div>
 
     <!-- props传递数据原则：单项数据流 -->
@@ -27,7 +27,8 @@
                     <li :key='index' v-for='(item,index) in parr'>{{item}}</li>
                 </ul>
                 <button @click='parr.push("lemon")'>点击加个lemon</button>
-                <button @click='$emit("enlarge-text")'>扩大父组件中字体大小</button>
+                <button @click='$emit("enlarge-text",5)'>扩大父组件中字体大小</button>
+                <button @click='$emit("enlarge-text",10)'>扩大父组件中字体大小</button>
             </div>
             `
         });
@@ -39,9 +40,9 @@
                 fontSize: 10
             },
             methods: {
-                handle: function () {
+                handle: function (val) {
                     // 扩大字体大小
-                    this.fontSize += 5;
+                    this.fontSize += val;
                 }
             },
         });
