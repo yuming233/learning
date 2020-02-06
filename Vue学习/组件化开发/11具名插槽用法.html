@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <base-layout>
+            <p slot="header">标题信息</p>
+            <p>主要内容1</p>
+            <p>主要内容2</p>
+            <p slot="footer">底部信息</p>
+        </base-layout>
+
+        <!-- 这样可以同时写多条插槽到里面，上面的方法只能写一条 -->
+        <base-layout>
+            <template slot="header">
+                <p>标题信息</p>
+                <p>标题信息</p>
+            </template>
+            <p>主要内容1</p>
+            <p>主要内容2</p>
+            <template slot="footer">
+                <p>底部信息</p>
+                <p>底部信息</p>
+            </template>
+        </base-layout>
+    </div>
+
+
+    <script>
+        Vue.component('base-layout', {
+            template: `
+            <div>
+               <header>
+                    <slot name='header'></slot>
+               </header>
+               <main>
+                   <slot></slot>
+               </main>
+               <footer>
+                   <slot name='footer'></slot>
+               </footer>
+               
+            </div>
+            `
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>
