@@ -108,7 +108,95 @@
         </div>
     </div>
     <script>
-        
+        var CartTitle = {
+            template: `
+         <div class="title">我的商品</div>
+         `
+        }
+        var CartList = {
+            template: `
+         <div>
+             <div class="item">
+                 <img src="img/a.jpg" />
+                 <div class="name"></div>
+                 <div class="change">
+                     <a href="">－</a>
+                     <input type="text" class="num" />
+                     <a href="">＋</a>
+                 </div>
+                 <div class="del">×</div>
+             </div>
+             <div class="item">
+                 <img src="img/b.jpg" />
+                 <div class="name"></div>
+                 <div class="change">
+                     <a href="">－</a>
+                     <input type="text" class="num" />
+                     <a href="">＋</a>
+                 </div>
+                 <div class="del">×</div>
+             </div>
+             <div class="item">
+                 <img src="img/c.jpg" />
+                 <div class="name"></div>
+                 <div class="change">
+                     <a href="">－</a>
+                     <input type="text" class="num" />
+                     <a href="">＋</a>
+                 </div>
+                 <div class="del">×</div>
+             </div>
+             <div class="item">
+                 <img src="img/d.jpg" />
+                 <div class="name"></div>
+                 <div class="change">
+                     <a href="">－</a>
+                     <input type="text" class="num" />
+                     <a href="">＋</a>
+                 </div>
+                 <div class="del">×</div>
+             </div>
+             <div class="item">
+                 <img src="img/e.jpg" />
+                 <div class="name"></div>
+                 <div class="change">
+                     <a href="">－</a>
+                     <input type="text" class="num" />
+                     <a href="">＋</a>
+                 </div>
+                 <div class="del">×</div>
+             </div>
+         </div>
+         `
+        }
+        var CartTotal = {
+            template: `
+         <div class="total">
+             <span>总价：123</span>
+             <button>结算</button>
+         </div>
+         `
+        }
+        Vue.component('my-cart', {
+            template: `
+         <div class='cart'>
+             <cart-title></cart-title>
+             <cart-list></cart-list>
+             <cart-total></cart-total>
+         </div>
+         `,
+            components: {
+                'cart-title': CartTitle,
+                'cart-list': CartList,
+                'cart-total': CartTotal
+            }
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        });
     </script>
 </body>
 
