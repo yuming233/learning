@@ -121,7 +121,7 @@
             <div class="name">{{item.name}}</div>
             <div class="change">
               <a href="">－</a>
-              <input type="text" class="num" />
+              <input type="text" class="num" :value='item.num' @blur='changeNum(item.id,$event)' />
               <a href="">＋</a>
             </div>
             <div class="del" @click='del(item.id)'>×</div>
@@ -129,6 +129,12 @@
         </div>
       `,
             methods: {
+                changeNum: function (id, event) {
+                    this.$emit('change-num', {
+                        id: id,
+                        num: event.target.value
+                    });
+                },
                 del: function (id) {
                     // 把id传递给父组件
                     this.$emit('cart-del', id);
@@ -194,7 +200,7 @@
             template: `
         <div class='cart'>
           <cart-title :uname='uname'></cart-title>
-          <cart-list :list='list' @cart-del='delCart($event)'></cart-list>
+          <cart-list :list='list' @change-num='changeNum($event)' @cart-del='delCart($event)'></cart-list>
           <cart-total :list='list'></cart-total>
         </div>
       `,
@@ -204,6 +210,16 @@
                 'cart-total': CartTotal
             },
             methods: {
+                changeNum: function (val) {
+                    // 根据子组件传递过来的数据，跟新list中对应的数据
+                    this.list.some(item => {
+                        if (item.id == val.id) {
+                            item.num = val.num;
+                            // 终止遍历
+                            return true;
+                        }
+                    });
+                },
                 delCart: function (id) {
                     // 根据id删除list中对应的数据
                     // 1、找到id所对应数据的索引
