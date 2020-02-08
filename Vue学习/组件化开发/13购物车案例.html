@@ -225,7 +225,7 @@
             methods: {
                 changeNum: function (val) {
                     // 分为三种情况：输入域商品数量变更 、加号变更、减号变更
-                    if (val.type = 'change') {
+                    if (val.type == 'change') {
                         // 根据子组件传递过来的数据，跟新list中对应的数据
                         this.list.some(item => {
                             if (item.id == val.id) {
