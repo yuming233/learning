@@ -120,9 +120,9 @@
             <img :src="item.img"/>
             <div class="name">{{item.name}}</div>
             <div class="change">
-              <a href="">－</a>
+              <a href="" @click.prevent='sub(item.id)'>－</a>
               <input type="text" class="num" :value='item.num' @blur='changeNum(item.id,$event)' />
-              <a href="">＋</a>
+              <a href="" @click.prevent='add(item.id)'>＋</a>
             </div>
             <div class="del" @click='del(item.id)'>×</div>
           </div>
@@ -132,7 +132,20 @@
                 changeNum: function (id, event) {
                     this.$emit('change-num', {
                         id: id,
+                        type: 'change',
                         num: event.target.value
+                    });
+                },
+                sub: function (id) {
+                    this.$emit('change-num', {
+                        id: id,
+                        type: 'sub'
+                    });
+                },
+                add: function (id) {
+                    this.$emit('change-num', {
+                        id: id,
+                        type: 'add'
                     });
                 },
                 del: function (id) {
@@ -211,14 +224,36 @@
             },
             methods: {
                 changeNum: function (val) {
-                    // 根据子组件传递过来的数据，跟新list中对应的数据
-                    this.list.some(item => {
-                        if (item.id == val.id) {
-                            item.num = val.num;
-                            // 终止遍历
-                            return true;
-                        }
-                    });
+                    // 分为三种情况：输入域商品数量变更 、加号变更、减号变更
+                    if (val.type = 'change') {
+                        // 根据子组件传递过来的数据，跟新list中对应的数据
+                        this.list.some(item => {
+                            if (item.id == val.id) {
+                                item.num = val.num;
+                                // 终止遍历
+                                return true;
+                            }
+                        });
+                    } else if (val.type == 'sub') {
+                        // 减一操作
+                        this.list.some(item => {
+                            if (item.id == val.id) {
+                                item.num -= 1;
+                                // 终止遍历
+                                return true;
+                            }
+                        });
+                    } else if (val.type == 'add') {
+                        // 加一操作
+                        this.list.some(item => {
+                            if (item.id == val.id) {
+                                item.num += 1;
+                                // 终止遍历
+                                return true;
+                            }
+                        });
+                    }
+
                 },
                 delCart: function (id) {
                     // 根据id删除list中对应的数据
