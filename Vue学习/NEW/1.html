@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="../vue.js"></script>
+
+<style>
+    .red {
+        color: red;
+    }
+</style>
+
+<!-- 要求：点到哪个电影哪个变红，其他还原 -->
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for='(item,index) in movies' :class="{red: index === i}" @click="ifShow(index)">{{item}}</li>
+
+        </ul>
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    i: -1,
+                    movies: ['海王', '钢铁侠', '超人', '蝙蝠侠'],
+                    isActive: true,
+                    hasError: false
+                }
+
+            },
+            methods: {
+                ifShow(index) {
+                    if (index == app.i) {
+                        this.i = -1
+                    } else {
+                        this.i = index
+                    }
+
+                },
+            }
+        });
+    </script>
+</body>
+
+</html>

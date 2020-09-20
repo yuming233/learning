@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>按钮1</button>
+		<button>按钮2</button>
+		<button>按钮3</button>
+		<button>按钮4</button>
+		<button>按钮5</button>
+	</body>
+	<script>
+		const btns = document.getElementsByTagName('button')
+		for (let i = 0; i < btns.length; i++) {
+			btns[i].addEventListener('click', function() {
+				console.log('第' + i + '个按钮');
+			})
+		}
+	</script>
+</html>
