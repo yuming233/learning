@@ -31,18 +31,12 @@
                 return {
                     i: -1,
                     movies: ['海王', '钢铁侠', '超人', '蝙蝠侠'],
-                    isActive: true,
-                    hasError: false
                 }
 
             },
             methods: {
                 ifShow(index) {
-                    if (index == app.i) {
-                        this.i = -1
-                    } else {
-                        this.i = index
-                    }
+                    this.i = index
 
                 },
             }
