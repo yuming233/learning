@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../vue.js"></script>
+	<body>
+		<div id="app">
+			<div>{{aMag}}</div>
+			<fat-item title="来自父组件的值"></fat-item>
+			<fat-item :title="aTitle" content="hello"></fat-item>
+		</div>
+
+		<script type="text/javascript">
+			Vue.component('fat-item', { //父
+
+				props: ['title', 'content'],	
+				data: function() {		// 子
+					return {
+						mag: '子组件'
+					}
+				},
+				template: '<div>{{mag + "---" + title + "---" + content}}</div>'
+			});
+
+
+			let vm = new Vue({
+				el: '#app',
+				data: {
+					aMag: '父组件',
+					aTitle: '绑定的属性'
+				}
+			})
+		</script>
+
+	</body>
+</html>

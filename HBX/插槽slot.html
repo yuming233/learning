@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../vue.js"></script>
+	<body>
+		
+		
+		<div id="app">
+			<!-- 插槽 -->
+			<cpn><div>我不是HelloWorld</div></cpn>
+			
+			<sas><div>我不是HelloWorld</div></sas>
+			<!-- 具名插槽 -->
+			<!-- <cpn><div slot="left">我不是HelloWorld</div></cpn> -->
+		</div>
+		
+		
+		<template id="cpn">
+			<div>
+				<!-- 插槽 -->
+				<slot><h4>HelloWorld</h4></slot>
+				<slot name="left"><h4>HelloWorld</h4></slot>
+				<slot name="right"><h4>HelloWorld</h4></slot>
+			
+			</div>
+		</template>
+		
+		<template id="sas">
+			<div>
+			<slot><h4>HelloWorsssld</h4></slot>
+			</div>
+		</template>
+		
+
+		<script>
+			// 创建一个组件
+
+			const app = new Vue({
+				el: '#app',
+				data: {},
+				components:{
+					cpn:{
+						template:'#cpn'
+					},
+					sas:{
+						template:'#sas'
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>
