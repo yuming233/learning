@@ -1,11 +1,15 @@
 const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
+
 
 module.exports = {
   entry: './src/mian.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: 'dist/'     // 给打包图片加路径
+    // publicPath: 'dist/'     // 给打包图片加路径
   },
   module: {
     rules: [
@@ -39,8 +43,25 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.vue$/,
+        use: ['vue-loader']
       }
 
     ]
-  }
+  },
+  resolve: {
+    extensions: ['.js', '.css', 'vue'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
+  },
+  plugins: [
+    new webpack.BannerPlugin('最终解释权归余明所有'),
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    }),
+    // new UglifyjsWebpackPlugin() // 打包压缩 开发阶段是不需要的 
+  ]
 }
