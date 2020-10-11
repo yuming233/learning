@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        aaa() {
+          setTimeout(function () {
+            setTimeout(function () {
+              console.log(this); // window
+            });
+
+            setTimeout(() => {
+              console.log(this); // window
+            });
+          });
+
+          setTimeout(() => {
+            setTimeout(function () {
+              console.log(this); // window
+            });
+
+            setTimeout(() => {
+              console.log(this); // Object
+            });
+          });
+        },
+      };
+
+      obj.aaa();
+    </script>
+  </body>
+  <ml></ml>
+</html>
