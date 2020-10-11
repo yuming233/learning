@@ -3,5 +3,6 @@
     
         "css",
         "scss"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
