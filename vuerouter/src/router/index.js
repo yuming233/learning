@@ -24,6 +24,9 @@ const routes = [
   {
     path: '/hello',
     component: Helloworld,
+    meta: {
+      title: '首页'
+    },
     children: [
       {
         path: '', //重定向
@@ -41,11 +44,17 @@ const routes = [
   },
   {
     path: '/about/:abc',
-    component: About
+    component: About,
+    meta: {
+      title: '关于'
+    }
   },
   {
     path: '/Profile',
-    component: Profile
+    component: Profile,
+    meta: {
+      title: '文档'
+    }
   }
 ]
 
@@ -54,6 +63,13 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
   linkActiveClass: 'change'
+})
+
+router.beforeEach((to, from, next) => {
+  // 从from跳转到to
+  document.title = to.matched[0].meta.title
+  console.log(to);
+  next()// 一定要调用next
 })
 
 

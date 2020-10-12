@@ -19,7 +19,12 @@
     <!-- <router-link to="/Profile">文档</router-link> -->
     <button @click="ProflieClick">文档</button>
 
-    <router-view></router-view>
+    <!-- 把要存缓的组件放进去 -->
+    <!-- include - 字符串或正则表达，只有匹配的组件会被缓存 -->
+    <!-- exclude - 字符串或正则表达式，匹配的组件不会被缓存,其他的会 -->
+    <keep-alive exclude="About">
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
