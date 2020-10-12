@@ -1,26 +1,59 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HellowWorld from '../components/HelloWorld.vue'
-import About from '../components/About.vue'
+
+// import HellowWorld from '../components/HelloWorld.vue'
+// import About from '../components/About.vue'
+
+// 路由懒加载
+const Helloworld = () => import('../components/HelloWorld.vue')
+const helloNew = () => import('../components/helloNew.vue')
+const HelloMgs = () => import('../components/HelloMgs.vue')
+const Profile = () => import('../components/Profile.vue')
+
+const About = () => import('../components/About.vue')
 
 Vue.use(VueRouter)  // 通过Vue.use()插件,安装插件
 
 // 创建一个router对象
 const routes = [
-  {
-    path: '/hello',
-    component: HellowWorld
+  { // 路由的默认路径
+    path: '',
+    // redirect重定向(默认首页) 
+    redirect: '/hello'
   },
   {
-    path: '/about',
+    path: '/hello',
+    component: Helloworld,
+    children: [
+      {
+        path: '', //重定向
+        redirect: 'New' // 一定不要加/
+      },
+      {
+        path: 'New',
+        component: helloNew
+      },
+      {
+        path: 'Mgs',
+        component: HelloMgs
+      }
+    ]
+  },
+  {
+    path: '/about/:abc',
     component: About
+  },
+  {
+    path: '/Profile',
+    component: Profile
   }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  linkActiveClass: 'change'
 })
 
 
