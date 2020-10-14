@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>什么情况下会使用到Promise？</div>
+    <div>一般情况下是有异步操作时，使用Promise对这个异步操作进行封装</div>
+
+
+
+    <script>
+        // 参数 -> 函数(resolve,reject)
+        // resolve,reject他们本身又是函数
+        //链式编程
+        // new Promise((resolve, reject) => {
+        //     // 模拟网络请求
+        //     // 第一次网络请求的代码
+        //     setTimeout(() => {
+        //         resolve()
+        //     }, 1000)
+
+        // }).then(() => {
+        //     // 第一次拿到结果的处理代码
+        //     console.log('hello Promise');
+        //     console.log('hello Promise');
+        //     console.log('hello Promise');
+
+        //     return new Promise((resolve, reject) => {
+
+        //         // 第二次网络请求的代码
+        //         setTimeout(() => {
+        //             resolve()
+        //         }, 1000)
+
+        //     }).then(() => {
+        //         // 第二次拿到结果的处理代码
+        //         console.log('hello Promise');
+        //         console.log('hello Promise');
+        //         console.log('hello Promise');
+
+        //         return new Promise((resolve, reject) => {
+
+        //             // 第三次网络请求的代码
+        //             setTimeout(() => {
+        //                 resolve()
+        //             }, 1000)
+
+        //         }).then(() => {
+        //             // 第三次拿到结果的处理代码
+        //             console.log('hello Promise');
+        //             console.log('hello Promise');
+        //             console.log('hello Promise');
+
+        //         })
+        //     })
+        // })
+
+        // new -> 构造函数(1.保存了一些状态信息  2.执行传入的函数)
+        // 在执行传入的回调函数时，会传入两个参数，resolve,reject他们本身又是函数
+        // new Promise((resolve, reject) => {
+
+        //     setTimeout(() => {
+        //         // 成功的时候调用resolve
+        //         // resolve('成功')
+        //         // 失败的时候调用
+        //         // reject('失败')
+
+        //         var num = Math.ceil(Math.random() * 10); //生成10以内的随机数，大于5返回
+        //         if (num <= 5) {
+
+        //             resolve(num);
+        //         } else {
+        //             reject('数字太大了,生成的数:' + num);
+        //         }
+        //     }, 100)
+
+        // }).then((data) => {
+        //     console.log(data);
+        // }).catch((err, num) => {
+        //     console.log(err);
+
+        // })
+
+        // new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('aaa+')
+        //     }, 1000)
+        // }).then((res) => {
+        //     console.log(res, '第一层的10行处理代码');
+
+        //     return res + '111+'
+
+        //     // return Promise.reject('error')   // 失败
+        //     // throw   抛出异常
+
+        // }).then(res => {
+        //     console.log(res, '第二层的10行处理代码');
+
+        //     return Promise.resolve(res + '222')
+        // }).then(res => {
+        //     console.log(res, '第三层的10行处理代码');
+        // }).catch(err => {
+        //     console.log(err);
+        // })
+
+
+        Promise.all([
+            new Promise((resolve, reject) => {
+                setTimeout(() => { // 模拟请求
+                    resolve({
+                        name: '第一个',
+                        age: 18
+                    })
+                }, 3000)
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(() => { // 模拟请求
+                    resolve({
+                        name: '第二个',
+                        age: 18
+                    })
+                }, 1000)
+            })
+        ]).then(results => { // 数组
+            console.log(results);
+        })
+    </script>
+</body>
+
+</html>
