@@ -12,11 +12,10 @@ const Profile = () => import('../components/Profile.vue')
 
 const About = () => import('../components/About.vue')
 
-Vue.use(VueRouter)  // 通过Vue.use()插件,安装插件
+Vue.use(VueRouter) // 通过Vue.use()插件,安装插件
 
 // 创建一个router对象
-const routes = [
-  { // 路由的默认路径
+const routes = [{ // 路由的默认路径
     path: '',
     // redirect重定向(默认首页) 
     redirect: '/hello'
@@ -27,9 +26,8 @@ const routes = [
     meta: {
       title: '首页'
     },
-    children: [
-      {
-        path: '', //重定向
+    children: [{
+        path: '', //子界面的重定向
         redirect: 'New' // 一定不要加/
       },
       {
@@ -69,7 +67,7 @@ router.beforeEach((to, from, next) => {
   // 从from跳转到to
   document.title = to.matched[0].meta.title
   console.log(to);
-  next()// 一定要调用next
+  next() // 一定要调用next
 })
 
 

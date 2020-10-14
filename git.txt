@@ -1,0 +1,4 @@
+git add . 全部提交
+git status  查看
+git commit -m '要提交的注释'  提交到本地
+git push origin master 
