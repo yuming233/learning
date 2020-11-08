@@ -12,8 +12,6 @@ img {
   width: 100%;
 }
 
-
-
 /* 全局颜色 */
 :root {
   --primary-color: #ff434f;
@@ -26,9 +24,8 @@ img {
   --text-color-gray: #8b8b8b;
   --text-color-dark-gray: #727272;
   --text-color-light-gray: #c6c6c6;
-  --backdrop-color: rgba(42, 42, 42, 0.69)
+  --backdrop-color: rgba(42, 42, 42, 0.69);
 }
-
 
 header {
   width: 100%;
@@ -117,8 +114,6 @@ header .burger {
   opacity: 0.5;
 }
 
-
-
 .explore-btn {
   padding: 14px 32px;
   background-color: var(--primary-color);
@@ -142,7 +137,6 @@ header .burger {
   /* 按列的方式布局 */
 }
 
-
 section {
   display: grid;
   justify-items: center;
@@ -164,8 +158,6 @@ section {
   z-index: -1;
 }
 
-
-
 .title1 {
   font-size: 34px;
   color: var(--text-color-darker);
@@ -186,7 +178,6 @@ section {
   font-size: 18px;
   color: var(--text-color-dark-gray);
 }
-
 
 /* 关于我们 */
 .about-us {
@@ -226,7 +217,6 @@ section {
   color: var(--text-color-gray);
   margin-top: 8px;
 }
-
 
 /* 成功案例 */
 .showcases {
@@ -277,4 +267,49 @@ section {
 .case-item img {
   height: 100%;
   object-fit: cover;
+}
+
+/* 服务流程 */
+.service {
+  padding-top: 131px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  column-gap: 38px;
+  row-gap: 34px;
+}
+
+.service-item {
+  display: grid;
+  grid-template-areas:
+    "icon title"
+    "icon content";
+  grid-template-columns: 70px 1fr;
+  grid-template-rows: 1fr 3fr;
+  padding: 24px;
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.06);
+}
+
+.service-item i.iconfont {
+  grid-area: icon;
+  font-size: 42px;
+  color: var(--primary-color);
+  padding-top: 6px;
+}
+
+.service-item .service-title {
+  grid-area: title;
+  color: var(--text-color-dark);
+  font-size: 24px;
+}
+
+.service-item .service-content {
+  grid-area: content;
+  color: var(--text-color-gray);
+  line-height: 30px;
+  font-size: 16px;
+  margin-top: 8px;
 }
