@@ -1,3 +1,26 @@
+const headerEl = document.querySelector("header");
+const scrollToTop = document.querySelector(".scrollToTop")
+
+
+window.addEventListener("scroll",() =>{
+  let height = headerEl.getBoundingClientRect().height;
+
+  if(window.pageYOffset - height > 700){
+    if(!headerEl.classList.contains("sticky")){
+      headerEl.classList.add("sticky");
+    }
+  }else{
+    headerEl.classList.remove("sticky");
+  }
+
+  if(window.pageYOffset > 1500){
+    scrollToTop.style.display = "block"
+  }else{
+    scrollToTop.style.display = "none"
+  }
+})
+
+
 var mySwiper = new Swiper('.swiper-container', {
   loop: true,
 

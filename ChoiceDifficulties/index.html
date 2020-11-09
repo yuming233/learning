@@ -1,194 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://at.alicdn.com/t/font_2174187_xin889mvhw.css"
+  />
+  <link rel="stylesheet" href="./libs/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="style.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_2174187_rcd3asoisbc.css" />
-<link rel="stylesheet" href="./libs/swiper/swiper.min.css">
-<link rel="stylesheet" href="style.css">
-
-<body>
-
-  <header>
-    <div class="logo">星能搬砖</div>
-    <nav>
-      <a href="#">首页</a>
-      <a href="#">关于</a>
-      <a href="#">工地</a>
-      <a href="#">团队</a>
-      <a href="#">公司</a>
-      <i class="iconfont icon-sousuo"></i>
-      <div class="burger">
-        <div class="burger-line1"></div>
-        <div class="burger-line2"></div>
-        <div class="burger-line3"></div>
-      </div>
-    </nav>
-  </header>
-
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="slide-caption">
-          <h1>用创新点缀人生，让科技融入理想</h1>
-          <h3>科技创新，智慧生活，依靠科技进步推进经济跨越式发展</h3>
-          <button class="explore-btn">探索更多</button>
+  <body>
+    <header>
+      <div class="logo">星能搬砖</div>
+      <nav>
+        <a href="#">首页</a>
+        <a href="#">关于</a>
+        <a href="#">工地</a>
+        <a href="#">团队</a>
+        <a href="#">公司</a>
+        <i class="iconfont icon-sousuo"></i>
+        <div class="burger">
+          <div class="burger-line1"></div>
+          <div class="burger-line2"></div>
+          <div class="burger-line3"></div>
         </div>
-        <div class="backdrop"></div>
-        <img src="images/people-in-couch-1024248.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <div class="slide-caption left">
-          <h1>让科技融入理想</h1>
-          <h3>依靠科技进步推进经济跨越式发展</h3>
-          <button class="explore-btn">探索更多</button>
-        </div>
-        <div class="backdrop"></div>
-        <video src="./videos/working-man.mp4" muted autoplay loop></video>
-      </div>
+      </nav>
+    </header>
 
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="slide-caption">
+            <h1>用创新点缀人生，让科技融入理想</h1>
+            <h3>科技创新，智慧生活，依靠科技进步推进经济跨越式发展</h3>
+            <button class="explore-btn">探索更多</button>
+          </div>
+          <div class="backdrop"></div>
+          <img src="images/people-in-couch-1024248.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-caption left">
+            <h1>让科技融入理想</h1>
+            <h3>依靠科技进步推进经济跨越式发展</h3>
+            <button class="explore-btn">探索更多</button>
+          </div>
+          <div class="backdrop"></div>
+          <video src="./videos/working-man.mp4" muted autoplay loop></video>
+        </div>
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white"></div>
     </div>
-    <!-- 如果需要分页器 -->
-    <div class="swiper-pagination"></div>
 
-    <!-- 如果需要导航按钮 -->
-    <div class="swiper-button-prev swiper-button-white"></div>
-    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="content-wrapper">
+      <section class="about-us">
+        <h2 class="title1">关于我们</h2>
+        <p class="intro">搬砖魂 搬砖人 搬砖使我致富 搬砖使我步入小康</p>
+        <div class="features">
+          <div class="feature">
+            <i class="iconfont icon-dengpao-tianchong"></i>
+            <h4 class="feature-title">品牌创意</h4>
+            <p class="feature-content">建设社会主义核心价值观</p>
+          </div>
+          <div class="feature">
+            <i class="iconfont icon-quxianshangsheng"></i>
+            <h4 class="feature-title">整合营销</h4>
+            <p class="feature-content">建设社会主义核心价值观</p>
+          </div>
+          <div class="feature">
+            <i class="iconfont icon-gouwuche"></i>
+            <h4 class="feature-title">电子商务</h4>
+            <p class="feature-content">建设社会主义核心价值观</p>
+          </div>
+          <div class="feature">
+            <i class="iconfont icon-wangye"></i>
+            <h4 class="feature-title">网页设计</h4>
+            <p class="feature-content">建设社会主义核心价值观</p>
+          </div>
+          <div class="feature">
+            <i class="iconfont icon-yibiaopan"></i>
+            <h4 class="feature-title">网站优化</h4>
+            <p class="feature-content">建设社会主义核心价值观</p>
+          </div>
+          <div class="feature">
+            <i class="iconfont icon-fuwuqi"></i>
+            <h4 class="feature-title">网站架设</h4>
+            <p class="feature-content">建设社会主义核心价值观</p>
+          </div>
+        </div>
+      </section>
 
-  </div>
+      <section class="showcases section-bg">
+        <h2 class="title1">成功案例</h2>
+        <div class="filter-btns">
+          <button class="filter-btn active" data-filter="*">全部</button>
+          <button class="filter-btn" data-filter=".web">web</button>
+          <button class="filter-btn" data-filter=".mobile">移动</button>
+          <button class="filter-btn" data-filter=".science">科研</button>
+        </div>
+        <div class="cases">
+          <div class="case-item web mobile">
+            <img
+              src="images/gray-laptop-computer-showing-html-codes-in-shallow-focus-160107.jpg"
+              alt=""
+            />
+          </div>
+          <div class="case-item web mobile">
+            <img src="images/business-woman-2697954_1920.jpg" alt="" />
+          </div>
+          <div class="case-item mobile science">
+            <img src="images/man-wearing-black-suit-2955376.jpg" alt="" />
+          </div>
+          <div class="case-item science mobile">
+            <img src="images/photo-of-imac-near-macbook-1029757.jpg" alt="" />
+          </div>
+          <div class="case-item science web">
+            <img
+              src="images/selective-focus-photograph-of-man-wearing-gray-suit-jacket-1138903.jpg"
+              alt=""
+            />
+          </div>
+          <div class="case-item web mobile">
+            <img src="images/red-suspension-bridge-3493772.jpg" alt="" />
+          </div>
+          <div class="case-item science web">
+            <img
+              src="images/smiling-woman-wearing-black-sweater-1587009.jpg"
+              alt=""
+            />
+          </div>
+          <div class="case-item science mobile">
+            <img src="images/watercrafts-on-river-3464632.jpg" alt="" />
+          </div>
+        </div>
+      </section>
 
+      <section class="service">
+        <h2 class="title1">服务流程</h2>
+        <p class="intro">有工程 打电话 我叫人 一步到位很强大</p>
+        <div class="services">
+          <div class="service-item">
+            <i class="iconfont icon-jiaoliu"></i>
+            <h4 class="service-title">需求沟通</h4>
+            <p class="service-content">建设社会主义核心价值观</p>
+          </div>
+          <div class="service-item">
+            <i class="iconfont icon-chufajueding"></i>
+            <h4 class="service-title">项目评估</h4>
+            <p class="service-content">建设社会主义核心价值观</p>
+          </div>
+          <div class="service-item">
+            <i class="iconfont icon-hetong"></i>
+            <h4 class="service-title">签订合同</h4>
+            <p class="service-content">建设社会主义核心价值观</p>
+          </div>
+          <div class="service-item">
+            <i class="iconfont icon-ren"></i>
+            <h4 class="service-title">提案阶段</h4>
+            <p class="service-content">建设社会主义核心价值观</p>
+          </div>
+          <div class="service-item">
+            <i class="iconfont icon-zhizuo"></i>
+            <h4 class="service-title">制作阶段</h4>
+            <p class="service-content">建设社会主义核心价值观</p>
+          </div>
+          <div class="service-item">
+            <i class="iconfont icon-yanshou"></i>
+            <h4 class="service-title">网站验收</h4>
+            <p class="service-content">建设社会主义核心价值观</p>
+          </div>
+        </div>
+      </section>
 
-  <div class="content-wrapper">
-    <section class="about-us">
-      <h2 class="title1">关于我们</h2>
-      <p class="intro">
-        搬砖魂 搬砖人 搬砖使我致富 搬砖使我步入小康
-      </p>
-      <div class="features">
-        <div class="feature">
-          <i class="iconfont icon-dengpao-tianchong"></i>
-          <h4 class="feature-title">品牌创意</h4>
-          <p class="feature-content">建设社会主义核心价值观</p>
+      <section class="team-intro section-bg">
+        <h2 class="title1">团队介绍</h2>
+        <div class="team-members">
+          <div class="team-menber">
+            <div class="profile-image">
+              <img src="./images/man-wearing-black-suit-2955376.jpg" alt="" />
+            </div>
+            <h4 class="name">XXL</h4>
+            <p class="postion">前端工程师</p>
+            <ul class="social-link">
+              <li>
+                <a href="#"><i class="iconfont icon-weixin"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-weibo"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-huaban88"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-in"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="team-menber">
+            <div class="profile-image">
+              <img src="./images/business-woman-2697954_1920.jpg" alt="" />
+            </div>
+            <h4 class="name">XXL</h4>
+            <p class="postion">前端工程师</p>
+            <ul class="social-link">
+              <li>
+                <a href="#"><i class="iconfont icon-weixin"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-weibo"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-huaban88"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-in"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="team-menber">
+            <div class="profile-image">
+              <img
+                src="./images/smiling-woman-wearing-black-sweater-1587009.jpg"
+                alt=""
+              />
+            </div>
+            <h4 class="name">XXL</h4>
+            <p class="postion">前端工程师</p>
+            <ul class="social-link">
+              <li>
+                <a href="#"><i class="iconfont icon-weixin"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-weibo"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-huaban88"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-in"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="team-menber">
+            <div class="profile-image">
+              <img
+                src="./images/selective-focus-photograph-of-man-wearing-gray-suit-jacket-1138903.jpg"
+                alt=""
+              />
+            </div>
+            <h4 class="name">XXL</h4>
+            <p class="postion">前端工程师</p>
+            <ul class="social-link">
+              <li>
+                <a href="#"><i class="iconfont icon-weixin"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-weibo"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-huaban88"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="iconfont icon-in"></i></a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="feature">
-          <i class="iconfont icon-quxianshangsheng"></i>
-          <h4 class="feature-title">整合营销</h4>
-          <p class="feature-content">建设社会主义核心价值观</p>
+      </section>
+
+      <section class="data-section">
+        <div class="data-piece">
+          <i class="iconfont icon-daima"></i>
+          <div class="num">156</div>
+          <div class="data-desc">行代码</div>
         </div>
-        <div class="feature">
-          <i class="iconfont icon-gouwuche"></i>
-          <h4 class="feature-title">电子商务</h4>
-          <p class="feature-content">建设社会主义核心价值观</p>
+        <div class="data-piece">
+          <i class="iconfont icon-jiangxiang"></i>
+          <div class="num">156</div>
+          <div class="data-desc">个奖项</div>
         </div>
-        <div class="feature">
-          <i class="iconfont icon-wangye"></i>
-          <h4 class="feature-title">网页设计</h4>
-          <p class="feature-content">建设社会主义核心价值观</p>
+        <div class="data-piece">
+          <i class="iconfont icon-kehu"></i>
+          <div class="num">156</div>
+          <div class="data-desc">位用户</div>
         </div>
-        <div class="feature">
-          <i class="iconfont icon-yibiaopan"></i>
-          <h4 class="feature-title">网站优化</h4>
-          <p class="feature-content">建设社会主义核心价值观</p>
+        <div class="data-piece">
+          <i class="iconfont icon-xiangmu"></i>
+          <div class="num">156</div>
+          <div class="data-desc">个项目</div>
         </div>
-        <div class="feature">
-          <i class="iconfont icon-fuwuqi"></i>
-          <h4 class="feature-title">网站架设</h4>
-          <p class="feature-content">建设社会主义核心价值观</p>
+      </section>
+
+      <section class="company-activities">
+        <h2 class="title1">公司动态</h2>
+        <p class="intro">关注公司动态，第一时间获取一手消息</p>
+        <div class="activities">
+          <div class="activity">
+            <div class="act-image">
+              <img src="./images/activity01-image.jpg" alt="" />
+            </div>
+            <div class="meta">
+              <p class="date-published">
+                <i class="iconfont icon-riqiqishu"></i>2020年11月9日
+              </p>
+              <p class="comments">
+                <i class="iconfont icon-pinglun"></i>33条评论
+              </p>
+            </div>
+            <h2 class="act-title">提供互联网接入的ISP公司</h2>
+            <article>
+              网络公司原本是指提供网络服务的互联网内容提供商ICP公司，提供互联网接入的ISP公司
+            </article>
+            <button class="read-more-btn">阅读更多</button>
+          </div>
+          <div class="activity">
+            <div class="act-image">
+              <img src="./images/watercrafts-on-river-3464632.jpg" alt="" />
+            </div>
+            <div class="meta">
+              <p class="date-published">
+                <i class="iconfont icon-riqiqishu"></i>2020年11月9日
+              </p>
+              <p class="comments">
+                <i class="iconfont icon-pinglun"></i>33条评论
+              </p>
+            </div>
+            <h2 class="act-title">提供互联网接入的ISP公司</h2>
+            <article>
+              网络公司原本是指提供网络服务的互联网内容提供商ICP公司，提供互联网接入的ISP公司
+            </article>
+            <button class="read-more-btn">阅读更多</button>
+          </div>
+          <div class="activity">
+            <div class="act-image">
+              <img src="./images/red-suspension-bridge-3493772.jpg" alt="" />
+            </div>
+            <div class="meta">
+              <p class="date-published">
+                <i class="iconfont icon-riqiqishu"></i>2020年11月9日
+              </p>
+              <p class="comments">
+                <i class="iconfont icon-pinglun"></i>33条评论
+              </p>
+            </div>
+            <h2 class="act-title">提供互联网接入的ISP公司</h2>
+            <article>
+              网络公司原本是指提供网络服务的互联网内容提供商ICP公司，提供互联网接入的ISP公司
+            </article>
+            <button class="read-more-btn">阅读更多</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="footer-menus">
+        <div class="contact-us">
+          <p class="menu-title">联系我们</p>
+          <p>地址：湿哒哒湿哒哒收到大舍大得</p>
+          <p>电话：十大打完大大大我的</p>
+          <p>传真：湿哒哒哈市对吧收到哈市</p>
+          <p>电子邮件：啊速度啊厚度啊大家啊尽快传达</p>
+        </div>
+        <div class="service-menu footer-munu">
+          <p class="menu-title">服务概览</p>
+          <ul class="menu-items">
+            <li><a href="#">网站建设</a></li>
+            <li><a href="#">域名购买</a></li>
+            <li><a href="#">网页设计</a></li>
+            <li><a href="#">移动应用</a></li>
+          </ul>
+        </div>
+        <div class="showcase-menu footer-munu">
+          <p class="menu-title">成功案例</p>
+          <ul class="menu-items">
+            <li><a href="#">桌面网站</a></li>
+            <li><a href="#">移动网站</a></li>
+            <li><a href="#">科研项目</a></li>
+            <li><a href="#">软件应用</a></li>
+          </ul>
+        </div>
+        <div class="activity-menu footer-munu">
+          <p class="menu-title">公司动态</p>
+          <ul class="menu-items">
+            <li><a href="#">信息公开</a></li>
+            <li><a href="#">最近新闻</a></li>
+            <li><a href="#">最新博客</a></li>
+          </ul>
+        </div>
+        <div class="help-menu footer-munu">
+          <p class="menu-title">帮助与支持</p>
+          <ul class="menu-items">
+            <li><a href="#">帮助中心</a></li>
+            <li><a href="#">联系客服</a></li>
+            <li><a href="#">文档资源</a></li>
+          </ul>
+        </div>
+        <p class="icp-info">备案号 13546518681</p>
+        <p class="rights">版权号 181684168</p>
+        <div class="scrollToTop">
+          <a href="#"><i class="iconfont icon-xiaohuojian"></i></a>
         </div>
       </div>
-    </section>
+    </footer>
 
-    <section class="showcases section-bg">
-      <h2 class="title1">成功案例</h2>
-      <div class="filter-btns">
-        <button class="filter-btn active" data-filter="*">全部</button>
-        <button class="filter-btn" data-filter=".web">web</button>
-        <button class="filter-btn" data-filter=".mobile">移动</button>
-        <button class="filter-btn" data-filter=".science">科研</button>
-      </div>
-      <div class="cases">
-        <div class="case-item web mobile">
-          <img src="images/gray-laptop-computer-showing-html-codes-in-shallow-focus-160107.jpg" alt="">
-        </div>
-        <div class="case-item web mobile">
-          <img src="images/business-woman-2697954_1920.jpg" alt="">
-        </div>
-        <div class="case-item mobile science">
-          <img src="images/man-wearing-black-suit-2955376.jpg" alt="">
-        </div>
-        <div class="case-item science mobile">
-          <img src="images/photo-of-imac-near-macbook-1029757.jpg" alt="">
-        </div>
-        <div class="case-item science web">
-          <img src="images/selective-focus-photograph-of-man-wearing-gray-suit-jacket-1138903.jpg" alt="">
-        </div>
-        <div class="case-item web mobile">
-          <img src="images/red-suspension-bridge-3493772.jpg" alt="">
-        </div>
-        <div class="case-item science web">
-          <img src="images/smiling-woman-wearing-black-sweater-1587009.jpg" alt="">
-        </div>
-        <div class="case-item science mobile">
-          <img src="images/watercrafts-on-river-3464632.jpg" alt="">
-        </div>
-
-      </div>
-    </section>
-
-    <section class="service">
-      <h2 class="title1">服务流程</h2>
-      <p class="intro">
-        有工程 打电话 我叫人 一步到位很强大
-      </p>
-      <div class="services">
-        <div class="service-item">
-          <i class="iconfont icon-jiaoliu"></i>
-          <h4 class="service-title">需求沟通</h4>
-          <p class="service-content">建设社会主义核心价值观</p>
-        </div>
-        <div class="service-item">
-          <i class="iconfont icon-chufajueding"></i>
-          <h4 class="service-title">项目评估</h4>
-          <p class="service-content">建设社会主义核心价值观</p>
-        </div>
-        <div class="service-item">
-          <i class="iconfont icon-hetong"></i>
-          <h4 class="service-title">签订合同</h4>
-          <p class="service-content">建设社会主义核心价值观</p>
-        </div>
-        <div class="service-item">
-          <i class="iconfont icon-ren"></i>
-          <h4 class="service-title">提案阶段</h4>
-          <p class="service-content">建设社会主义核心价值观</p>
-        </div>
-        <div class="service-item">
-          <i class="iconfont icon-zhizuo"></i>
-          <h4 class="service-title">制作阶段</h4>
-          <p class="service-content">建设社会主义核心价值观</p>
-        </div>
-        <div class="service-item">
-          <i class="iconfont icon-yanshou"></i>
-          <h4 class="service-title">网站验收</h4>
-          <p class="service-content">建设社会主义核心价值观</p>
-        </div>
-
-      </div>
-    </section>
-  </div>
-
-
-
-
-
-
-
-
-  <script src="./libs/swiper/swiper.min.js"></script>
-  <script src="./libs/isotope/isotope.pkgd.min.js"></script>
-  <script src="index.js"></script>
-</body>
-
+    <script src="./libs/swiper/swiper.min.js"></script>
+    <script src="./libs/isotope/isotope.pkgd.min.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
