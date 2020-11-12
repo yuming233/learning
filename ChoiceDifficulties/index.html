@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <script src="./libs/scrollReveal/scrollreveal.min.js"></script>
   <link
     rel="stylesheet"
     type="text/css"
@@ -17,21 +18,21 @@
     <header>
       <div class="logo">星能搬砖</div>
       <nav>
-        <a href="#">首页</a>
-        <a href="#">关于</a>
-        <a href="#">工地</a>
-        <a href="#">团队</a>
-        <a href="#">公司</a>
+        <a href="#home">首页</a>
+        <a href="#about-us">关于</a>
+        <a href="#showcases">工地</a>
+        <a href="#team-intro">团队</a>
+        <a href="#company-activities">公司</a>
         <i class="iconfont icon-sousuo"></i>
-        <div class="burger">
-          <div class="burger-line1"></div>
-          <div class="burger-line2"></div>
-          <div class="burger-line3"></div>
-        </div>
       </nav>
+      <div class="burger">
+        <div class="burger-line1"></div>
+        <div class="burger-line2"></div>
+        <div class="burger-line3"></div>
+      </div>
     </header>
 
-    <div class="swiper-container">
+    <div id="home" class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="slide-caption">
@@ -61,7 +62,7 @@
     </div>
 
     <div class="content-wrapper">
-      <section class="about-us">
+      <section id="about-us" class="about-us">
         <h2 class="title1">关于我们</h2>
         <p class="intro">搬砖魂 搬砖人 搬砖使我致富 搬砖使我步入小康</p>
         <div class="features">
@@ -98,7 +99,7 @@
         </div>
       </section>
 
-      <section class="showcases section-bg">
+      <section id="showcases" class="showcases section-bg">
         <h2 class="title1">成功案例</h2>
         <div class="filter-btns">
           <button class="filter-btn active" data-filter="*">全部</button>
@@ -180,7 +181,7 @@
         </div>
       </section>
 
-      <section class="team-intro section-bg">
+      <section id="team-intro" class="team-intro section-bg">
         <h2 class="title1">团队介绍</h2>
         <div class="team-members">
           <div class="team-menber">
@@ -276,7 +277,7 @@
         </div>
       </section>
 
-      <section class="data-section">
+      <section  class="data-section">
         <div class="data-piece">
           <i class="iconfont icon-daima"></i>
           <div class="num">156</div>
@@ -284,22 +285,22 @@
         </div>
         <div class="data-piece">
           <i class="iconfont icon-jiangxiang"></i>
-          <div class="num">156</div>
+          <div class="num">888</div>
           <div class="data-desc">个奖项</div>
         </div>
         <div class="data-piece">
           <i class="iconfont icon-kehu"></i>
-          <div class="num">156</div>
+          <div class="num">2888</div>
           <div class="data-desc">位用户</div>
         </div>
         <div class="data-piece">
           <i class="iconfont icon-xiangmu"></i>
-          <div class="num">156</div>
+          <div class="num">666</div>
           <div class="data-desc">个项目</div>
         </div>
       </section>
 
-      <section class="company-activities">
+      <section id="company-activities" class="company-activities">
         <h2 class="title1">公司动态</h2>
         <p class="intro">关注公司动态，第一时间获取一手消息</p>
         <div class="activities">
@@ -406,13 +407,15 @@
         <p class="icp-info">备案号 13546518681</p>
         <p class="rights">版权号 181684168</p>
         <div class="scrollToTop">
-          <a href="#"><i class="iconfont icon-xiaohuojian"></i></a>
+          <a href="#home"><i class="iconfont icon-xiaohuojian"></i></a>
         </div>
       </div>
     </footer>
 
     <script src="./libs/swiper/swiper.min.js"></script>
     <script src="./libs/isotope/isotope.pkgd.min.js"></script>
+    <script src="./libs/anime/anime.min.js"></script>
+    <script src="./libs/smooth-scroll/smooth-scroll.polyfills.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
